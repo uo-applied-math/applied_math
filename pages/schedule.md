@@ -1,21 +1,9 @@
 ---
 layout: page
-title: course schedule
+title: course schedule // quick links
 description: schedule
 ---
 
-# Fall 2019: Computation and combinatorics
-
-Week 1
-
-: topics
-
-Week 2
-
-: more topics
-
-
-# Winter 2020: Applied stochastic processes and dynamical systems
-
-
-# Spring 2020: Machine learning and statistics
+* Fall: [Computation and combinatorics](fall.html) :: [schedule](fall_schedule.html)
+* Winter: [Computation and combinatorics](winter.html) :: [schedule](winter_schedule.html)
+* Spring: [Computation and combinatorics](spring.html) :: [schedule](spring_schedule.html)

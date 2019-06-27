@@ -35,20 +35,26 @@ This sequence aims to teach these skills in the context of three general and int
 Fall
 
 : ["Computation and combinatorics"](pages/fall.html)
-Goals: proficiency with computational tools and methods; survey of modern discrete mathematics
-Topics: enumerative combinatorics; (exact) statistical mechanics; graphs and networks; experimental mathematics and computation; combinatorial optimization.
+
+*Goals:* proficiency with computational tools and methods; survey of modern discrete mathematics
+
+*Topics:* enumerative combinatorics; (exact) statistical mechanics; graphs and networks; experimental mathematics and computation; combinatorial optimization.
 
 Winter
 
 : ["Applied stochastic processes and dynamical systems"](pages/winter.html)
-Goals: proficiency with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
-Topics: Brownian motion, Gaussian processes, point processes, diffusions and associated PDE, random matrices, linear systems theory.
+
+*Goals:* proficiency with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
+
+*Topics:* Brownian motion, Gaussian processes, point processes, diffusions and associated PDE, random matrices, linear systems theory.
 
 Spring
 
 : ["Machine learning and statistics"](pages/spring.html)
-Goals: ability to deploy modern methods in computational inference and feedforward and recurrent neural networks, and familiarity with underlying theory and assumptions. 
-Topics: information theory, statistical inference, generative models, mean field theory, feedforward and recurrent neural networks, supervised/unsupervised
+
+*Goals:* ability to deploy modern methods in computational inference and feedforward and recurrent neural networks, and familiarity with underlying theory and assumptions. 
+
+*Topics:* information theory, statistical inference, generative models, mean field theory, feedforward and recurrent neural networks, supervised/unsupervised
 
 
 ## Prerequisites 

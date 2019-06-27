@@ -54,9 +54,9 @@ Weeks 7-8: Diffusions and associated PDE, via the Fokker-Planck equation
 5. First passage times of diffusions. 
 6. Detailed analysis of double-well potential example.  
 
-Weeks 9-10:: Linear systems theory
+Weeks 9-10: Linear systems theory
 
-    :  
+:  
 
 1. Driven linear time-invariant systems LTI
 2. State-space vs. input/output views of LTI systems. 
