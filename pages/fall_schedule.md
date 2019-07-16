@@ -16,12 +16,9 @@ Week 1: Counting things and using python
         * regular languages 
         * tree-type structures and Catalan objects 
     * Asymptotics: Partial Fractions / Singularity analysis
-    * Combinatorial statistics and multivariate generating functions
+    * Multivariate generating functions for analysis of run time
 * Experimental math
     * Guessing formulae from data; fitting polynomial/rational/exponential functions 
-* Famous algorithms from undergraduate mathematics
-    * Matrix multiplication (naive, fast)
-    * Number theory: fast modular arithmetic, Euclidean algorithm
 * Python
     * basic flow control (if/then/else, loops, functions)
     * Lists, dictionaries
@@ -31,6 +28,9 @@ Week 2: Complexity and more programming skills
 
 :  
 
+* Famous algorithms from undergraduate mathematics
+    * Matrix multiplication (naive, fast)
+    * Number theory: fast modular arithmetic, Euclidean algorithm
 * Graph algorithms: 
     * breadth first/depth first search
     * topological sort
