@@ -33,6 +33,7 @@ Weekly homeworks will consist of a mix of pen-and-paper problems and computation
 
 * A recent version of [Python](https://python.org)
 * A working installation of [Jupyter](https://jupyter.org/)
+* The python package [numpy](https://numpy.org/)
 * A good code editor like [Atom](https://atom.io)
 
 ## Books
