@@ -9,10 +9,10 @@ This is the website for the graduate series on applied mathematics at UO.
 
 Quick links:
 
-- [Fall:](pages/fall.html) Computation and combinatorics
-- [Winter:](pages/winter.html) Applied stochastic processes and dynamical systems
-- [Spring:](pages/spring.html) Machine learning and statistics
-- [useful links](pages/reference.html), to reference/background material.
+- [Fall:](pages/fall.md) Computation and combinatorics
+- [Winter:](pages/winter.md) Applied stochastic processes and dynamical systems
+- [Spring:](pages/spring.md) Machine learning and statistics
+- [useful links](pages/reference.md), to reference/background material.
 
 ## Course overview
 
@@ -34,7 +34,7 @@ This sequence aims to teach these skills in the context of three general and int
 
 Fall
 
-: ["Computation and combinatorics"](pages/fall.html)
+: ["Computation and combinatorics"](pages/fall.md)
 
 *Goals:* proficiency with computational tools and methods; survey of modern discrete mathematics
 
@@ -42,7 +42,7 @@ Fall
 
 Winter
 
-: ["Applied stochastic processes and dynamical systems"](pages/winter.html)
+: ["Applied stochastic processes and dynamical systems"](pages/winter.md)
 
 *Goals:* proficiency with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
 
@@ -50,7 +50,7 @@ Winter
 
 Spring
 
-: ["Machine learning and statistics"](pages/spring.html)
+: ["Machine learning and statistics"](pages/spring.md)
 
 *Goals:* ability to deploy modern methods in computational inference and feedforward and recurrent neural networks, and familiarity with underlying theory and assumptions. 
 
