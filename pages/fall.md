@@ -4,7 +4,7 @@ title: about this course // syllabus
 description: Syllabus for Computation and Combinatorics
 ---
 
-See [the schedule](fall_schedule.md) for topics by week and links to slides.
+See [the schedule](fall_schedule.html) for topics by week and links to slides.
 
 
 # Applied Mathematics I: Computation and combinatorics
@@ -58,7 +58,7 @@ Your classmates come from a diverse set of backgrounds and experiences;
 please avoid assumptions or stereotypes, and aim for inclusivity.
 Let us know if there are classroom dynamics that impede your (or someone else’s) full engagement. 
 
-Please see [this page](policies.md) for more information on
+Please see [this page](policies.html) for more information on
 campus resources, academic integrity, discrimination, and harassment (and reporting of it).
 
 
