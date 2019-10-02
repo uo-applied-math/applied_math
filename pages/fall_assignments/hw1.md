@@ -1,0 +1,84 @@
+
+# Math 607 Applied Math I: Week 1 Homework
+Due date: Wednesday, Oct 9.
+
+Please submit a Jupyter notebook with your solutions, via Canvas.  No paper submissions, please.
+
+It's absolutely OK if you work together on these problems - and this is especially true for the programming problems, when we want you to be working in pairs at one computer, with one person typing and one person thinking.
+
+We do want everyone to write up each assignment on their own.
+
+## Problem 1: counting planar rooted trees
+
+A *planar rooted binary tree* is a collection of nodes such that (a) one of them is the *root*,
+(b) each node except the root has a *parent*,
+(c) if node $u$ is parent to node $v$ then $v$ is either the *left* or the *right* child of $u$, and
+(d) each node has at most one left child and at most one right child.
+A recursive definition begins with the empty tree and the one-node tree,
+and says that every node has a left and a right subtree (which may be empty).
+Let $T(n)$ denote the number of such trees with a total of $n$ nodes.
+
+**(a)** Write *two* programs that each take an integer $n$ and returns $T(n)$, in two different ways.
+Make sure they agree with each other.
+
+**(b)** Use your program and the [online encyclopedia of integer sequences](oeis.org) to find the name of and a formula for this sequence.
+
+**(c)** Derive a recursive formula for the generating function
+$$G(x) = \sum_{n \ge 0} x^n T(n)$$
+for $T(n)$ and solve it to obtain a closed-form expression for $G(x)$.
+Use this to derive a formula for $T(n)$ (*hint: [this](https://en.wikipedia.org/wiki/Binomial_theorem#Newton's_generalized_binomial_theorem) may be helpful).
+
+## Problem 2: guessing a recurrence
+
+Guess a closed-form formula for the sequence of numbers 1, 1, 1, 3, 17, 83, 345, 1291, 4513, 15075, 48809, 154619, 482289, ...
+
+One way to do this is as follows look it up on the internet.  However, I don't think this sequence is in the OEIS (yet).  Here is an alternate way: Let $\{a_n\}_{n \geq 0}$ be the above sequence.  Then: 
+    
+
+**(a)** Use linear algebra to try and find a linear recurrence with constant coefficients satisfied by ${a_n}$.  I'd suggest you use the python package numpy to do your linear algebra.
+
+**(b)** Let $G(x)  = \sum_{n \geq 0}a_nx^n$.  Use the recurrence to find an expression for $G(x)$.  If you succeeded in part (a), this expression will be a rational function in x.
+
+**(c)** Use partial fractions on your answer to (b). Then compute taylor series around x=0 for all the resulting terms.  The $n$th term of the taylor series is now a closed form expression for $a_n$.  Check that it's right.
+
+## Problem 3: diagonal of a bivariate series
+
+Let $$F(s,t) = \frac{1}{1-s-t} = 1 + s + t + s^2 + 2st + t^2 + \dots$$
+
+Find a closed-form expression for $$G(x) = \text{diag}(F) = [s^0]F(s, x/s) = 1+2x+6x^2+20x^4 + \dots$$ where $[s^k]G$ is the coefficient of $s^k$ in the power series $G$.  Hint: use partial fractions.  Note that while $F$ is a rational function in $s$ and $t$, $\text{diag}(F)$ is not.
+
+## Problem 4: expectation, variance, inversions
+
+**(a)** Let $p$ be a probability distribution on the positive integers, and let $X$ be a random variable distributed according to $p$.  Let $G(x)=\sum_n p(n) x^n$. Explain how to compute the expectation $E(X)$ and the variance $\text{Var}(X)$ by doing algebraic manipulations on $G$ (if you don't know this terminology, please look it up or ask us).
+
+**(b)** Let $\pi$ be a permutation on $n$ letters. An *inversion* of pi is a pair $(i,j)$ with $1 \leq i < j \leq n$ 
+such that $\pi(i) > \pi(j)$. Let $I(n,k)$ denote the number of permutations on $n$ letters which have $k$ inversions.  
+
+Compute the generating function $G_n(k) = \sum_k \frac{I(n,k)}{n!} x^k$.  What is the expected number of inversions in a randomly chosen permutation on $n$ letters?
+
+##  Problem 5: weird dice
+
+Consider two six-sided dice with sides marked as follows:
+
+* Die A has sides marked 1,3,4,5,6,8
+* Die B has sides marked 1,2,2,3,3,4
+
+We roll these two dice and add the values to get a random number between 2 and 12.
+
+**(a)** Show that the random number we get has the same distribution as rolling two ordinary dice and adding the values.    This part doesn't *need* generating functions, but the next part does, so you might as well use them.
+
+**(b)** Show that 
+ * the ordinary labeling of two dice, and
+ * the labelling of Die A and Die B
+ 
+are the only labellings with the property described in part (a), subject to the condition that the smallest number on both dice is 1.
+
+##  Problem 6: spambot
+
+**(a)** Download [the complete works of William Shakespeare](http://www.gutenberg.org/files/100/100-0.txt).   Write a python function which reads in the file, one line at a time, and produces a list $L$ of words in the file, in order.  Remove all spaces, but leave the punctuation and capitalization the way they are.
+
+This file has a bunch of non-shakespeare stuff in it - copyright notices, tables of contents, and so forth.  You might want to take those out.  Also, to save time during testing, you should create a shorter text file, with only some of the works of William Shakespeare.
+
+**(b)** Write a python program that constructs the following directed graph $G=(V,E)$:  $V$ is the set of ordered triples $(w_1, w_2, w_3)$ of consecutive words in $L$, and $E$ is the set of all pairs $((w_1,w_2,w_3),(w_2,w_3,w_4))$ where $(w_1, w_2, w_3, w_4)$ is an ordered quadruple of consecutive words in $L$.  Implement the graph as a dictionary whose keys are triples as above, and whose values are lists of possible words $w_4$.
+
+**(c)** Write a python program which generates vaguely shakespeare-sounding nonsense by carrying out a random walk in $G$.  If your program is producing less-than-ideal output, you may want to clean up the file from part (a).
