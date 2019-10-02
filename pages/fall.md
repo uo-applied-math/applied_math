@@ -6,7 +6,8 @@ description: Syllabus for Computation and Combinatorics
 
 See [the schedule](fall_schedule.html) for topics by week and links to slides.
 
-Here is [the homework](fall_assignments/fall_assignments.html).
+# Homework
+**Assignment 1**.  Due Wednesday Oct 9 [html](hw1.html), [Jupyter Notebook](hw1.ipynb)
 
 # Applied Mathematics I: Computation and combinatorics
 
