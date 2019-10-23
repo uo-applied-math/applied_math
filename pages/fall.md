@@ -13,6 +13,7 @@ See [the schedule](fall_schedule.html) for topics by week and links to slides.
 
 **Assignment 3**.  Due Wednesday Oct 23 [Jupyter Notebook](fall_assignments/hw3.ipynb)
 
+**Assignment 4**.  Due Wednesday Oct 30 [Jupyter Notebook](fall_assignments/hw4.ipynb)
 
 # Applied Mathematics I: Computation and combinatorics
 
