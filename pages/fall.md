@@ -9,11 +9,11 @@ See [the schedule](fall_schedule.html) for topics by week and links to slides.
 # Homework
 **Assignment 1**.  Due Wednesday Oct 9 [html](fall_assignments/hw1.html), [Jupyter Notebook](fall_assignments/hw1.ipynb)
 
-**Assignment 2**.  Due Wednesday Oct 16 [Jupyter Notebook](fall_assignments/hw2.ipynb)
+**Assignment 2**.  Due Wednesday Oct 16 [html](fall_assignments/hw2.html), [Jupyter Notebook](fall_assignments/hw2.ipynb)
 
-**Assignment 3**.  Due Wednesday Oct 23 [Jupyter Notebook](fall_assignments/hw3.ipynb)
+**Assignment 3**.  Due Wednesday Oct 23 [html](fall_assignments/hw3.html), [Jupyter Notebook](fall_assignments/hw3.ipynb)
 
-**Assignment 4**.  Due Wednesday Oct 30 [Jupyter Notebook](fall_assignments/hw4.ipynb)
+**Assignment 4**.  Due Wednesday Oct 30 [html](fall_assignments/hw4.html), [Jupyter Notebook](fall_assignments/hw4.ipynb)
 
 # Applied Mathematics I: Computation and combinatorics
 
