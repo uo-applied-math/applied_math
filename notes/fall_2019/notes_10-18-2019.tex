@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}   
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in}
+\parindent = 0pt
+
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[mathscr]{euscript}
+\usepackage{extpfeil}
+\usepackage {graphicx}
+\usepackage{mathtools}
+\usepackage{changepage}
+\usepackage{tikz}
+\usepackage{ulem}
+\usepackage{float}
+
+\usepackage{amsthm}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\tr}{\text{tr}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+\theoremstyle{definition}
+
+\newtheorem*{defn}{Definition}
+\newtheorem*{claim}{Claim}
+\newtheorem{ex}{Example}
+
+\begin{document}
+Math 607: Computation and Combinatorics \\
+Fall 2019 \\
+October 18 (Friday of Week 3) \\
+
+At the beginning of class, we reviewed Wilson's algorithm from the previous lecture but didn't add any new information. To summarize: suppose $G = (V, E)$ is a graph from which we want to pick a spanning tree uniformly at random. We can do this using Wilson's algorithm, which says \begin{itemize}
+	\item Randomly pick a root vertex $r$ from the set of vertices and set $T_0 = \{r\}$.
+	\item For incrementing $i$, repeat the following: \begin{itemize}
+		\item Pick a uniformly random vertex $v_i$ not in $T_i$
+		\item Perform a loop-erased random walk in $G$ until we get a path $P_i$ from $v_i$ to $T_i$
+		\item Set $T_{i+1} = T_i \cup P_i$
+		\end {itemize}
+	\item Continue until $T_k$ spans $G$.
+	\end{itemize}
+	
+Equivalently, we can think of Wilson's algorithm in the following way:	
+\begin{itemize}
+	\item On each vertex $v \in V$ except for a randomly chosen root vertex, place a stack of cards where each card has a uniformly random neighbor of $v$ written on it, and the $i$th card in each stack has color $i$. The cards are independent of one another.
+	\item If the top cards on the stacks form a cycle $v_1, v_2, \dots, v_t = v_1$, remove the top card on each vertex in the cycle. Regardless of the order in which we remove the cycles, the same cycles are removed. Repeat until there are no cycles. 
+	\item If there are infinitely many cycles to be removed, this procedure never finishes. However, this is a probability 0 event, and the expected running time of the algorithm is finite.
+	\item If the number of cycles to be removed is a finite integer $k$, then the cycles $C_1, \dots, C_k$ come out in some order, leaving a uniformly random tree $T$. Wilson's algorithm ``discovers" $T$ by performing a loop-erased random walk.
+\end{itemize}
+
+\underline{Adjacency Matrices of Graphs} \\
+
+Let $G$ be an undirected graph with no loops and no multiple edges, with $n$ vertices $v_1, \dots, v_n$.
+
+\begin{defn}
+	The \textbf{adjacency matrix} for the graph $G$ is the matrix $A = [a_{ij}]_{i, j}$ where
+	$$ \begin{cases}
+	1 & \text{ if $v_i$ is adjacent to $v_j$} \\
+	0 & \text{ otherwise}
+	\end{cases} $$
+\end{defn}
+
+An \textbf{eigenvalue/eigenvector of the graph $G$} is an eigenvalue/eigenvector of its adjacency matrix $A$. \\
+
+Since $A$ is real and symmetric,
+\begin{itemize}
+	\item The eigenvalues of $A$ are real
+	\item $A$ gives an orthogonal eigenbasis
+	\item $A$ is diagonalizable over $\CC$.
+\end{itemize}
+
+When we square the matrix $A$, we get
+$$A^2 = \begin{bmatrix} \sum_{\ell} a_{i \ell} a_{\ell j} \end{bmatrix}_{i, j} = \begin{bmatrix} \text{\# walks } v_i \rightarrow \star \rightarrow v_j \end{bmatrix}_{i, j}.$$
+
+The trace of an $n \times n$ matrix $M$ is defined as the sum of its diagonal entries, and is equal to the sum of its eigenvalues counted with multiplicity. That is,
+$$\tr(M) = \sum_{1 \leq i \leq n} a_{ii} = \sum_{i} \lambda_i.$$
+
+If $x$ is a formal variable, then 
+$$\tr(1 - xA)^{-1} = \tr(1 + xA + x^2A^2 + \dots)$$
+is the generating function for the number of closed walks (walks which start and end at the same vertex) rooted at vertex $i$, with $x$ marking the length of the walk. \\
+
+We can find the eigenvalues of the adjacency matrix $A$ using the \textbf{power method}:
+\begin{itemize}
+	\item Since $A$ is symmetric, we can write $A = PDP^{-1}$, where $D$ is the diagonal matrix of eigenvalues of $A$, and $P$ is the matrix of eigenvectors for $A$ where the $i$th column of $P$ corresponds to the $(i, i)$-entry of $D$. Assume the largest eigenvalue has multiplicity 1 and $|\lambda_1| > |\lambda_2| \geq \dots \geq |\lambda_n|$.
+	\item Then
+	\begin{equation} A^k = P \begin{bmatrix} \lambda_1^k & & \\ & \ddots & \\ & & \lambda_n^k \end{bmatrix} P^{-1}. \end{equation}
+	For large $k$, $\lambda_1^k$ dominates all other entries in the diagonal matrix.
+	\item Given any vector $v$ in $\CC^n$, you can express $v$ in the eigenbasis. Applying (1), $A^k v$ is approximately an eigenvector for $\lambda_1$ when $k$ is large. In practice, to find the eigenvector corresponding to the largest eigenvalue of $A$, we can repeatedly set
+	$$v_i = \frac{Av_{i-1}}{|Av_{i-1}|},$$
+	starting with an arbitrary nonzero vector $v_0$. As $i$ increases, $v_i$ gets closer and closer to being an eigenvector corresponding to $\lambda_1$.
+\end{itemize}
+
+
+
+
+\end{document}
+	

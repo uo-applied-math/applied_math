@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, enumerate, amsmath, amsthm}
+\usepackage{graphics}
+\newcommand{\extr}{\overline{\mathds{R}}}
+\newcommand{\suun}[1]{\textsuperscript{\underline{#1}}}
+\newcommand{\lnorm}{\left\lvert \left \lvert }
+\newcommand{\rnorm}{\right \rvert \right \rvert}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\re}{\text{Re}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}{Question}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{nonexample*}{Non-Example}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.7in}
+\title{MATH 607 (Applied Math I) Lecture Notes}
+\author{Christophe Dethier}
+\date{October 23, 2019}
+\begin{document}
+\bigskip
+\maketitle
+
+Please send Peter the \LaTeX notes to plr@uoregon.edu and tell him if you \emph{don't} want to be credited. Make sure to send the .tex file as well as the .pdf file.
+
+Today we're going to talk more about branching processes. For setup, we have a collection of independent, identically distributed random variables, which we generically denote $X$. Each random variable is the number of offspring that each parent has. The generating function $\phi(u)$ is given by
+\[
+\phi(u) = \mathbb{E}[u^X] = \sum_{n \geq 0} u^n p_n,
+\]
+where $p_n = \mathbb{P}\{X = n\}$ is the probability that a parent has $n$ children. (As the $X$ are identically distributed, this probability does not depend on the parent.) We can think of this generating function as a map $\phi: [0,1] \rightarrow [0,1]$. For example, $\phi(0) = p_0$, while
+\[
+\phi'(1) = \mu = \mathbb{E}[X] = \sum_n n p_n,
+\]
+where $\mu$ is the mean (or expectation) of the distribution used for the family $X$.
+
+\begin{theorem*}
+If $\mu > 1$, then there is a fixed point of $\phi$, perhaps $1-q$ for some $0 < q \leq 1$. That is, $\phi(1-q) = 1-q$. Furthermore, $q$ is the survival probability of the branching process,
+\[
+q = \mathbb{P}\{\text{Survival of BP}\} = \mathbb{P}\left\{\lim_{t \rightarrow \infty} N_t > 0\right\}.
+\]
+Conversely, if $\mu \leq 1$, then
+\[
+\mathbb{P}\{N_t \rightarrow 0\} = 1.
+\]
+\end{theorem*}
+
+\begin{proof}
+We define
+\[
+1 - q_t = \mathbb{P} \left\{N_t > 0\right\} = \phi^{(t)}(0) = \phi(\phi(\ldots \phi(0)\ldots )).
+\]
+We note that $\phi(u) \nearrow$ as $u \nearrow$. So if $u < 1-q$ then $u < \phi(u) < 1-q$.
+\end{proof}
+
+\begin{example*}
+Suppose that $X$ has the Poisson distribution with mean $\lambda$. This means that
+\[
+\mathbb{P}\{X = n\} = e^{-\lambda} \frac{\lambda^n}{n!}.
+\]
+Then
+\[
+\phi(u) = \sum_{n \geq 0} u^n e^{-\lambda} \frac{\lambda^n}{n!} = e^{-\lambda} e^{-\lambda u} = \exp(\lambda(u-1)),
+\]
+and we note that $\mathbb{E}[X] = \phi'(1) = \lambda$, which is why $\lambda$ is referred to as the mean of this distribution.
+\end{example*}
+
+{\bf Approximating the Survival Probability.} Suppose that $\mu = 1 + s$ for some small-ish $s$. Then we can build a Taylor series around $x = 0$ for $\phi(1-x)$;
+\[
+\phi(1-x) = \phi(1) - x\phi'(1) + \frac{x^2}{2} \phi''(1) - \ldots.
+\]
+here we see that $\phi''(1) = \mathbb{E}[X(X-1)]$ is almost the variance. We call this quantity $m$. Using the quadratic approximation of this Taylor series, we see that
+\[
+\phi(1-x) \approx 1 - \mu x + \frac{m}{2} x^2.
+\]
+Since $1-q$ is a fixed point of $\phi$, $q$ will (approximately) be a solution to the quatratic equation
+\[
+1 - x = 1 - \mu x + \frac{m}{2} x^2.
+\]
+Since this equation is solved by $x = 2s/m$, we see that $q \approx 2s/m$ is a nice approximation for the survival probability when $s$ is small. When $s$ is larger, this Taylor expansion doesn't converge very fast, so the quadratic approximation won't be the best.
+
+\begin{example*}
+Each virus particle that goes in your mouth might die or reproduce. Suppose that $\mathbb{P}\{\text{death} \} = 99\%$, and 
+\[
+\mathbb{E}[ \text{ \# offspring } | \text{ not death }] = 150.
+\]
+Question: What is the probability, approximately, that you get sick from a single particle, i.e., that the number of viruses $\nearrow \infty$?
+
+We note that $\mu = 150\cdot 0.1 = 1.5 > 1$, so $s = 0.5$. To calculate $m$, we use $m = \mathbb{E}[X(X-1)]$. This is 0 with 99\% probability, and $\approx 150^2$ with probability 1\%. So we see that
+\[
+q \approx \frac{2s}{m} \approx\frac{2(0.5)}{0.01(150^2)} \approx 1\%.
+\]
+\end{example*}
+
+{\bf Random Graphs.} For an undirected graph with $N$ nodes, let $d_n^{(N)}$, be the proportion of nodes with degree $n$, and let $D^{(N)}$ be a random variable giving the degree of a uniformly randomly chosen node in the graph. $d_n^{(N)}$ is called the degree sequence. We note that $\mathbb{P}\{D^{(N)} = n\} = d_n^{(N)}$.
+
+\begin{definition*} 
+A sequence of graphs is called \emph{sparse} if $D^{(N)}$ converges in distribution as $N \rightarrow \infty$, perhaps to a random variable $D$. In this case, convergence in distribution means that $d_n^{(N)}$ converges for each $n$ as $N \rightarrow \infty$ to a possible degree sequence, that is, it converges to some $d_n$ with $\sum d_n = 1$.
+\end{definition*} 
+
+\begin{example*}
+A branching provess with $\mu > 1$, run until it has $N$ nodes.
+\end{example*}
+
+\begin{example*}
+$\mathbb{Z}^2 \cap [0,\sqrt{n}]^2$. Then as $N \rightarrow \infty$, $d_i^{(N)} \rightarrow 0$ for $i \neq 4$ while $d_4^{(N)} \rightarrow 1$.
+\end{example*}
+
+\begin{nonexample*}
+Connect $u,v \in \{1,2,\ldots,n\}$ if $u|v$ or $v|u$. This is not sparse as $\mathbb{P}\{D^{(n)} > x\} \rightarrow 1$ as $N \rightarrow \infty$ for all $x$.
+\end{nonexample*}
+
+\begin{theorem*}[''Your friends have more friends than you do."] Assume that $d_0 = 0$. Let $U$ be a uniformly chosen node and $V$ a uniformly chosen neighbor of $U$. Then
+\[
+\mathbb{E}[\deg(V)] > \mathbb{E}[\deg(U)].
+\]
+\end{theorem*}
+\begin{proof}
+The probability that the edge $(U,V)$ is chosen is given by
+\[
+\mathbb{P}\{\text{ pick edge $(U,V)$ }\} = \frac{1}{N} \frac{1}{\deg(U)}.
+\]
+for any edge $(U,V)$. We note that
+\[
+\mathbb{E}[\deg(U)] = \sum_{(U,V) \in E} \deg(U) \frac{1}{N} \frac{1}{\deg(U)} = \frac{2|E|}{N},
+\]
+which is the average degree. Furthermore,
+\[
+\mathbb{E}[\deg(V)] = \sum_{(U,V) \in E} \deg(V) \frac{1}{N} \frac{1}{\deg(U)}.
+\]
+To evaluate this, we note that one has the fundamental inequality
+\[
+\frac{1}{2}\left(\frac{x}{y} + \frac{y}{x}\right) \geq 1,
+\]
+which holds for every $x,y > 0$. So
+\[
+\mathbb{E}[\deg(U)] = \sum_{U,V} \frac{1}{N} \leq \sum_{U,V} \frac{1}{N} \left(\frac{\deg(U)}{\deg(V)} + \frac{\deg(U)}{\deg(V)} \right) \frac{1}{2} = \mathbb{E}[\deg(V)].
+\]
+\end{proof}
+
+
+
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{verbatim}
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\begin{document}
+\section{Analysis of Algorithms}
+
+\begin{itemize}
+	\item how long your code takes to run, with "how long" referring to the number of steps. Then the question remains: what is a step?
+	\item look for rough bounds, depend on size of the problem but don't depend on what computer you have
+\end{itemize}
+
+We say $f(n)$ is $O(g(n))$ if there exist constants $C$, $N$ such that $\forall n \geq N$, we have $f(n) \leq Cg(n)$. Or a lower bound $\Omega$, then $f(n) \geq Cg(n)$. 
+
+We say $f(x)$ is $\theta(g(x))$ if both $f(x)$ is $O(g(x))$ and $f(x)$ is $\Omega(g(x))$. 
+
+\begin{example}[Bubble Sort Algorithm]
+	Input: list of numbers $L = [\ell_0, \ldots \ell_n]$. 
+	
+	Output: $L$, but sorted.
+	Repeat the following: 
+	
+	\noindent\texttt{for i from 0 to n-1:}\\
+	\hspace*{4ex}\texttt{if $\ell_i > \ell_{i+1}$:}\\
+	\hspace*{8ex}\texttt{swap $l_i$ with $l_{i+1}$ in $L$}
+	
+\end{example}
+	
+\end{document}

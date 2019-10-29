@@ -6,6 +6,8 @@ description: Syllabus for Computation and Combinatorics
 
 See [the schedule](fall_schedule.html) for topics by week and links to slides.
 
+Here is a collection of [student-transcribed notes](../notes/fall_2019/README.html).
+
 # Homework
 **Assignment 1**.  Due Wednesday Oct 9 [html](fall_assignments/hw1.html), [Jupyter Notebook](fall_assignments/hw1.ipynb)
 
