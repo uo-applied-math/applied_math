@@ -1,0 +1,120 @@
+\documentclass[12pt]{amsart}   
+\usepackage[margin=1in]{geometry}                		
+\geometry{letterpaper}   
+
+
+
+
+\title{Friday Week 2 Notes}
+\date{October 11, 2019}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Binary Search}
+
+Input: \\
+$L$ - a sorted list of numbers\\
+$x$ - the number we're looking for\\
+$a$ - place in $L$ to start looking\\
+$b$ - place in $L$ to stop looking\\
+
+Output:\\
+true or false - is $x$ in the list between $a$ and $b$ or not\\
+
+Some code for binary search: \\ 
+
+def Find(L,x,a,b):\\
+\indent \indent \indent let $c = \lfloor{\frac{a+b}{2}\rfloor}$\\
+\indent \indent \indent if $a = = b$:\\
+\indent \indent \indent \indent \indent \indent return $(L(a) = = x)$\\
+\indent \indent \indent else:\\
+\indent \indent \indent \indent \indent \indent if $L[c] < x:$\\
+\indent \indent \indent \indent \indent \indent \indent \indent \indent return Find(L,x,c,b)\\
+\indent \indent \indent \indent \indent \indent else:\\
+\indent \indent \indent \indent \indent \indent \indent \indent \indent return Find(L,x,a,c)\\
+
+Let's analyze how long this takes to run:\\
+Let $T(n) = $ worst-case running time on list of length n\\
+\underline{Claim.} $T(n) = max\left(T(\lfloor{\frac{n}{2}\rfloor}), T(\lceil{\frac{n}{2}\rceil})\right) + C$
+\vspace{10mm}
+
+\underline{Claim.} T is increasing, so $T(n) = T(\lceil{\frac{n}{2}\rceil}) + C$ 
+
+If $n = 2^k$, 
+$$T(2^k) = T(2^{k-1}) + C$$
+$$ = T(2^{k-2} + 2C$$
+$$...$$
+$$ = T(1) + kC$$
+
+We learn $T(n) \leq Clog_2n$ (assuming T is increasing), i.e. $T(n) = O(logn)$.
+
+
+\hrulefill
+
+\section{Memoization}
+
+If you have something like:\\
+
+def F(a,b,c):\\
+\indent \indent \indent do some things\\
+\indent \indent \indent return answer\\
+
+and you would like this to run faster the next time you call it, you can do:\\
+
+memoize = $\{\}$\\
+def F(a,b,c):\\
+\indent \indent \indent if (a,b,c) not in memoize:\\
+\indent \indent \indent \indent \indent \indent do some things\\
+\indent \indent \indent \indent \indent \indent memoize[(a,b,c)] = answer\\
+\indent \indent \indent return memoize[(a,b,c)]\\
+
+note that (a,b,c) have to be things you can put in a dictionary\\
+
+\vspace{10mm}
+
+\underline{Example.} Up-Right lattice points from $(0,0)$ to $(a,b)$\\
+
+Let $n(a,b)$ be the number of U-R paths from $(0,0$ to $(a,b)$\\
+
+It's clear that\\
+
+
+$$ 
+	n(a,b) = 
+	\begin{cases}
+	1 \;\; \text{if $a = 0$ or $b = 0$}\\
+	n(a-1,b)+n(a,b-1) \\
+	\end{cases}
+$$
+
+You have some options:\\
+- could memoize\\
+- could compute these for $(a,b)$ in increasing lex order\\
+- answer really though is ${a+b \choose b}$, could do math\\
+
+\vspace{10mm}
+
+\section{Graph Theory}
+
+\begin{itemize}
+\item{A \underline{graph} $G = (V,E)$ has a set $V$ of vertices and $E \subseteq (V \times V)$ of edges.}
+\item{We say G is \underline{simple} if $(v,v) \notin E$ for every $v \in V$ (i.e. no loops of vertex to itself).}
+\item{We say G is \underline{directed} if $E$ is a set of ordered pairs $(a,b)$.}
+\item{We say G is \underline{undirected} if $E$ is a set of unordered pairs $\{a,b\}$.}
+\item{A \underline{walk} from $a \in V$ to $b \in V$ is a sequence of edges
+$$(a_1,a_1), (a_1,a_2),...,(a_{k-1},a_k),(a_k,b)$$
+in $E$.}
+\item{A \underline{connected} graph has a walk from a to b for all $a,b \in V$.}
+\item{A \underline{path} from a to b is a walk with no repeated vertex.}
+\item{A \underline{cycle} is a walk from $a \in V$ to a of length $\geq 3$ with no repeated vertices except for endpoints.}
+\item{A \underline{tree} is a connected graph with no cycles.}
+\end{itemize}
+
+\vspace{10mm}
+
+\underline{Claim.} If $T = (V,E)$ is a tree, then $|V| = |E| +1$. 
+
+\end{document}
