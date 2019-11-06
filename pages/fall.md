@@ -17,6 +17,9 @@ Here is a collection of [student-transcribed notes](../notes/fall_2019/README.ht
 
 **Assignment 4**.  Due Wednesday Oct 30 [html](fall_assignments/hw4.html), [Jupyter Notebook](fall_assignments/hw4.ipynb)
 
+**Assignment 5**.  Due Wednesday Oct 30 [html](fall_assignments/hw5.html), [Jupyter Notebook](fall_assignments/hw5.ipynb)
+
+
 # Applied Mathematics I: Computation and combinatorics
 
 This is a *draft syllabus*, subject to change.
