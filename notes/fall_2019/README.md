@@ -8,4 +8,5 @@ Fall 2019:
 - 10/18/2019  [pdf](notes_10-18-2019.pdf) [latex source](notes_10-18-2019.tex)
 - 10/16/2019  [pdf](notes_10-16-2019.pdf) [latex source](notes_10-16-2019.tex)
 - 10/23/2019  [pdf](notes_10-23-2019.pdf) [latex source](notes_10-23-2019.tex)
+- 11/08/2019  [pdf](notes_11-08-2019.pdf) [latex source](notes_11-08-2019.tex)
 
