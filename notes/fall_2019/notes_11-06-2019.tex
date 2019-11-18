@@ -1,0 +1,297 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[margin=.75in, total={8.25in, 10.75in}, heightrounded]{geometry}
+
+\usepackage{graphicx}
+\graphicspath{{graphics/}}
+
+\usepackage{hyperref}
+
+\usepackage{scalerel}
+
+\usepackage{xcolor}
+
+\usepackage{stmaryrd}
+
+\usepackage{MnSymbol}
+
+\usepackage{mdframed}
+
+\usepackage{titlesec}
+
+\usepackage{blkarray}
+
+\usepackage{etex}
+
+\titleformat{\section}
+{\normalfont \Large \bfseries \centering}{\Roman{section} --- }{0pt}{}
+
+
+
+
+\definecolor{DefGreen}{rgb}{0,0.5,0}
+\definecolor{TheoremOrange}{rgb}{0.88,0.6,0.08}
+\definecolor{LemmaYellow}{rgb}{1,1,0}
+\definecolor{CorollaryBlue}{rgb}{0,0.3,1}
+\definecolor{ProofPurple}{rgb}{0.58,0,1}
+\definecolor{AxiomRed}{rgb}{1,0,0}
+\definecolor{CommentBlue}{rgb}{0.46,0.67,1}
+
+
+
+\usepackage{amsthm}
+
+\newtheoremstyle{colontheorem}
+	{0in}                    	% Space above
+	{.15in}                   	% Space below
+	{\normalfont}      		    % Body font
+	{}                          % Indent amount
+	{\bfseries}                 % Theorem head font
+	{:}                         % Punctuation after theorem head
+	{.5em}                      % Space after theorem head
+	{}							% Theorem head spec (can be left empty, meaning ‘normal’)
+	
+\theoremstyle{colontheorem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{corollary}{Corollary}[theorem]
+
+\newtheorem{exercise}{Exercise}[section]
+
+
+
+
+\newcommand{\Span}{\textnormal{span}}
+\newcommand{\Null}{\textnormal{null }}
+\newcommand{\Range}{\textnormal{range }}
+\newcommand{\T}{^\textnormal{T}}
+
+\newcommand{\Sub}{\textnormal{sub }}
+
+\newcommand{\re}{\textnormal{Re }}
+\newcommand{\im}{\textnormal{Im }}
+\newcommand{\Arg}{\textnormal{Arg }}
+\newcommand{\Log}{\textnormal{Log }}
+\newcommand{\Res}{\textnormal{Res}}
+\newcommand{\pv}{\textnormal{p.v.}}
+
+\newcommand{\e}{\varepsilon}
+
+
+
+
+\newenvironment{Theorem}
+{
+	\begin{mdframed}[backgroundcolor=TheoremOrange!10]
+	\begin{theorem}
+}
+{
+	\end{theorem}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Proposition}
+{
+	\begin{mdframed}[backgroundcolor=TheoremOrange!10]
+	\begin{proposition}
+}
+{
+	\end{proposition}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Def}
+{
+	\begin{mdframed}[backgroundcolor=DefGreen!10]
+	\begin{definition}
+}
+{
+	\end{definition}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Axiom}
+{
+	\begin{mdframed}[backgroundcolor=AxiomRed!10]
+	\begin{axiom}
+}
+{
+	\end{axiom}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Lemma}
+{
+	\begin{mdframed}[backgroundcolor=LemmaYellow!10]
+	\begin{lemma}
+}
+{
+	\end{lemma}
+	\end{mdframed}
+	
+	\vspace{.03in}
+}
+
+\newenvironment{Corollary}
+{
+	\begin{mdframed}[backgroundcolor=CorollaryBlue!10]
+	\begin{corollary}
+}
+{
+	\end{corollary}
+	\end{mdframed}
+	
+	\vspace{.09in}
+}
+
+\newenvironment{Comment}
+{
+	\begin{mdframed}[backgroundcolor=CommentBlue!10]
+	\textbf{Comment:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Proof}
+{
+	\begin{mdframed}[backgroundcolor=ProofPurple!10]
+	\textbf{Proof:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.085in}
+}
+
+\newenvironment{Example}
+{
+	\begin{mdframed}
+	\textbf{Example:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+
+
+\setlength{\parindent}{0pt}
+
+
+
+
+\begin{document}
+
+\vspace*{.5in}
+
+\begin{center}
+	\Huge Applied Notes\\
+	
+	\vspace{.25in}
+	
+	\Large November 6th, 2019\\
+\end{center}
+
+\vspace{.5in}
+
+
+
+\begin{Example}
+	%
+	Let $K_n$ be the complete graph on $n$ vertices. Then the number of spanning trees of $K_n$ is $\det \Delta_i^i$ for any $i$. If we choose $i = n$, we have
+	
+	$$
+		\det \Delta_i^i = \det \begin{bmatrix}
+ 			n - 1 & -1 & \cdots & -1\\
+ 			-1 & n - 1 & \cdots & -1\\
+ 			\vdots & \vdots & \ddots & \vdots\\
+ 			-1 & -1 & \cdots & n - 1
+ 		\end{bmatrix}.
+	$$
+	
+	Subtracting row $1$ from each other row,
+	
+	$$
+		\det \Delta_i^i = \det \begin{bmatrix}
+ 			n - 1 & -1 & -1 & \cdots & -1\\
+ 			-n & n & 0 & \cdots & 0\\
+ 			-n & 0 & n & \cdots & 0\\
+ 			\vdots & \vdots & \vdots & \ddots & \vdots\\
+ 			-n & 0 & 0 & \cdots & n
+ 		\end{bmatrix}.
+	$$
+	
+	Now adding every column except column $1$ to column $1$,
+	
+	$$
+		\det \Delta_i^i = \det \begin{bmatrix}
+ 			1 & -1 & -1 & \cdots & -1\\
+ 			0 & n & 0 & \cdots & 0\\
+ 			0 & 0 & n & \cdots & 0\\
+ 			\vdots & \vdots & \vdots & \ddots & \vdots\\
+ 			0 & 0 & 0 & \cdots & n
+ 		\end{bmatrix}.
+	$$
+	
+	By a theorem from Cauchy, this determinant is equal to $n^{n - 2}$, so there are $n^{n - 2}$ spanning trees of $K_n$.
+	
+\end{Example}
+
+
+
+\begin{Def}
+	
+	Let $G$ be an undirected graph and let $e = (e_0, e_1)$ and $f = (f_0, f_1)$ be arbitrarily oriented edges in $G$. Let $\overleftarrow{f} = (f_1, f_0)$. $J^e(f) = \mathbb{E}(\textnormal{\# times } f \textnormal{ is used in a random walk from } e_0 \textnormal{ to } e_1) = \mathbb{E} \left( \textnormal{\# times } \overleftarrow{f} \textnormal{ is used} \right)$. $\beta(e, f) = \mathbb{P}(\textnormal{the path from } e_0 \textnormal{ to } e_1 \textnormal{ in a uniformly random spanning tree of } G \textnormal{ uses } f)$.
+	
+\end{Def}
+
+
+
+\begin{Theorem}
+	
+	$\beta(e, f) - \beta \left( e, \overleftarrow{f} \right) = J^e(f)$.
+	
+	\begin{Proof}
+		%
+		$\beta(e, f) - \beta \left( e, \overleftarrow{f} \right)$ is the expected number of times a loop-erased random walk from $e_0$ from $e_1$ uses $f$, minus the amount of times it uses $\overleftarrow{f}$. This is because a loop-erased random walk either uses $f$ once or not at all, so the probability is the same as the expectation. But in the non-loop-erased walk, the probability of walking through $f$ forwards is the same as the probability of walking through it backwards, so the expected number of times $f$ is used inside of a loop is the same as the expected number of times that $\overleftarrow{f}$ is. Thus $\beta(e, f) - \beta \left( e, \overleftarrow{f} \right)$ is the expected number of times $f$ is used outside of a loop in a random walk from $e_0$ to $e_1$, minus the expected number of times $\overleftarrow{f}$ is used. But this is exactly $J^e(f)$.
+		
+	\end{Proof}
+	
+\end{Theorem}
+
+
+
+\begin{Comment}
+	%
+	$J^e$ describes the current flowing through a graph $G$ when a $1$V battery is placed on edge $e$ and $1\Omega$ resistors are placed on every edge.
+	
+\end{Comment}
+
+
+
+
+
+
+
+\end{document}
