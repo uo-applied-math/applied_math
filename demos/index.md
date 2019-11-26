@@ -5,3 +5,6 @@
 
 - November 12: [notebook](random_spanning_tree.ipynb), [html](random_spanning_tree.html)
     generating a random spanning tree of the grid
+
+- November 26: [notebook](ising.ipynb), [html](ising.html)
+    sampling from the Ising distribution
