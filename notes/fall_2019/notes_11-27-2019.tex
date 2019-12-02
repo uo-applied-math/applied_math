@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Week 9, Lecture 2}
+\author{Chandan Tankala}
+\date{27 November 2019}
+
+\begin{document}
+
+\maketitle
+\section{2D Ising model}
+\subsection{Summary}
+
+This is a $2D$ Ising model on a square lattice with periodic boundary conditions. In a $2D$ ising model, phase transition happens which doesn't in a $1D$ Ising model. 
+
+In particular, the phase transition happens at $K = \frac{\text{arcsinh} (1)}{2}$\\
+
+\subsection{Computation of $Z$:}
+The main idea is to use duality (hidden symmetry in the model).
+
+Recall,
+
+$$\sinh(x) = \frac{e^x-e^{-x}}{2}, \cosh(x) = \frac{e^x+e^{-x}}{2}$$
+
+Then:
+
+$$Z = \sum_{\sigma}\exp(\frac{K}{T}\sum_{i\sim j}\sigma_i\sigma_j) = \sum_{\sigma}\prod_{i\sim j}\exp(\frac{K}{T}\sigma_i\simga_j)$$
+
+If $\sigma = \pm 1$, then:
+
+$$
+\begin{align}
+exp\left( \frac{K}{T}\sigma \right) = \cosh \left( \frac{K}{T} \right)+\sinh \left( \frac{K\sigma}{T} \right) &= \sum_{\sigma}\prod_{i\sim j} \left( \cosh \frac{K}{T} + \sinh \frac{K\sigma_i\sigma_j}{T}  \right) \\
+&= \sum_{\sigma} \left(\cosh \frac{K}{T} \right)^{|E|}\times \prod_{i\sim j}\left( 1+\frac{\sinh \frac{K\sigma_i\sigma_j}{T}}{\cosh \frac{K\sigma_i\sigma_j}{T}} \right)\\
+&= \left( \cosh \frac{K}{T} \right)^{|E|} \sum_{\sigma}\prod_{i\sim j} \left( 1+\tanh \frac{K\sigma_i \sigma_j}{T} \right)\\
+\end{align}
+$$
+
+When $T$ is large, $K$ is small $\implies K\sigma_i\sigma_j$ is small.
+
+Let $\tanh K = e^{-K^{*}}$. Get partition function for Ising model with $K^{*}$ and not $K$. $K=K^{*}=K_c$ when $\sinh (2K) = 1$.
+
+\end{document}
