@@ -25,6 +25,8 @@ And, here is a collection of [in-class demonstrations](../demos/index.html).
 
 **Assignment 7**.  Due Wednesday Nov 27  [html](fall_assignments/hw7.html) [Jupyter Notebook](fall_assignments/hw7.ipynb)
 
+**Practice Problems 1**.  [html](fall_assignments/practice_problems_1.html) [Jupyter Notebook](fall_assignments/practice_problems_1.ipynb)
+
 
 # Applied Mathematics I: Computation and combinatorics
 
