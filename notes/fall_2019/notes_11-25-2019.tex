@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Week 9, Lecture 1}
+\author{Chandan Tankala}
+\date{25 November 2019}
+
+\begin{document}
+
+\maketitle
+\section{Ising model}
+\subsection{Definitions:} 
+Let $G(V,E)$ be a graph. A state $\sigma$ is an assignment of $\pm 1$ to each $v\in V$ i.e. $\sigma: V\to \{+1,-1\}$. $\pm 1$ are also referred to as spins.\\
+
+Fix constants $K,h$, where $K$ is the interacting strength and $h$, the external magnetic field strength. The energy of a configuration is defined as: 
+$$E(\sigma) = K\sum_{i\sim j}\sigma_i \sigma_j + h\sum_i \sigma_i$$
+
+Ising model is a probability measure with the aforementioned energy. The probability measure is also referred to as Boltzmann or Gibbs measure given by:
+
+$$P(\sigma)\propto \exp\left( \frac{-E(\sigma)}{T}\right)$$
+
+where the constant of proportionality is $\frac{1}{Z}$ and $Z = \sum_{\sigma}\exp\left( \frac{-E(\sigma)}{T}\right)$, $Z$ is called the partition function. If we can find $Z$ analytically, the model is called a solvable model.
+
+\subsection{Application:}
+Consider a $n-$cycle i.e. $V=\{1,2,\cdots,n\}$. For this graph, we will compute $Z$ and correlation functions.
+
+\subsubsection{Computation of $Z$:}
+For two configurations $\sigma$ and $\sigma^{'}$, consider
+
+$$V(\sigma,\sigma^{'}) = \exp \left[ \frac{-K}{T}\sigma\sigma^{'}+\frac{-h(\sigma+\sigma^{'})}{2T}\right]$$
+
+and define a $2\times 2$ matrix $V$ consisting of values corresponding to different $\sigma,\sigma^{'}$ i.e.:
+
+$$V = \begin{bmatrix} V(+,+) & V(+,-) \\ V(-,+) & V(-,-) \end{bmatrix} = \begin{bmatrix} \exp(\frac{-K}{T}+h) & \exp(\frac{K}{T}) \\\exp(\frac{K}{T}) & \exp(\frac{-K}{T}-h) \end{bmatrix}$$
+
+$V$ is called a transfer matrix and the partition function $Z = tr(V^n)$, where $tr$ refers to trace of a matrix.\\
+
+Choose $\phi$ such that $\cot 2\phi = e^{2K}\sinh (h)$. Then the eigenvectors of $V$ are:
+
+$$\begin{bmatrix} \cos \phi \\ \sin \phi\end{bmatrix},\begin{bmatrix} -\sin \phi \\ \cos \phi\end{bmatrix}$$ \\
+
+Let $\lambda_1,\lambda_2$ be the eigenvalues of $V$ s.t. $\lambda_1>\lambda_2$, then:
+
+$$Z = tr(V^n) = \lambda_1^n+\lambda_2^n = \lambda_1^n\left[ 1+\frac{\lambda_2^n}{\lambda_1^n} \right]\approx \lambda_1^n$$
+
+\subsubsection{Computation of correlation functions:}
+$$E(\sigma_1) = \frac{1}{Z}\text{ and } E(\sigma_k) = tr(SV^n)\text{ ,where } S = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} $$
+
+Similarly, 
+
+$$E(\sigma_1,\sigma_3) = \frac{tr(SVVSV^{n-2})}{Z}$$ i.e. $S$ are inserted in the first and third positions in the aforementioned product of matrices. \\
+
+Let
+
+$$P = \begin{bmatrix} \cos \phi & -\sin \phi \\ \sin \phi & \cos \phi \end{bmatrix}$$
+
+Then:
+
+$$P^{-1}VP = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix} , P^{-1}SP = \begin{bmatrix} \cos 2\phi & -\sin 2\phi \\ \sin 2\phi & -\cos \phi \end{bmatrix}$$
+
+Taking trace, we get:
+
+$$E(\sigma_i) = \cos 2\phi, E(\simga_i,\sigma_j) = \cos^2 2\phi + \sin^2 2\phi\left( \frac{\lambda_2}{\lambda_1} \right)^{j-i}$$
+
+So:
+
+$$Cov(\sigma_i,\sigma_j) = E(\sigma_i\sigma_j)-E(\sigma_i)E(\sigma_j) = \sin^2 2\phi \left( \frac{\lambda_2}{\lambda_1} \right)^{j-i}$$ \\
+
+which decays exponentially in $j-i$.
+
+
+\end{document}
