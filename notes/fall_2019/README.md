@@ -11,6 +11,8 @@ Fall 2019:
 - 11/06/2019  [pdf](notes_11-06-2019.pdf) [latex source](notes_11-06-2019.tex)
 - 11/08/2019  [pdf](notes_11-08-2019.pdf) [latex source](notes_11-08-2019.tex)
 - 11/11/2019  [pdf](notes_11-11-2019.pdf) [latex source](notes_11-11-2019.tex)
+- 11/13/2019  [pdf](notes_11-13-2019.pdf) [latex source](notes_11-13-2019.tex)
+- 11/15/2019  [pdf](notes_11-15-2019.pdf) [latex source](notes_11-15-2019.tex)
 - 11/20/2019  [pdf](notes_11-20-2019.pdf) [latex source](notes_11-20-2019.tex)
 - 11/25/2019  [pdf](notes_11-25-2019.pdf) [latex source](notes_11-25-2019.tex)
 - 11/27/2019  [pdf](notes_11-27-2019.pdf) [latex source](notes_11-27-2019.tex)
