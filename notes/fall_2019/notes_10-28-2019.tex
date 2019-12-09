@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+
+\usepackage{upgreek}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[justification=centering]{subfig}
+\usepackage{hyperref}
+\usepackage{spverbatim}
+\usepackage{mathtools}
+\usepackage[OT2,T1]{fontenc}
+\usepackage[lastexercise]{exercise}
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}{Claim}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}{Proposition}
+
+\newcommand \Q {\mathbb Q}
+\newcommand \R {\mathbb R}
+\newcommand \Z {\mathbb Z}
+
+\let \int \undefined
+\DeclareMathOperator \int {int}
+
+\title{Applied Day 12}
+% \author{Andy Huchala}
+\date{October 28, 2019}
+\begin{document}
+
+\maketitle
+Peter Ralph lecturing.
+\section{Configuration model}
+A random graph such that every degree $\sim D$ with probability given by $\mathbb P\{D=n\}= d_n$. Let $$\mu = \dfrac{\mathbb E[D(D-1)]}{\mathbb E[D]}$$
+$$=\sum_{n\geq 0} \dfrac{n d_n}{\sum_{m\geq 0}md_m} (n-1)
+$$be the mean of the the ``size-biased distribution of $D-1$'', ie picking a vertex with probability proportional to the number of edges connected to it. We consider the generating function of $D$ and the sized-biased version of $D$:
+$$\Phi(z) = \mathbb E[z^D] = \sum_{n\geq 0} z^n d_n
+$$
+$$\Psi(z) = \dfrac{\mathbb E[z^{D-1}D]}{\mathbb E[D]}=\sum_{n\geq 0}z^n \dfrac{nd_n}{\sum_{m\geq 0}md_m}
+$$
+Recall from homework 1 that $\mu = \Psi'(1)$.
+
+At step $t$, let $$A_t = \text{``active vertices''}\,\,\,\,(\text{where }A_0=0)$$
+$$V_t = \text{``visited vertices''}\,\,\,\, (\text{note }|V_t|=t)$$
+$$U_t = \text{``unvisited vertices''}\,\,\,\,[N]\setminus(A_t\cup V_t)$$
+We explore by
+\begin{enumerate}
+    \item taking an active vertex
+    \item move it to $V$
+    \item adding its children\footnote{Children isn't quite the right word\ldots we want to add the vertices it's connected to which aren't already in $A$ or $V$} to $A$
+\end{enumerate}
+We will compare this to a branching process.
+
+Let $N_0=1$. Want: $N_t$ to give us the size of a branching process so far.\\
+
+\noindent Note: branching process goes generation by generation, so we defined $N_t$ slightly different.\\
+
+\noindent Let $N_t=|A_t| + E_t+t$ where $E_t$ is the ``excess''. This is not quite a branching process since we get some cross connections, e.g. a node having muliple parents. We want it to look as much as possible like an exploration process; when we hit a trouble edge we do (something).
+
+$$E_0 = 0$$
+$$E_{t+1} = \text{\#(edges between vertices in $V_t$ except the original ones)}$$
+$$=\text{\#(edges between vertices in $V)-(t-1)$}
+$$
+
+Note: \# edges in a tree with vertices is $n-1$.
+
+\underline{Claim:} Let $(X_k)_{k\geq 0}$ be a branching process with $\mathbb P\{X_0 = n\} = d_n$ and offspring distribution with generating function $\Psi(z)$. Then
+$$\left(\lim_{t\xrightarrow{}\infty}N_t\right) = N_{\infty}$$ has the same distribution as
+$$\left(\lim_{k\xrightarrow{}\infty} \sum_{s=0}X_s = T_k\right) = T_{\infty}
+$$ the total size of the branching process.
+
+\begin{proof}
+This is obvious (???)
+\end{proof}
+\begin{proof}
+\begin{enumerate}
+    \item Let's number each vertex $v$ with a ``generation'' $g(v)$ so that
+    $$g(v) = g(\text{parent of }v)+1$$
+    i.e. $g(v)$ is the min of $g(\text{parents of v})+1$
+    \item Let $X_k = \#\{\text{vertices $v:g(v)=k$}\}+(\text{something else related to $E$})$
+    where 
+    $$(\text{something})_k = \sum_{l=0}^k Y_{l,(k-l)}
+    $$
+    the number of edges from generation $k$ to generation $k$.\\
+    \noindent Let $B_k = \#\{\text{edges in excess connecting to generation k}\}$\\
+    
+    \noindent For $t \geq 0$, $0\leq j \leq B_t -1$, let $Y_{tj}$ be an independent branching process with the same distribution as $X$. Then $(\text{something})_k$ counts how many extra things were added in this new branching process.
+    
+    Then the idea of this proof is that in the limit the amount of excess should go to zero (?).
+    
+\end{enumerate}
+$N_{\infty}\geq |A_{\infty} + T$ where $A_{\infty}=0$, the number of active vertices at the end of the exploration process, and $T$ is the size of component and $1=|C|$ so if $N_{\infty}$ is finite then so is $|C|$. We assume the connected component is finite.
+\end{proof}
+
+\underline{Fact:} Proportion of nodes \underline{not} in the giant component is asymptotically the probability of extinction of the branching process.
+
+\end{document}
