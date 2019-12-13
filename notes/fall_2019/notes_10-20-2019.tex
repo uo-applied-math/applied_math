@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[all]{xy}
+\usepackage[margin=0.75in]{geometry}
+
+\pagestyle{fancy}
+\lhead{Math }
+\rhead{\thepage}
+\chead{Homework 2}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\begin{document}
+\section{Math 607: Day 10}
+\subsection{More Branching Processes}
+Recall that $\phi(u) = \mathbb{E}[u^x] = \sum_{n=0}^{\infty}{p_nu^n}$. If we remind ourselves that: $\phi(0) = p_0, \phi(1) = 1, \text{ and } \phi'(1) = \mu$, then we see that $\phi(u)$ has a fixed point on the interval $[0,1]$ whenever $\mu > 1$. This results in the following theorem.
+
+\begin{theorem} If $\mu > 1$, then there exists a fixed point of $\phi$ at $1 - q$ for some $q \in [0,1]$. In this case, $q$ is the probability that the branching process survives. Conversely, if $\mu \leq 1$ then the branching process dies. 
+\end{theorem} 
+
+We omit the proof of the theorem and instead provide an example. 
+
+\begin{example} Let $X \sim \text{Poisson}(\lambda)$ so $P(X = n) = \frac{e^{-\lambda}\lambda^n}{n!}$. Then 
+\begin{align*}
+\phi(u) &= \sum_{n\geq 0}{\frac{u^ne^{-\lambda}\lambda^n}{n!}}\\
+&= e^{-\lambda}e^{u\lambda} \\
+&= \text{exp}(\lambda(u-1))
+\end{align*}
+Note that $\mathbb{E}[X] = \phi'(1) = \lambda$ so the branching process dies off if $X$ has a rate less than or equal to one. 
+\end{example}
+
+We now develop some general theory for approximating $q$. Suppose that $\mu = 1 + s$ for some small s. Let $m = \mathbb{E}[X(X-1)]$. Expanding $\phi(u)$ about 1 gives us
+\begin{align*}
+\phi(1-x) &= \phi(1) - x\phi'(1) + \frac{x^2}{2}\phi''(1) + O(x^3)\\
+\cong 1 - \mu x + \frac{x^2}{2}m + O(x^3)
+\end{align*}
+So $1 - x = \phi(1-x)$ is solved whenever $x* = \frac{2s}{m}$. Let's use this approximation in an example! 
+
+\begin{example} Each virus particle that enters your mouth may either die or reproduce with the probability of surviving being $p = .01$. Every reproducing virus produces 150 copies of itself. What is the chance that you get sick? 
+
+If we assume that you get sick whenever the branching process "survives," then we can leverage our previous work to solve this problem. First we compute $\mu$. As a virus has a survival probability of .01 and produces 150 offspring, $\mu = 150*.01 = 1.5$. As $\mu > 1$, this branching process has a shot at surviving. 
+
+To find $q$ we employ our approximation. Quickly we see that $s = .5$. Calculating $m$ is fairly straightforward
+\[m = \mathbb{E}[X(X-1)] \cong 150^2*.01\]
+
+So $q \cong \frac{2*.5}{.01*150^2} \cong .01$. So you have a roughly one percent chance of getting sick. 
+\end{example}
+
+\subsection{Random Graphs}
+
+We now pivot to discuss random graphs. First a definition!
+
+\begin{definition} For an undirected graph $G = (V,E)$ with $N$ nodes let $d_n = \frac{\text{\# of nodes with degree n}}{N}$ and $D = \text{deg}(\text{randomly selected node})$. In other words, $P(D = n) = d_n$. We call $d_n$ the \textbf{degree sequence} of $G$. 
+
+Given a sequence of graphs $(G_n)$ the sequence is \textbf{sparse} if $D^N \rightarrow D$ in distribution as $N \rightarrow \infty$. In other words, if the degree sequences converge to some nice probability distribution.
+\end{definition}
+
+\begin{example} $\mathbb{Z}^2 \cap [0,\sqrt{n}]$ defines a nice sparse sequence of graphs.
+\end{example}
+
+\begin{example}[Non-Example] Connect $u, v \in \lbrace 1,\dots,N\rbrace$ if $u|v$ or $v|u$. As $N \rightarrow \infty$, $d_n \rightarrow \infty$. 
+\end{example}
+
+Here is a theorem about random graphs. It is colloquially known as the "Your Friends Have More Friends Than You" theorem.
+
+\begin{theorem} Assume that $d_0 = 0$. Let $u$ be a uniform picked node and $v$ a uniformly selected neighbor of $u$. Then $\mathbb{E}[\text{deg}(v)] \geq \mathbb{E}[\text{deg}(u)]$.
+\end{theorem} 
+\begin{proof} Note that $P(\text{pick edge (u,v)}) = \frac{1}{N}\frac{1}{\text{deg}(u)}$ for all $(u,v) \in E$. Now 
+\[\mathbb{E}[\text{deg}(u)] = \sum_{u,v}{\frac{\text{deg(u)}}{N}\frac{1}{\text{deg(u)}}} = \frac{\text{\# of edges}}{N}\]
+Likewise \[\mathbb{E}[\text{deg}(v) = \sum_{u,v}{\frac{\text{deg}(v)}{N}\frac{1}{\text{deg}(u)}}\]
+So 
+\[\mathbb{E}[\text{deg}(u)] \leq \sum_{u,v}{\frac{1}{2N}\Big(\frac{\text{deg}(u)}{\text{deg}(v)}+\frac{\text{deg}(v)}{\text{deg}(u)}\Big)} \leq \mathbb{E}[\text{deg}(v)]\]
+\end{proof}
+\end{document}

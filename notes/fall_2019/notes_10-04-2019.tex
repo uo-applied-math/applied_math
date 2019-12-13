@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[all]{xy}
+\usepackage[margin=0.75in]{geometry}
+
+\pagestyle{fancy}
+\lhead{Math }
+\rhead{\thepage}
+\chead{Homework 2}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\begin{document}
+\section{Math 607: Day 2}
+\subsection{Ring of Formal Power Series}
+We call $\mathbb{C}[[x]]$ the \textbf{ring of formal power series}. $\mathbb{C}[[x]]$ consists of elements of the form 
+\[\sum_{i\geq 0}a_ix^i, \text{ with } a_i \in \mathbb{C}\]
+
+To simplify matters we use $[x^n]^A$ to denote the n-th coefficient in $A(x)$. Please note that $\mathbb{C}[[x]]$ naturally contains all polynomials with complex coefficients $\mathbb{C}[x]$. As $\mathbb{C}[[x]]$ is a ring, it is natural to wonder which of its elements are invertible. If $A(x), B(x) \in \mathbb{C}[[x]]$ with $A(x)B(x) = 1$, then $a_0b_0 = 1$. So both $A(x)$ and $B(x)$ must have a non-zero constant term. In fact, this condition is both sufficient and necessary for $A(x)$ to be invertible. 
+
+The existence of infinite sums might give some students concern. Don't worry though! Everything is formal, so it works out. These infinite sums do make it a bit tricky to define convergence. Here's the definition
+
+\begin{definition} If $f_1(x),f_2(x),\dots$ is a sequence of formal power series and for each $n \in \mathbb{N}$ the sequence $[x^n]^{f_1},[x^n]^{f_2},\dots$ stabilizes at a constant, then we say that $f_1,f_2,\dots$ converges to 
+\[F(x) = \sum_{n\geq 0}{\Big(\lim_{i \rightarrow \infty}[x^n]^{f_i}\Big)x^n}\]
+\end{definition} 
+
+A good rule of thumb when operating on a formal power series is that, if the operation is true analytically within the series' radius of convergence and it makes sense in $\mathbb{C}[[x]]$ then they operation is true in $\mathbb{C}[[x]]$. A good example of this rule of thumb is your exponent rules. Remember that \[\text{exp}(x) = \sum_{n\geq 0}{\frac{x^n}{n!}}\]
+then $\text{exp}(x)\text{exp}(-x) = 1$ is a valid identity in $\mathbb{C}[[x]]$. It is certainly true analytically and the termwise multiplication of the two power series makes sense in $\mathbb{C}[[x]]$. 
+
+On the other hand, the identity $\text{exp}(x+1) = \text{exp}(x)\text{exp}(1)$ does not make sense in $\mathbb{C}[[x]]$. While the identity certainly holds analytically, the sum \[\sum_{n\geq 0}{\frac{(x+1)^n}{n!}}\] doesn't make sense as the finite sum terms don't converge in $\mathbb{C}[[x]]$ correctly. 
+
+Now that we've seen $\text{exp}(x)$, let's look at some other examples of formal power series.
+\begin{example}\begin{align*}
+\frac{1}{1-x} &= \sum_{n\geq 0}{x^n} \\
+-\log(1-x) &= \sum_{n\geq 0}{\frac{x^n}{n}}
+\end{align*}
+\end{example}
+Composition works as expected, although it is only valid in the following situation. If $g(x) \in \mathbb{C}[[x]]$ and $f(x) \in \mathbb{C}[x]$, then $(f(g(x)) \in \mathbb{C}[[x]]$. We can't always reverse f and g though. If you aren't convince look back at what went wrong with our second exponential example. Alternatively, note that if $f(x) = \frac{1}{1-x}$ and $g(x) = 1+x$ then $f(g(x)) = \frac{-1}{x}$ which can't be expressed as a formal power series. Composition is always allowed though if $g(0) = 0$. This is because $\text{min}(\text{deg}(g)) > 0$ so $\text{min}(\text{deg}(g^2)) > 1$. Therefore high powers of $g$ don't touch the head of the power series, thus giving convergence. 
+
+One nice property of $\mathbb{C}[[x]]$ is that we can do "calculus". More specifically, we can take formal derivatives. 
+\begin{definition} If $F(n) = \sum_{n\geq 0}a_nx^n$ is in $\mathbb{C}[[x]]$ then we define the \textbf{derivative of $F(x)$} as 
+\[F'(x) = \sum_{n\geq 1}{a_nx^{n-1}}\]
+\end{definition}
+You can check that the derivative is linear and that the product rules holds. The chain rule also holds, but only when the composition makes sense. 
+
+So far we have only discussed the ring of formal power series in one variables. Just as there are multivariable polynomials, you can define a ring of formal power series over several variables. This ring is denoted $\mathbb{C}[[x_1,\dots, x_n]]$. This lets you work with multivariable generating functions. 
+
+Even in one variable, the ring of formal power series is vast. Many of the power series are difficult to work with. There are however some nice subclasses of formal power series. Here's a list of definitions.
+\begin{definition} Let $F(x) \in \mathbb{C}[[x]]$. We say that $F(x)$ is 
+\begin{enumerate}
+	\item ...an \textbf{algebraic series} if there exist $p_0(x),\dots,p_d(x) \in \mathbb{C}[x]$ such that 
+	\[p_0(x) + p_1(x)F(x) + \dots + p_d(x)F^d(x) = 0\]
+	\item ...a \textbf{D-finite series} if there exist $p_0(x),\dots,p_d(x) \in \mathbb{C}[x]$ such that 
+	\[pF + p_1F' + p_2F'' + \dots + p_dF^{(d)} = 0\]
+	
+\end{enumerate}
+\end{definition}
+
+\end{document}
