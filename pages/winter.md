@@ -6,6 +6,10 @@ description: Syllabus for Stochastic Processes and Dynamical Systems
 
 See [the schedule](winter_schedule.html) for topics by week and links to slides.
 
+# Homework
+
+**Assignment 1**.  Due Wednesday Jan 15 [html](../assignments/winter/hw1.html), [Jupyter Notebook](../assignments/winter/hw1.ipynb)
+
 # Applied Mathematics II: Stochastic processes and dynamical systems
 
 This is a *draft syllabus*, subject to change.
@@ -30,7 +34,8 @@ Familiarity with probability and random variables at an undergraduate level, exp
 
 ## Homework and assessment:
 
-Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.  There will be a final exam, which will be taken in-class, on paper - we will assess understanding of computational methods by asking for written descriptions of algorithms (for instance).
+Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.  There will be a midterm and a final exam, which will be taken in-class, on paper - we will assess understanding of computational methods by asking for written descriptions of algorithms (for instance).
+Grades will be assigned based on either 40% homework + 30% midterm + 30% final, or 20% homework + 40% midterm + 40% final, whichever is larger.
 
 ## Software
 

@@ -11,21 +11,21 @@ Here is a collection of [student-transcribed notes](../notes/fall_2019/README.ht
 And, here is a collection of [in-class demonstrations](../demos/index.html).
 
 # Homework
-**Assignment 1**.  Due Wednesday Oct 9 [html](fall_assignments/hw1.html), [Jupyter Notebook](fall_assignments/hw1.ipynb)
+**Assignment 1**.  Due Wednesday Oct 9 [html](../assignments/fall/hw1.html), [Jupyter Notebook](../assignments/fall/hw1.ipynb)
 
-**Assignment 2**.  Due Wednesday Oct 16 [html](fall_assignments/hw2.html), [Jupyter Notebook](fall_assignments/hw2.ipynb)
+**Assignment 2**.  Due Wednesday Oct 16 [html](../assignments/fall/hw2.html), [Jupyter Notebook](../assignments/fall/hw2.ipynb)
 
-**Assignment 3**.  Due Wednesday Oct 23 [html](fall_assignments/hw3.html), [Jupyter Notebook](fall_assignments/hw3.ipynb)
+**Assignment 3**.  Due Wednesday Oct 23 [html](../assignments/fall/hw3.html), [Jupyter Notebook](../assignments/fall/hw3.ipynb)
 
-**Assignment 4**.  Due Wednesday Oct 30 [html](fall_assignments/hw4.html), [Jupyter Notebook](fall_assignments/hw4.ipynb)
+**Assignment 4**.  Due Wednesday Oct 30 [html](../assignments/fall/hw4.html), [Jupyter Notebook](../assignments/fall/hw4.ipynb)
 
-**Assignment 5**.  Due Wednesday Oct 30 [html](fall_assignments/hw5.html), [Jupyter Notebook](fall_assignments/hw5.ipynb)
+**Assignment 5**.  Due Wednesday Oct 30 [html](../assignments/fall/hw5.html), [Jupyter Notebook](../assignments/fall/hw5.ipynb)
 
-**Assignment 6**.  Due Wednesday Nov 20  [html](fall_assignments/hw6.html) [Jupyter Notebook](fall_assignments/hw6.ipynb)
+**Assignment 6**.  Due Wednesday Nov 20  [html](../assignments/fall/hw6.html) [Jupyter Notebook](../assignments/fall/hw6.ipynb)
 
-**Assignment 7**.  Due Wednesday Nov 27  [html](fall_assignments/hw7.html) [Jupyter Notebook](fall_assignments/hw7.ipynb)
+**Assignment 7**.  Due Wednesday Nov 27  [html](../assignments/fall/hw7.html) [Jupyter Notebook](../assignments/fall/hw7.ipynb)
 
-**Practice Problems 1**.  [html](fall_assignments/practice_problems_1.html) [Jupyter Notebook](fall_assignments/practice_problems_1.ipynb)
+**Practice Problems 1**.  [html](../assignments/fall/practice_problems_1.html) [Jupyter Notebook](../assignments/fall/practice_problems_1.ipynb)
 
 
 # Applied Mathematics I: Computation and combinatorics
