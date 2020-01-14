@@ -8,3 +8,6 @@
 
 - November 26: [notebook](ising.ipynb), [html](ising.html)
     sampling from the Ising distribution
+
+- January 14: [notebook](pigeons.ipynb), [html](pigeons.html)
+    simulating a Poisson process of pigeons and counting nearby pairs
