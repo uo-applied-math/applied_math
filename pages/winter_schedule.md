@@ -4,6 +4,7 @@ title: schedule // stochastic processes and dynamical systems
 description: Schedule for Stochastic Processes and Dynamical Systems
 ---
 
+*Notes* from Winter 2020 can be found [here](../notes/winter_2020/README.html).
 
 Weeks 1-2: Poisson point processes
 

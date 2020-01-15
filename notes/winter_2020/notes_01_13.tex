@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, enumerate, amsmath, amsthm}
+\usepackage{graphics}
+\newcommand{\extr}{\overline{\mathds{R}}}
+\newcommand{\suun}[1]{\textsuperscript{\underline{#1}}}
+\newcommand{\lnorm}{\left\lvert \left \lvert }
+\newcommand{\rnorm}{\right \rvert \right \rvert}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\re}{\text{Re}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}{Question}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{nonexample*}{Non-Example}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.7in}
+\title{MATH 607 (Applied Math II) Lecture Notes}
+\author{Christophe Dethier}
+\date{January 13, 2019}
+\begin{document}
+\bigskip
+\maketitle
+
+Lab is in 13 Pacific, from 1:00 - 2:30pm on Tuesdays.\\
+
+A few last details from the raindrop problem from last week. If $N \sim \text{Pois}(\lambda)$, then $\mathbb{P}\{N = 0\} = e^{-\lambda}$. One can visualize the number of drops which intersect a point $p$ as the volume of the cone above $p$ in $xyr$ space. Let's move on to some new examples.\\
+
+Example: Let $N \sim \text{Pois}(\lambda)$, $X \sim \text{Binomial}(N,p)$, and $Y = N - X$. Then we claim that $X$ and $Y$ are independent, $X \sim \text{Pois}(\lambda)$, and $Y \sim \text{Pois}((1 - p)\lambda)$. (Note that $X$ and $Y$ are no longer independent if one conditions on $N$.) To prove this claim, we will compute the joint probability generating function. If we can show that
+\[
+\mathbb{E}\left[ a^X b^Y\right] = e^{\lambda p(a - 1)} e^{\lambda(1 - p)(b - 1)},
+\]
+then the claim will be demonstrated. To do this, we use three different properties:
+\begin{enumerate}[(1)]
+\item $\displaystyle \mathbb{E}\left[ u^N\right] = \sum_{n \geq 0} \frac{\lambda^n}{n!} e^{-\lambda} u^n = e^{\lambda(u - 1)}$
+\item $\displaystyle \mathbb{E}\left[ u^X | N\right] = \sum_{k=1}^N {N \choose k} (1 - p)^{N - k} u^k = (1 - p + pu)^N$.
+\item $\displaystyle \mathbb{E}\left[ f(X) \right] = \mathbb{E}\left[ \mathbb{E}\left[ f(X) | Y\right] \right]$. This is known as the ``tower property".
+\end{enumerate}
+First, we use (3) to condition on $N$;
+\[
+\mathbb{E}\left[ a^X b^Y\right] = \mathbb{E}\left[ a^X b^{N-X}\right] = \mathbb{E}\left[b^N \mathbb{E}\left[ \left( \frac{a}{b} \right)^X | N\right] \right].
+\]
+Next we use (2) to evaluate the inner expectation and (1) to evaluate the outer expectation;
+\begin{align*}
+\mathbb{E}\left[b^N \mathbb{E}\left[ \left( \frac{a}{b} \right)^X | N\right] \right] &= \mathbb{E}\left[ b^N\left(1 - p + p \frac{a}{b}\right)^N \right] \\
+&= \exp\left(\lambda \left(b \left( 1 - p + p \frac{a}{b} \right) - 1 \right) \right) \\
+&= \exp(\lambda((1 - p)(b - 1) + p ( a -1 )).
+\end{align*}
+So the claim is proved. \\
+
+\text{underline:} Let $\{x_1,\ldots,x_m\} \subseteq T$, where $T = [0,1]^2$ is the torus. Are they from a PPP with constant intensity? (Constant intensity means mean measure proportional to Lebesgue measure.)
+
+To analyze this problem, we first need a general fact about PPP's, conditional uniformity: If $N \sim \text{PPP}(\mu)$ on $X$ and $\{y_1,\ldots, y_m\}$ are points of $N$ in $A \subseteq X$, then $\{y_1,\ldots,y_m\}$ are independent, and distributed according to $Y$ given $N(A) = m$, where 
+\[
+\mathbb{P}\{Y \in dy\} = \frac{1}{\mu(A)} \mu(dy).
+\] 
+
+
+The idea here is to quantify ``clusteriness", or over/under dispersion. To do this, let $\rho: \mathbb{R}_{\geq 0} \rightarrow \mathbb{R}_{\geq 0}$ be a decreasing function with $\lim_{r \rightarrow \infty} \rho(r) = 0$ and $\int_T \rho(|x|) dx = 1$. Let
+\[
+P_i = \sum_{j \neq i} \rho(|x_j - x_i|), \quad \quad \text{ and } \quad \quad P = \sum_i P_i.
+\]
+This $P$ measures ``clusteriness" at scale $\rho$. Note that
+\[
+P = \int_S \rho(|x - y|) N(dx)N(dy),
+\]
+where $S = \{(x,y) \in T^2: x \neq y\}$. Suppose that the points are from a $\text{PPP}(\lambda dx dy)$. Let's compute $\mathbb{E}[P]$.
+\[
+\mathbb{E}[P] = \int_S \rho(|x - y|) \mathbb{E}[N(dx)N(dy)],
+\]
+where $\mathbb{E}[N(dx)N(dy)]$ is the expected pairs of points at $x$ and at $y$. That is,
+\[
+\frac{\mathbb{E}[N(dx)N(dy)]}{dxdy} = \lim_{\epsilon rightarrow 0} \frac{1}{|B_{\epsilon}(x)|^2} \mathbb{E}[N(B_{\epsilon}(x)) N(B_{\epsilon}(y))] = \lambda^2
+\]
+if $x \neq y$. So
+\[
+\mathbb{E}[P] = \int_S \rho(|x - y|) \lambda^2 dx dy = \lambda^2.
+\]
+
+
+
+\end{document}
