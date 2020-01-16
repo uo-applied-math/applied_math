@@ -8,7 +8,8 @@ See [the schedule](winter_schedule.html) for topics by week and links to slides.
 
 # Homework
 
-**Assignment 1**.  Due Wednesday Jan 15 [html](../assignments/winter/hw1.html), [Jupyter Notebook](../assignments/winter/hw1.ipynb)
+- **Assignment 1**.  Due Wednesday Jan 15 [html](../assignments/winter/hw1.html), [Jupyter Notebook](../assignments/winter/hw1.ipynb)
+- **Assignment 2**.  Due Wednesday Jan 22 [html](../assignments/winter/hw2.html), [Jupyter Notebook](../assignments/winter/hw2.ipynb)
 
 # Applied Mathematics II: Stochastic processes and dynamical systems
 
