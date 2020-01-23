@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, enumerate, amsmath, amsthm}
+\usepackage{graphics}
+\newcommand{\extr}{\overline{\mathds{R}}}
+\newcommand{\suun}[1]{\textsuperscript{\underline{#1}}}
+\newcommand{\lnorm}{\left\lvert \left \lvert }
+\newcommand{\rnorm}{\right \rvert \right \rvert}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\re}{\text{Re}}
+\newcommand{\var}{\text{var}}
+\newcommand{\cov}{\text{cov}}
+\newcommand{\PPP}{\text{PPP}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}{Question}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{nonexample*}{Non-Example}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.7in}
+\title{MATH 607 (Applied Math II) Lecture Notes}
+\author{Christophe Dethier}
+\date{January 17, 2019}
+\begin{document}
+\bigskip
+\maketitle
+
+Today we will talk about ``The" Poisson Process. Let $N \sim \PPP(\lambda dx)$ on $\mathbb{R}_{\geq 0}$, and $X(t) = N([0,t])$. Let $T^k = \inf\{t \geq 0: X_{T^{k-1}+t} > k-1\}$. That is, $T^k$ is the distance between the $k-1$th point and the $k$th point. Then $T^1, T^2, \ldots$ are iid exponential random variables with rate parameter $\lambda$. The proof of this uses the independence of PPP's on disjoint sets, and 
+\[
+\mathbb{P}\{T^1 > t\} = \mathbb{P}\{N([0,t]) = 0\} = e^{-\lambda t}.
+\]
+Note: Assuming waiting times are exponentially distributed implies memorylessness.
+
+Let $\phi: \mathbb{N}_{\geq 0} \rightarrow \mathbb{R}$. Then
+\[
+\mathbb{E}[\phi(X_t)] = \sum_{n = 0}^{\infty} \phi(n) e^{-\lambda t} \frac{(\lambda t)^n}{n!}.
+\]
+Here's another method of computing this: Let $f(t) = \mathbb{E}[\phi(X_t)]$. Then
+\[
+\frac{d}{dt} \lim_{\epsilon \rightarrow 0} \frac{\mathbb{E}[\phi(X_{t + \epsilon})] - \mathbb{E}[\phi(X_t)]}{\epsilon} = \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon} \mathbb{E}[\phi(X_{t + \epsilon}) - \phi(X_t)] = \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon} \mathbb{E}[\phi(X_{t + \epsilon}) - \phi(X_t)|X_t].
+\]
+Well, $X_{t + \epsilon} - X_t \sim \text{Pois}(\lambda \epsilon)$. Furthermore, for small $\epsilon$, we have $X_{t + \epsilon} - X_t = 0$ with probability roughly $1 - \lambda \epsilon$, $1$ with probability roughly $\lambda \epsilon$, and $>1$ with small probability. Therefore,
+\[
+\mathbb{E}[\phi(X_{t + \epsilon}) - \phi(X_t)|X_t = x] = \lambda \epsilon (\phi(x + 1) - \phi(x)) + \mathcal{O}(\epsilon^2).
+\]
+Putting this together, we see that
+\[
+\lim_{\epsilon \rightarrow 0} \mathbb{E}[\mathbb{E}[\phi(X_{t + \epsilon}) - \phi(X_t)|X_t]] = \lambda (\mathbb{E}[\phi(X_t + 1)] - \mathbb{E}[\phi(X_t)]).
+\]
+So in conclusion,
+\[
+\frac{d}{dt} \mathbb{E}[\phi(X_t)] = \lambda(\mathbb{E}[\phi(X_t + 1) - \mathbb{E}[\phi(X_t)]).
+\]
+So it follows that 
+\[
+\sum_n \phi(n) e^{-\lambda t} \frac{(\lambda t)^n}{n!}
+\]
+is a solution to the initial value problem
+\[
+\frac{d}{dt} \mathbb{E}[\phi(X_t)] = \lambda(\mathbb{E}[\phi(X_t + 1)] - \mathbb{E}[\phi(X_t)]),
+\]
+with the initial condition $\mathbb{E}[\phi(X_0)] = \phi(0)$. Let's verify that this power series is indeed a solution to this differential equation.
+\begin{align*}
+\frac{d}{dt} \sum_t \phi(n) e^{-\lambda t} \frac{(\lambda t)^n}{n!} &= \sum_n \phi(n)\lambda \{n - \lambda t\} e^{-\lambda t} \frac{(\lambda t)^n}{n!} \\
+&= \lambda \sum_n \{\phi(n + 1) - \phi(n)\} e^{-\lambda t} \frac{(\lambda t)^n}{n!}\\
+&= \lambda \sum_n \phi(n) e^{-\lambda t} \frac{(\lambda t)^{n-1}}{(n-1)!} - \lambda \sum_n \phi(n) e^{-\lambda t} \frac{(\lambda t)^n}{n!}\\
+&= \sum_n \phi(n) (n - \lambda t) \frac{(\lambda t)^{n-1}}{n!}.
+\end{align*}
+This problem should have a similar feel to the proof of Stein's Lemma on the homework. Later we will use these initial value problems as a method to solve problems without knowing the solution beforehand.\\
+
+More generally, what can we say about
+\[
+\Phi = \int \phi(x) N(dx) = \sum_i \phi(x_i),
+\]
+where $N = \sum \delta_{x_i}$ is $\PPP(\mu)$ on $S$?\\
+
+\underline{\textbf{Theorem:}}
+\[
+\mathbb{E}\left[ e^{iu\Phi}\right] = \exp\left\{ \int_S \left(e^{iu\phi(x)} - 1\right) \mu(dx)\right\}.
+\]
+
+\underline{\textbf{Corollary:}}
+\[
+\mathbb{E}[\Phi] = -i \partial_u \mathbb{E}\left[ e^{iu \Phi}\right]_{u = 0} = \int_S \phi(x)\mu(dx).
+\]
+
+\end{document}

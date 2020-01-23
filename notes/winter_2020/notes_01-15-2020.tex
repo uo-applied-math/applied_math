@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, enumerate, amsmath, amsthm}
+\usepackage{graphics}
+\newcommand{\extr}{\overline{\mathds{R}}}
+\newcommand{\suun}[1]{\textsuperscript{\underline{#1}}}
+\newcommand{\lnorm}{\left\lvert \left \lvert }
+\newcommand{\rnorm}{\right \rvert \right \rvert}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\re}{\text{Re}}
+\newcommand{\var}{\text{var}}
+\newcommand{\cov}{\text{cov}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}{Question}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{nonexample*}{Non-Example}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.7in}
+\title{MATH 607 (Applied Math II) Lecture Notes}
+\author{Christophe Dethier}
+\date{January 15, 2019}
+\begin{document}
+\bigskip
+\maketitle
+
+Last time we let $N = \sum_i \delta_{x_i}$ for some points $x_i$ in $T = [0,1]^2$. We let $\rho$ be a function with
+\[
+\rho(r) = \int_T \rho(|x|)dx = 1,
+\]
+and intuitively, we let $\sigma$ be the ``width", or standard deviation of $\rho$. Note that we could define
+\[
+\sigma^2 = \int_T |x|^2\rho(|x|)dx,
+\]
+to make $\sigma$ the standard deviation. Let
+\[
+P_i = \sum_{j \neq i} \rho(|x_i - x_j|) \quad \quad \text{ and } \quad \quad P = \sum_i P_i = \sum_{\substack{(i,j) \\ i \neq j}} \rho(|x_i - x_j|).
+\]
+
+If $N$ happens to be a Poisson Point Process (PPP), then $\mathbb{E}[P] = \lambda^2$, which is due to the double counting. We did this by writing this as an integral over a point measure,
+\[
+P = \int_A \rho(|x - y|) N(dx)N(dy),
+\]
+where $\mathbb{E}[N(dx)N(dy)] = \lambda^2 dx dy$, and $A = \{(x,y) \in T^2: x \neq y\} \subseteq T \times T$.\\
+
+Now that we've computed the mean when $N$ is a PPP, let's also compute the variance. (To use this as a Poisson process test, we need to know the standard deviation we're expecting, as this will tell us what deviance form the mean is ``reasonable".) Using standard properties of the covariance, we see that
+\begin{align*}
+\var[P] &= \cov[P,P]\\
+&= \cov\left[ \int_A \rho(|x - y|) N(dx)N(dy), \int_A \rho(|u - v|) N(du)N(dv) \right]\\
+&= \int \int_A \rho(|x - y|) \rho(|u - v|) \cov[N(dx)N(dy), N(du) d(dv)].
+\end{align*}
+To analyze this last term, we consider various possibilities for $x, y, u, v$. If all are distinct, then $\cov[N(dx)N(dy), N(du)N(dv)] = 0$, because
+\[
+\lim_{\epsilon \rightarrow 0} \frac{1}{|B_{\epsilon}|^4} \cov[N(B_{\epsilon}(x))N(B_{\epsilon}(y)), N(B_{\epsilon}(u))N(B_{\epsilon}(v))] = 0.
+\]
+Next consider the case when $x = u$ and $y \neq v$. Then if $\epsilon$ is small enough, then 
+\[
+\cov[N(dx)N(dy), N(du)N(dv)] = \mathbb{E}[B_{\epsilon}(y))] \var[N(B_{\epsilon}(x))] = \lambda^3 |B_{\epsilon}|^3.
+\]
+using the conditional covariance formula. So we arrive at
+\[
+\cov[N(dx)N(dy), N(du)N(dv)] = \lambda^3 dxdydv \delta_x(u).
+\]
+
+Similarly, if $x = u$ and $y = v$, then we have
+\[
+\cov[N(dx)N(dy), N(du)N(dv)] = \lambda^2 dxdy \delta_x(u)\delta_y(v).
+\]
+So overall we see that
+\[
+\var(P) = 4 \int \int \rho(|x - y|) \rho(|u - v|)\lambda^3 dxdydv + 2 \int \int \rho(|x - y|)^2 \lambda^2 dxdy.
+\]
+
+
+\end{document}
