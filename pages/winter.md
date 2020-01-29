@@ -15,6 +15,7 @@ And, here is a collection of [in-class demonstrations](../demos/index.html).
 - **Assignment 1**.  Due Wednesday Jan 15 [html](../assignments/winter/hw1.html), [Jupyter Notebook](../assignments/winter/hw1.ipynb)
 - **Assignment 2**.  Due Wednesday Jan 22 [html](../assignments/winter/hw2.html), [Jupyter Notebook](../assignments/winter/hw2.ipynb)
 - **Assignment 3**.  Due Wednesday Jan 29 [html](../assignments/winter/hw3.html), [Jupyter Notebook](../assignments/winter/hw3.ipynb)
+- **Assignment 4**.  Due Wednesday Feb 5 [html](../assignments/winter/hw4.html), [Jupyter Notebook](../assignments/winter/hw4.ipynb)
 
 # Applied Mathematics II: Stochastic processes and dynamical systems
 
