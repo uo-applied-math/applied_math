@@ -11,3 +11,6 @@
 
 - January 14: [notebook](pigeons.ipynb), [html](pigeons.html)
     simulating a Poisson process of pigeons and counting nearby pairs
+
+- January 28: [notebook](ppp_on_a_square.ipynb), [html](ppp_on_a_square.html)
+    simulating a various Poisson processes, including nonuniform intensity, on the unit square

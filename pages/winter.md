@@ -6,6 +6,10 @@ description: Syllabus for Stochastic Processes and Dynamical Systems
 
 See [the schedule](winter_schedule.html) for topics by week and links to slides.
 
+Here is a collection of [student-transcribed notes](../notes/winter_2020/README.html).
+
+And, here is a collection of [in-class demonstrations](../demos/index.html).
+
 # Homework
 
 - **Assignment 1**.  Due Wednesday Jan 15 [html](../assignments/winter/hw1.html), [Jupyter Notebook](../assignments/winter/hw1.ipynb)
