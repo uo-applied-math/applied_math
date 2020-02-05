@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb}
+
+\usepackage{mdframed}
+\usepackage{upgreek}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Comma}{\mathbin{{,}}}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[justification=centering]{subfig}
+\usepackage{hyperref}
+\usepackage{spverbatim}
+\usepackage{mathtools}
+\usepackage[OT2,T1]{fontenc}
+\usepackage{tikz-cd}
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+
+        
+\newtheorem{theorem}{Theorem}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}
+\newtheorem*{example*}{Example}
+
+\newcommand \Q {\mathbb Q}
+\newcommand \R {\mathbb R}
+\newcommand \C {\mathbb C}
+\newcommand \Z {\mathbb Z}
+
+\usepackage[margin=1in]{geometry}
+\DeclareMathOperator{\Tr}{Tr}
+
+\title{607 Applied Notes}
+% \author{Andy Huchala}
+\date{2/3/2020}
+
+\begin{document}
+
+\maketitle
+Erratum for homework 4, question 2: The probability that the tower \underline{does not} fall over during a given $t$ minutes is $e^{-nt}$.\\\\
+
+\Large
+\noindent \textbf{List of topics for Midterm 1:}\normalsize
+\begin{enumerate}
+    \item \underline{Poisson point processes:}
+    \begin{itemize}
+        \item definition, assumptions
+        \item thinning, labeling, additivity
+        \item how to simulate one
+        \item exponential waiting times for $PP(\lambda \text dt)$
+        \item characteristic function
+    \end{itemize}
+    \item \underline{General:}
+    \begin{itemize}
+        \item covariance
+        \item independence
+        \item conditional expectation
+        \item computing expectation (by conditioning)
+        \item law of total (co)variance
+    \end{itemize}
+    \item \underline{Continuous-time Markov chains:}
+    \begin{itemize}
+        \item definition(s):
+        \begin{itemize}
+            \item jump rates $\xrightarrow{} G$
+            \item exponential waiting times + jump probabilities
+        \end{itemize}
+        \item transition probabilities $\left(e^{tG}\right)_{xy}$
+        \item stationary distribution $\pi G = 0$
+        \item hitting probabilities: solve $Gh = 0$
+        \item hitting times: solve $Gh = -1$
+    \end{itemize}
+\end{enumerate}
+Midterm will be 3 problems, solve 2.\\
+
+\underline{Recall} Q\# 3) How long does an outbreak last? (on average)\\
+\noindent Let $\tau = \inf\{t\geq 0 : X(t) = 0\}$. Find 
+$$\mathbb E[\tau | X(0) = 1]$$
+
+Recall
+$$G = \begin{bmatrix} -\delta & \delta & 0 & 0\\ \mu & -(\mu +\lambda) & \lambda & 0\\
+0 & 2\mu & -2(\mu + \lambda) & 2\lambda\\
+0 & 0 & 3\mu & -3(\mu +\lambda)
+\end{bmatrix}
+$$
+
+$$G_1 = \delta$$
+$$G_{n,n+1} = n\lambda$$
+$$G_{n,n-1} = n\mu$$
+$$G_{nn} = -n(\mu + \lambda)$$
+
+\begin{theorem*}
+Let $X$ be a CTMC on $S$ with generator matrix $G$, and $A\subset S$. Define $$\mathfrak{h}_A(x) = \mathbb E[\tau_A|X(0) = x] := \mathbb E^x[\tau_A]$$
+where $$\tau_a = \inf\{t\geq 0:X(t)\in A\}$$
+Then $\mathfrak h_A$ is the unique solution to 
+$$\mathfrak h_A(x) = 0 \,\,\,\,\,\,\, \text{if } x\in A$$
+$$G\mathfrak h_A(x) = -1 \,\,\,\,\,\,\, \text{if } x \notin A
+$$
+\end{theorem*}
+\begin{corollary}
+If it makes sense,
+$$\mathfrak h_A = \left(G_{-A,-A}\right)^{-1}\mathbb{ONE}
+$$
+where 
+$$(G_{-A,-A})_{xy} = G_{xy}\,\,\,\,\text{for }x\notin A, y\notin A$$
+\end{corollary}
+Let $\mathfrak h_0(x) = \mathbb E^x[\tau]$. Then $\mathfrak h(0) = 0$. We want is $\mathfrak h(1) = ?$
+$$\delta(\mathfrak h(1) - \mathfrak h(0)) =-1
+$$
+$$n\lambda (\mathfrak h(n+1) - \mathfrak h(n)) + n \mu (\mathfrak h(n) - \mathfrak h(n-1)) = -1
+$$
+so 
+$$\mathfrak h(n+1) = \dfrac{\mu + \lambda}{\lambda}\mathfrak h(n) - \dfrac{\mu}{\lambda}\mathfrak h(n-1) - 1
+$$
+How to solve this? Generating functions would work. Or could just plug it in (just need first two values, then can go from there).
+$$a(n) = (\mathfrak h(n+1) - \mathfrak h(n))\left(\dfrac{\lambda}{\mu}\right)^n \implies a(n) - a(n-1) = -\dfrac{1}{n\lambda} \left(\dfrac{\lambda}{\mu}\right)^n
+$$
+where we can take $a(n)$ to be a discrete analogue of the derivative of $\mathfrak h$ (from which we could ``integrate'' to obtain $\mathfrak h(n)$).
+
+\begin{proof}
+$$\mathfrak h_A(x) = \dfrac{1}{-G_{xx}} + \sum_{y\neq x} \dfrac{G_{xy}}{-G_{xx}}\mathfrak h_A(y)
+$$
+where the first term is the mean time until leaves $x$, the fraction on the right is the probability that it jumps from $x\to y$ next, and the rightmost term is the mean remaining time.
+\end{proof}
+\begin{proof}
+We could write down proof number 2 but we're out of time.
+\end{proof}
+\end{document}
