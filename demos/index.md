@@ -14,3 +14,6 @@
 
 - January 28: [notebook](ppp_on_a_square.ipynb), [html](ppp_on_a_square.html)
     simulating a various Poisson processes, including nonuniform intensity, on the unit square
+
+- February 11: [notebook](some_simulations.ipynb), [html](some_simulations.html)
+    simulating a Markov chain and a Poisson point process.
