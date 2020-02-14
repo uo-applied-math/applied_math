@@ -1,0 +1,173 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{coro}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\author{Math 607}
+\title{Applied Stochastic Processes}
+\begin{document}
+	\maketitle
+	We begin with the canonical real world process:
+	Question: How many U$^{238}$ (uranium) atoms decay from a 1 gram chunk of U$^{238}$ in $t$ seconds? [The key is that all of the atoms are independent of each other, and atoms have no memory.] We know that the half life of U$^{238}$ is $1.41 \times 10^{17}$ seconds. So 1 gram = $2.53 \times 10^{18}$ atoms of uranium.
+	
+	Let $T $ be the time until a particular atom decays. This is memoryless, which means that given an atom has not yet decayed, the chance it will decay is the same as it was before (so it does not depend on how long it has waited). So $$\mathbb{P}\{T > t\} = \mathbb{P}\{T > t+s \mid T > s\}$$
+	$$ \Rightarrow \mathbb{P}\{T > t\} = e^{-\lambda t}$$ for some $\lambda$. i.e. $T \sim \text{Exp}(\text{rate} = \lambda)$. So $$\frac{1}{2} = \mathbb{P}\{T > t_{1/2}\} = e^{-\lambda t_{1/2}}$$ $$\Rightarrow \lambda = \log 2 / 1.41 \times 10^{17} = 4.9 \times 10^{-18} \text{ decays per second}$$
+	
+	Let $X$ be the number of atoms that decay in 1 second. So $$X \sim \text{Binom}(n = 2.35\times10^{18}, p = 1-e^{\lambda} \approx \lambda = 4.9 \times 10^{-18}).$$ So \begin{align*}
+	\mathbb{P}\{X = k\} &= {n \choose k} p^k (1-p)^{n-k}\\
+	&= \frac{n(n-1) \dots (n-k+1)}{k!}\lambda^k (1-\lambda)^{n-k}\\
+	&\approx \frac{(nk)^k}{k!} e^{-\lambda n}
+	\end{align*}
+	Then $\mathbb{E}[X] = \mu = n\lambda$, so $\frac{(n\lambda)^k}{k!}e^{-\lambda n} = \frac{\mu^k}{k!} e^{\mu}$. Note that this is a Poisson distribution! Therefore $X \sim Pois(\mu)$. 
+	
+	More generally, suppose that in some space $X$, we lay down tiny little lights with density $\propto \mu$ (Where $\mu$ is a $\sigma$-finite measure). i.e. for any $A \subseteq X$, the number of lights in $A \approx \mu(A) \times M$ for large $M$, and each light is on with probability $1/M$, independently. \underline{Fact:} as $M \rightarrow \infty$, $N(A) := \#(\text{lights on in $A$}) \sim Pois(\mu(A))$. 
+	
+	\begin{defn}
+		A Poisson Point Process with \emph{mean measure} (or intensity) $\mu$, i.e. $PPP(\mu)$ on some space $X$ is a random point measure $N$ on $X$:
+		\begin{enumerate}
+			\item $N(A) \in \{0,1,2,\ldots\}$ counts the number of points in $A$ (point measure)
+			\item $N(A) \sim$ Pois$(\mu(A))$ 
+			\item if $A, B$ are disjoint, then $N(A), N(B)$ are independent
+		\end{enumerate}
+	\end{defn}
+
+	\noindent\underline{Properties}
+	\begin{enumerate}
+		\item[]
+		\underline{(Enumeration)}: We may write $N = \sum_{i} \delta_{X_i}$ for some countable $\{X_i\} \subseteq X$ (locations in the space). so that $\int f(x) = dN(X) = \sum_{i} f(x_i)$. 
+		
+		\item[]\underline{(Mean measure)}: $\mathbb{E}[\int f(x) dN(x)] = \int f(x) d\mu(x)$. 
+	\end{enumerate}
+	
+	\begin{proof}
+		Let $f(x) = \sum_j f_j \mathds{1}_{A_j}(x)$ for some partition $A$ of $X$. \begin{align*}
+		\mathbb{E}\left[\int fdN = \sum_j f_j N(A_j)\right] &= \sum_j f_j \mathbb{E}[N(A_j)] \\
+		&= \int f(x) d\mu(x)
+		\end{align*}
+	\end{proof}
+
+	\begin{defn}
+		$N$ is a $PPP(\mu)$ on $X$ if and only if $\forall A \subseteq X$ (Borel), $N(A) \sim$ Pois$(\mu(A))$ and for $A, B \subseteq X$ disjoint, $N(A)$ and $N(B)$ are independent. 
+	\end{defn}
+
+	\underline{Note:} We can always write $N = \sum_{i}\delta_{X_i}$ for some collection of ``points'' $\{X_i\} \subseteq X$. And $\delta$ is the measure such that $\forall f \int_X f(x) \delta_Y(dx) = f(y) \forall f$. If $\mu$ is a measure on $X$ then for measurable sets $A \subseteq X$, \begin{enumerate}
+		\item $\mu(A) \geq 0$
+		\item if $A \cap B = \varnothing \Rightarrow \mu(A \cup B) = \mu(A) + \mu(B)$
+		\item $\mu(\varnothing) = 0$
+	\end{enumerate}
+
+	In general, we want $\mu$ to have a density, and we pick points $A$ in relation to that density. 
+	
+	Some background: For a random variable $X$, the characteristic function is $\phi_x(u) = \mathbb{E}[e^{iuX}]$. Note that if $X$ has probability density $p$, then $\int p(x) e^{iuX}dx$. Facts \begin{enumerate}
+		\item $X \stackrel{d}{=} Y$ if and only if $\phi_x(u) = \phi_y(u) \ \forall u$. 
+		\item $X, Y$ are independent if and only if $\mathbb{E}[e^{i(uX + vY)}] = \phi_X(u) \phi_Y(v)$. 
+	\end{enumerate}
+	
+	\begin{thm}
+		If $N_k \sim PPP(\mu_k)$, for some $k$, then $N = \sum_{k} \sim PPP(\sum_k\mu_k)$. 
+	\end{thm}
+
+	\begin{proof}
+		Independence is obvious, so we need to check that $N(A) = \sum_k N_k(A) \sim$ Pois$\left(\sum_k \mu_k(A)\right)$. Recall that $Z_k = N_k(A) \sim $ Pois$\left(\mu_k(A)\right)$ and is independent. So \begin{align*}\phi_{Z_k}(u) &= \mathbb{E}[e^{iuZ_k}] \\
+		&= \sum_{n \geq 0} e^{iun} \frac{\mu_k(A)^n}{n!} e^{-\mu_k(A)} \\
+		&= \exp(\mu_k(A)(e^{iu} - 1)).\end{align*} Then by number 2 above, $\mathbb{E}[e^{iuN(A)}] = \prod_k \phi_{Z_k}(u)$, which is equivalent to $\exp(\sum_k \mu_k(A)(e^{iu} - 1))$ by part 1. 
+	\end{proof}
+
+	\section{Example: Rainfall}
+	Rain falls for $T= 10$ minutes on a patio at a rate of $\nu = 5000$ raindrops per minute per square meter. Each drop splatters a random radius $R$ drawn from an exponential distribution with mean of 1 centimeter, independently. 
+	
+	Assume the drops fall as a (uniform) $PPP$. We aim to answer two questions: \begin{enumerate}
+		\item What is the mean and variance of the total amount of water on a given square meter of patio, if drops are 1 millimeter thick?
+		\item How much of the patio remains dry?
+	\end{enumerate}
+\subsection{Question 1}
+	To answer question one, we let $N(A)$ be the number of drops in an area $A$ of the patio. Then $A \sim $ Pois$(\nu T |A|)$, where $|A|$ is the area of $A$. In particular, let $M$ be the total number of drops on 1 square meter. Then $M \sim $ Pois$(\nu T) = 50000$. Then $V = (\text{total volume}) = \sum_{i=1}^M \pi R^2_i \cdot 1$mm where $R_i$ is the radius of the ith drop.  
+	
+	\begin{thm}{Wald's Theorem}
+		If $X_1, X_2, \ldots $ are independent and identically distributed, then $\mathbb{E}[\sum_{n=1}^N X_i] = \mathbb{E}[{N}]\mathbb{E}[{X}]$. 
+	\end{thm}
+
+	So by Wald's Theorem, $\mathbb{E}[V] = \mathbb{E}[M]\pi \mathbb{E}[R^2]$. 
+	
+	\begin{defn}
+		$\mathbb{E}[R^n] = \int_{0}^\infty r^ne^{-r}dr = n! cm^n$
+	\end{defn}
+	So \begin{align*}
+	\mathbb{E}[V] &= \mathbb{E}\left[\sum_{i=1}^M \pi R^2_i\right] = \pi \mathbb{E}[M]\mathbb{E}[R^2]\\
+	&= \sum_{m=0}^\infty \mathbb{P}\{M=m\}\mathbb{E}\left[\sum_{i=1}^M \pi R^2_i\right]\\
+	&= \sum_{m=0}^\infty \mathbb{P}\{M=m\}m\pi \mathbb{E}[R^2] \\
+	&= \sum_{m=0}^\infty \mathbb{P}\{M=m\}2\pi m\\
+	&= 2\pi \nu T\text{ cm}^2 \times \text{mm}
+	\end{align*} 
+	
+	\begin{defn} Background
+		\begin{itemize}
+			\item $\var[X] = \cov[X,X] = \mathbb{E}[X^2] - \mathbb{E}[X]^2$
+			\item $\cov[X,Y] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$
+			\item $\var[X+Y] = \var[X] + \var[Y]$ if $X$ and $Y$ are independent
+			\item $\var[aX] = a^2\var[X]$ for some constant $a$
+			\item sd$(X) = \sqrt{\var[X]}$
+			\item $\var[X] = \mathbb{E}[(X - \mathbb{E}[X])^2]$
+			\item $\var[V] = \var[\mathbb{E}[V\mid M]] + \mathbb{E}[\var[V\mid M]]$
+		\end{itemize}
+	\end{defn}
+
+	Then $\mathbb{E}[V\mid M = m] = 2\pi m$, so 
+	\begin{align*}
+	\var[V \mid M = m] &= \var[\sum_{i=1}^m 2\pi R^2_i]\\
+	&= m(2\pi)^2 \var[R^2]\\
+	&= m(2\pi)^2 (\mathbb{E}[R^4] - \mathbb{E}[R^2]^2)\\
+	&= m(2\pi)^2 (4! - (2!)^2) \\
+	&= 20m(2\pi)^2
+	\end{align*}
+	Now we can put the pieces together to see that $$\var[V] = \var[2\pi M] + \mathbb{E}[2\pi^2 \cdot 20 \cdot M] = ((2\pi)^2 + (2\pi)^2\cdot 20)\nu T,$$ so $\var[V] = 21\nu T(2\pi)^2$. 
+
+\subsection{Question 2}
+
+How umch of the patio gets wet? i.e. What is the chance a given point gets hit with a raindrop? Let's associate each drop with three coordinates: \[\begin{array}{cccc}
+	(x_i,\ \ \ \  y_i, & r_i) & \in \mathbb{R} \times \mathbb{R}\times \mathbb{R}_{>0}\\
+	\text{position} & \text{radius}
+\end{array}\]
+
+\underline{Claim:} $N = \sum_{i=1}^M \delta_{(x_i, y_i, r_i)} \sim \text{PPP}$ on the above with intensity $dxdye^{-r}dr ~\cdot~ \nu T$. (e.g. the number of drops landing on a given square meter with radius at least $t$ centimeters is $\sim \text{PPP}\left(\int_{0}^1 \int_0^1 \int_{R_t}^\infty dxdy e^{-r}dr = e^{-t}\right)$. 
+
+\begin{thm}[Labeling]
+	To each point of a Poisson Point Process on $X$ with intensity $\mu$, associate an independent, random  label from $Y$ with probability density $\nu(y,x)$ (where $y$ is the label and $x$ the location of the point), the result is also a poisson point process. 
+	
+	i.e. if $N = \sum_{i} \delta_{x_i}$ and $L_i$ independent of each other, then $\mathbb{P}\{L_i = y\} = \nu(y, x_i)$, and then $\overline{N} = \sum_{i} \delta_{(x_i, L_i)} \sim \text{PPP}(\mu(dx)\nu(dy,x))$. 
+\end{thm}
+
+\begin{exmp}
+	If $A \subseteq X \times Y$, and $\mu(dx) = f(x) dx$, $\nu(dy, x) = g(x,y)dy$, then $\overline{N}(A) = \#\{i \mid (x_i, L_i) \in A\} \sim \text{Pois}\left(\int_A f(x) g(x,y) dxdy\right)$. 
+\end{exmp}
+
+\begin{coro}
+	$M_0 = \#\{i \mid R_i \leq 1\text{cm}\}$, and $M_1 = \#\{i \mid R_i > 1\text{cm}\}$, independent and conditioned on $M = M_0 + M_1$, then $M_0 \sim \text{Pois}(\nu T(1-\frac{1}{e}))$ and $M_1 \sim \text{Pois}(\nu\frac{T}{e})$ since $\mathbb{P}\{R \leq 1\} = 1 - \frac{1}{e}$. 
+\end{coro}
+
+Now let $A$ be the number of drops that hit the point $(0,0)$, so $A = \{x,y,r \mid x^2 + y^2 \leq r^2\}$. Then $(R)\mathbb{P}\{N(A) > 0\} = 1-\exp(-\mathbb{E}[N(A)])$, and \begin{align*}
+\mathbb{E}[N(A)] &= \int\int\int_A dxdye^{-r}dr \\
+&= \int_0^\infty e^{-r}(\pi r^2) dr\\
+&= 2\pi.
+\end{align*}
+	
+	Thus $1 - \exp(-\mathbb{E}[N(A)]) = 1 - e^{-2\pi\nu T} = 0.95$. 
+\end{document}
