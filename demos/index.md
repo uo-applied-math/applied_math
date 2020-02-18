@@ -17,3 +17,6 @@
 
 - February 11: [notebook](some_simulations.ipynb), [html](some_simulations.html)
     simulating a Markov chain and a Poisson point process.
+
+- February 18: [notebook](a_random_walk.ipynb), [html](a_random_walk.html)
+    computing transition probabilities for a continuous-time random walk.
