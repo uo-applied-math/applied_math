@@ -13131,7 +13131,7 @@ where $W$ is random (what distribution should $W$ have?).</p>
 </li>
 <li><p>It turns out that $X(t)$ can be defined directly in terms of white noise as follows:
 $$ X(t) = e^{-ct} X(0) + \int_0^t e^{-c(t-s)} dB(s) .$$
-Show that if we define $X(t)$ in this way, then $X(t+dt) - X(t)$ has the mean and variance
+Show that if we define $X(t)$ in this way, then the increment, $X(t+dt) - X(t)$ has the mean and variance
 implied by the equation above for small $dt$.</p>
 </li>
 <li><p>Take $X(0) = 0$ and use the expression of part (2) to compute
@@ -13158,7 +13158,7 @@ $$ \text{cov}[Z_i, Z_j] = \frac{1}{1 + \left(\frac{10 \, d(i,j)}{n}\right)^2} . 
 </li>
 <li><p>For $0 \le s &lt; t \le 1$ let $U(s, t) = \frac{1}{n(t-s)} \sum_{i=ns}^{nt} Z_i$:
  in other words, $U(s,t)$ is the average of the values between positions $s$ and $t$ around the circle,
- if the circle has diameter 1. Find an approximation for large $n$ for $\text{cov}[U(0), U(s,t)]$
+ if the circle has diameter 1. Find an approximation for large $n$ for $\text{cov}[U(0, s), U(0, t)]$
  and check your answer using simulation with a few values of $s$ and $t$.</p>
 </li>
 </ol>
