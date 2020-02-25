@@ -20,3 +20,6 @@
 
 - February 18: [notebook](a_random_walk.ipynb), [html](a_random_walk.html)
     computing transition probabilities for a continuous-time random walk.
+
+- February 25: [notebook](another_random_walk.ipynb), [html](another_random_walk.html)
+    simulating from multivariate Gaussians to produce a path from Brownian motion
