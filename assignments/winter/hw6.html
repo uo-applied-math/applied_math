@@ -13131,8 +13131,11 @@ where $W$ is random (what distribution should $W$ have?).</p>
 </li>
 <li><p>It turns out that $X(t)$ can be defined directly in terms of white noise as follows:
 $$ X(t) = e^{-ct} X(0) + \int_0^t e^{-c(t-s)} dB(s) .$$
-Show that if we define $X(t)$ in this way, then the increment, $X(t+dt) - X(t)$ has the mean and variance
-implied by the equation above for small $dt$.</p>
+Show that if we define $X(t)$ in this way, then the increment, $X(t+dt) - X(t)$, has the mean and variance
+implied by the equation above for small $dt$. (The mean and variance of the increment
+should be computed with $X(t)$ <em>given</em>, e.g., $\mathbb{E}[X(t+dt)-X(t)|X(t)]$.
+To do this, write $X(t+dt)$ as a sum of two terms: one which is a deterministic function of $X(t)$
+and one which is <em>independent</em> of $X(t)$.)</p>
 </li>
 <li><p>Take $X(0) = 0$ and use the expression of part (2) to compute
  $$ \text{cov}[X(s), X(s+t)] .$$</p>
