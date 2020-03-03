@@ -23,3 +23,6 @@
 
 - February 25: [notebook](another_random_walk.ipynb), [html](another_random_walk.html)
     simulating from multivariate Gaussians to produce a path from Brownian motion
+
+- March 3: [notebook](bm_squared.ipynb), [html](bm_squared.html)
+    simulating B(t) squared, in three different ways, and a 2D diffusion
