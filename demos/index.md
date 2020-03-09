@@ -26,3 +26,9 @@
 
 - March 3: [notebook](bm_squared.ipynb), [html](bm_squared.html)
     simulating B(t) squared, in three different ways, and a 2D diffusion
+
+- March 9: [notebook](intro-to-linear-systems.ipynb), [html](intro-to-linear-systems.html)
+    an introduction to linear systems, with a Lotka-Volterra-type model
+
+
+
