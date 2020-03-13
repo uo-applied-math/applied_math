@@ -1,0 +1,367 @@
+\documentclass{article}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{tikz-cd}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[margin=.75in, total={8.25in, 10.75in}, heightrounded]{geometry}
+
+\usepackage{graphicx}
+\graphicspath{{graphics/}}
+
+\usepackage{scalerel}
+
+\usepackage{stmaryrd}
+
+\usepackage{MnSymbol}
+
+\usepackage{mdframed}
+
+\usepackage{titlesec}
+
+\usepackage{enumitem}
+
+\usepackage{stackengine}
+
+\setenumerate[0]{label=\alph*)}
+
+\usepackage{blkarray}
+
+\usepackage{mathtools}
+
+\usepackage{hyperref}
+
+\hypersetup
+{
+	colorlinks = true,
+	urlcolor = OliveGreen
+}
+
+\titleformat{\section}
+{\normalfont \Large \bfseries \centering}{\Roman{section} --- }{0pt}{}
+
+
+
+\newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
+\newcommand{\hooklongleftarrow}{\longleftarrow\joinrel\rhook}
+
+
+\renewcommand{\baselinestretch}{1.33}
+
+
+
+\definecolor{DefGreen}{rgb}{0,0.5,0}
+\definecolor{TheoremOrange}{rgb}{0.88,0.6,0.08}
+\definecolor{LemmaYellow}{rgb}{1,1,0}
+\definecolor{CorollaryBlue}{rgb}{0,0.3,1}
+\definecolor{ProofPurple}{rgb}{0.58,0,1}
+\definecolor{AxiomRed}{rgb}{1,0,0}
+\definecolor{CommentBlue}{rgb}{0.46,0.67,1}
+
+
+
+\usepackage{amsthm}
+
+\newtheoremstyle{colontheorem}
+	{0in}                    	% Space above
+	{.15in}                   	% Space below
+	{\normalfont}      		    % Body font
+	{}                          % Indent amount
+	{\bfseries}                 % Theorem head font
+	{:}                         % Punctuation after theorem head
+	{.5em}                      % Space after theorem head
+	{}							% Theorem head spec (can be left empty, meaning ‘normal’)
+	
+\theoremstyle{colontheorem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{corollary}{Corollary}[theorem]
+
+\newtheorem{exercise}{Exercise}
+
+
+
+
+\newcommand{\fadeline}
+{
+	\noindent\begin{tikzpicture}[baseline]
+		\path[left color=white,right color=white,middle color=black]
+		(0,0) rectangle (\textwidth,.5pt);%
+	\end{tikzpicture}
+}
+
+\newcommand{\Span}{\textnormal{span}}
+\newcommand{\Null}{\textnormal{null }}
+\newcommand{\Range}{\textnormal{range }}
+\newcommand{\T}{^\textnormal{T}}
+
+\newcommand{\Sub}{\textnormal{sub }}
+
+\newcommand{\re}{\textnormal{Re }}
+\newcommand{\im}{\textnormal{Im }}
+\newcommand{\Arg}{\textnormal{Arg }}
+\newcommand{\Log}{\textnormal{Log }}
+\newcommand{\Res}{\textnormal{Res}}
+\newcommand{\pv}{\textnormal{p.v.}}
+
+\newcommand{\e}{\varepsilon}
+
+\newcommand{\Aut}{\textnormal{Aut }}
+\newcommand{\Inn}{\textnormal{Inn }}
+\newcommand{\orb}{\textnormal{orb }}
+\newcommand{\Char}{\textnormal{char }}
+\newcommand{\Spec}{\textnormal{Spec }}
+\newcommand{\Frac}{\textnormal{Frac }}
+\newcommand{\Gal}{\textnormal{Gal}}
+
+\newcommand{\transverse}{\stackinset{c}{}{c}{.75pt}{\rotatebox[origin=c]{180}{$\perp$}}{$\scaleto{\cap}{1ex}$}}
+
+
+
+
+
+\newenvironment{Theorem}
+{
+	\begin{mdframed}[backgroundcolor=TheoremOrange!10]
+	\begin{theorem}
+}
+{
+	\end{theorem}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Proposition}
+{
+	\begin{mdframed}[backgroundcolor=TheoremOrange!10]
+	\begin{proposition}
+}
+{
+	\end{proposition}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Def}
+{
+	\begin{mdframed}[backgroundcolor=DefGreen!10]
+	\begin{definition}
+}
+{
+	\end{definition}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Axiom}
+{
+	\begin{mdframed}[backgroundcolor=AxiomRed!10]
+	\begin{axiom}
+}
+{
+	\end{axiom}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Lemma}
+{
+	\begin{mdframed}[backgroundcolor=LemmaYellow!10]
+	\begin{lemma}
+}
+{
+	\end{lemma}
+	\end{mdframed}
+	
+	\vspace{.03in}
+}
+
+\newenvironment{Corollary}
+{
+	\vspace{-.035in}
+	
+	\begin{mdframed}[backgroundcolor=CorollaryBlue!10]
+	\begin{corollary}
+}
+{
+	\end{corollary}
+	\end{mdframed}
+	
+	\vspace{.09in}
+}
+
+\newenvironment{Comment}
+{
+	\begin{mdframed}[backgroundcolor=CommentBlue!10]
+	\textbf{Comment:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Proof}
+{
+	\begin{mdframed}[backgroundcolor=ProofPurple!10]
+	\textbf{Proof:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.085in}
+}
+
+\newenvironment{Example}
+{
+	\begin{mdframed}
+	\textbf{Example:}%
+}
+{
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+\newenvironment{Exercise}
+{
+	\begin{mdframed}
+	\begin{exercise}
+}
+{
+	\end{exercise}
+	\end{mdframed}
+	
+	\vspace{.15in}
+}
+
+
+
+
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\vspace*{.5in}
+
+\begin{center}
+	\Huge Applied Notes\\
+	
+	\vspace{.25in}
+	
+	\normalsize February 12--14, 2020
+\end{center}
+
+\vspace{.25in}
+
+
+
+\begin{Comment}
+	%
+	Let $S(t)$ be the CMTP on $\mathbb{Z}$ that jumps up and down by one, both at rate $\frac{1}{2}$. What does $S$ look like in the long term? It always has mean $0$, and so the variance is just $\mathbb{E}[S(t)^2] = \mathbb{E}[(U(t) - D(t))^2]$, where $U(t)$ is the number of jumps up before time $t$ and $D(t)$ is the number of jumps down. Since both $U(t)$ and $S(t)$ are Poisson with rate $\frac{t}{2}$, the variance of $S(t)$ is just $t$. Thus the standard deviation is $\sqrt{t}$. Fixing $N$, let $B_N(t) = \frac{1}{\sqrt{N}} S(Nt)$. Then $\mathbb{E}[B_N(t)] = 0$ and $\text{var}(B_N(t)) = t$. This is called Brownian Scaling. The question is, does $B_N(t)$ converge in distribution to some $B(t)$ as $N \longrightarrow \infty$?
+	
+\end{Comment}
+
+
+
+\begin{Lemma}
+	
+	If $X_N$ and $X$ are Markov processes such that for all $s$ with $s < t$, all $x_0$, and all sets $A$,
+	
+	$$
+		\mathbb{P}(X_N(t) \in A \mid X_N(s) = x_0) \longrightarrow \mathbb{P}(X(t) \in A \mid X(s) = x_0),
+	$$
+	
+	then $X_N \longrightarrow X$ in distribution.
+	
+\end{Lemma}
+
+
+
+\begin{Def}
+	
+	The $B_N$ converge to some $B$ by the lemma, and it is called \textbf{Brownian Motion}.
+	
+\end{Def}
+
+
+
+\begin{Theorem}
+	
+	If $P(t, x) = \mathbb{P}(B(t) = x \mid B(0) = 0)$, then $\frac{d}{dt} [P(t, x)] = \frac{1}{2} \frac{d^2}{dx^2} [P(t, x)]$, $P(0, x) = \delta_0(x)$, and $P(t, x) = \dfrac{1}{\sqrt{2 \pi t}} e^{-x^2 / 2t}$ --- that is, $B(t) \sim N(0, t)$.
+	
+\end{Theorem}
+
+
+
+\begin{Lemma}
+	
+	If $W \sim N(0, t)$, then $\mathbb{E}[e^{-uW}] = e^{-u^2 t / 2}$. (This is the Laplace Transform, which uniquely determines probability distributions.)
+	
+\end{Lemma}
+
+
+
+\begin{Proof}
+	%
+	$$
+		\mathbb{E}[e^{-uW}] = \int_{-\infty}^\infty e^{-ux} \cdot \frac{1}{\sqrt{2 \pi t}} e^{-x^2 / 2t}\ dx = e^{-u^2 t / 2} \int_{-\infty}^\infty \frac{1}{\sqrt{2 \pi t}} e^{-(x + ut)^2 / 2t} dx
+	$$
+	
+	by completing the square. But that integral is just a shifted normal distribution, so it evaluates to $1$. Thus $\mathbb{E}[e^{-uW}] = e^{-u^2 t / 2}$.
+	
+\end{Proof}
+
+
+
+\begin{Comment}
+	%
+	We can also construct $B$ another way. Let $\Lambda$ be a PPP on $[0, \infty) \times \mathbb{R}$, where $[0, \infty)$ represents time and $\mathbb{R}$ represents jump size, with mean intensity $dt \cdot f(x) \cdot dx$, where $f$ is a probability density (that is, $\int_{-\infty}^\infty f(x)\ dx = 1$). Now if $X$ has probability density $f$, then $\mathbb{E}[X] = 0 = \int_{-\infty}^\infty x f(x)\ dx$ and $\mathbb{E}[X^2] = \sigma^2 = \int_{-\infty}^\infty x^2 f(x)\ dx$. Let $S(t)$ be the sum of the jumps out to time $t$. Then
+	
+	$$
+		S(t) = \sum_{\substack{(t_i, x_i) \in \Lambda \\ t_i \leq t}} x_i = \int_0^t \int_{-\infty}^\infty x \Lambda(dt, dx).
+	$$
+	
+	Now let $B_N(t) = \frac{1}{\sqrt{N}} S(Nt) = \frac{1}{\sqrt{N}}\int_0^t \int_{-\infty}^\infty x \Lambda(dt, dx)$. Then
+	
+	\begin{align*}
+		\mathbb{E}[e^{-u B_N(t)}] &= \exp \left( \int_0^{tN} \int_{-\infty}^\infty (e^{\frac{ux}{\sqrt{N}}} - 1) f(x)\ ds\ dx \right)\\
+		&= \exp \left( \int_0^{tN} \mathbb{E} \left[ e^{\frac{uX}{\sqrt{N}}} - 1 \right]\ ds \right)\\
+		&= \exp \left( \int_0^{tN} \mathbb{E} \left[ \frac{uX}{\sqrt{N}} + \frac{u^2 X^2}{2 \sqrt{N}} + O\left( \frac{1}{N^{3/2}} \right) \right]\ ds \right)\\
+		&= \exp \left( \int_0^{tN} 0 + \frac{u^2 \sigma^2}{2 \sqrt{N}} + O\left( \frac{1}{N^{3/2}} \right)\ ds \right)\\
+		&= e^{- \frac{1}{2} \sigma^2 u^2 t} + O\left( \frac{1}{\sqrt{N}} \right) \sim N(0, \sigma^2 t).
+	\end{align*}
+	
+	Thus $B_N \longrightarrow B(\sigma^2, t)$ in distribution, since $B_N$ is a Markov process and has iid increments --- in particular, $B_N(t) - B_N(s) = B_N(t - s)$ in distribution.
+	
+\end{Comment}
+
+
+
+\begin{Theorem}
+	
+	1. $B$ is a standard Brownian motion if and only if $B$ is a Markov process and $B(t) - B(s) \sim N(0, t - s)$ for all $0 \leq s < t$.
+	
+	2. The map $t \longmapsto B(t)$ is continuous but nowhere differentiable almost surely.
+	
+	3. If $W(t) = \dfrac{1}{\sqrt{c}} B(ct)$ for some $c$, then $W(t)$ and $B(t)$ are equal in distribution.
+	 	
+\end{Theorem}
+
+
+
+\end{document}
