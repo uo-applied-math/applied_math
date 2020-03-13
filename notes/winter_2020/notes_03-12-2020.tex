@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Week 8, Lecture 1}
+\author{Chandan Tankala}
+\date{12 March 2020}
+
+\begin{document}
+
+\maketitle
+\section{Stochastic integral}
+We know that 
+
+$$\int_0^t B_sds = \int_0^t (t-s)dB_s \sim N\left(0,\frac{t^2}{2}\right)$$
+
+But what about $\int_0^t B_sdB_s$? Is it equal to $B_t^2/2$ by normal calculus? The answer is no because it depends on how you define a stochastic integral.
+
+Let $X_t = f(B_t)$ for some $f:\mathbb{R}\to \mathbb{R}$. What is $dX_t$? i.e. $\int_0^t dX_s:= X_t - X_0$. Is it equal to $\int_0^t f'(B_s)dB_s$? 
+
+Well, take $B_0 = 0, f(0)=0, f\in C^2$
+
+\begin{align}
+    f(B_t) &= f(0) + B_tf'(0) + \frac{1}{2}B_t^2f''(0)+\Theta(|B_t|^3) \\
+    \implies E[f(B_t)] &= E[B_tf'(0)] + \frac{1}{2}tf''(0) + \Theta(t^{3/2}) \\
+    \implies Var[f(B_t)] &= Var[B_tf'(0)] + Cov[B_tf'(0),\frac{1}{2}B_t^2f''(0)]+Var[\frac{1}{2}B_t^2f''(0)] + \Theta(|B_t|^3) \\
+    &= [f'(0)]^2t + \Theta(|t|^2)
+\end{align}
+
+\section{Simulation}
+We can simulate $X_t$ as follows:\\
+$$
+\begin{align}
+    & t=0, B_0 = 0 \\
+    & X_0 = f(0) \\
+    & \text{while}\:\; t<T: \\
+    &\;\;\;\;\;\; W\sim N(0,1) \\
+    &\;\;\;\;\;\;  B(t+dt) += \sqrt{dt}W \\
+    &\;\;\;\;\;\;  X(t+dt) += \frac{1}{2}f''(B_t)dt+|f'(B_t)|\sqrt{dt}W \\
+    &\;\;\;\;\;\;  t += dt
+\end{align}
+$$
+
+\section{Ito's Lemma}
+
+\begin{align}
+    df(B_t) &= f'(B_t)dB_t + \frac{1}{2}f''(B_t)dt \\
+    \text{i.e.}\; f(B_t) &= f(B_0) + \int_0^t f'(B_s)dB_s + \frac{1}{2}\int_0^t f''(B_s)ds
+\end{align}
+
+where $\int f'(B_s)dB_s$ is the Ito integral.
+
+Ito integral is defined as: 
+
+$$\lim_{N\to \infty} \sum_{k=0}^{N-1}g\left( B\left(\frac{kt}{N} \right) \right)\left[ B\left(\frac{(k+1)t}{N} \right) - B\left(\frac{kt}{N} \right) \right] =: \int_0^tg(B_s)dB_s$$
+
+
+\end{document}

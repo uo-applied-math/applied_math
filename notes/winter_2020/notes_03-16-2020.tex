@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Week 8, Lecture 3}
+\author{Chandan Tankala}
+\date{12 March 2020}
+
+\begin{document}
+
+\maketitle
+\section{Diffusions}
+Let $X_t\in \mathbb{R}$ be the solution to the SDE 
+
+$$dX_t = a(X_t)dt + b(X_t)dB_t$$
+
+then $X_t$ is called a diffusion process with drift $a(x)$ and diffusion $b(x)$.
+
+\section{Simulation of a diffusion process}
+
+Started from $x$, until $T$:
+
+$$
+\begin{align}
+    &\text{Let}\;\; X_0 = x \\
+    & t= 0 \\
+    & \text{while}\;\; t<T: \\
+    & \;\;\;\;\;\; W\sim N(0,dt) \\
+    & \;\;\;\;\;\; X(t+dt) = X(t) + dta(X_t) + Wb(X_t) \\
+\end{align}
+$$
+
+Equivalently, if $X_t$ is a time-homogenous Markov process such that:
+
+\begin{align}
+    E[X(t+dt)-X(t)] &= a(X_t)dt+\Theta(dt^2) \\
+    Var[X(t+dt)-X(t)] &= b(X(t))^2dt+\Theta(dt^2)
+\end{align}
+
+Then:
+
+$$X_t = X_0 + \int_0^ta(X_s)ds+\int_0^tb(X_s)dB_s$$
+
+Recall the example: \\
+
+\begin{align}
+    X_t &= B_t^2 \\
+    dX_t &= 2B_tdB_t + dt \\
+    B_t^2 &= B_0^2 + \int_0^t 2B_sdB_s + t
+\end{align}
+
+\section{Example}
+
+ODE: Let us say we solve $f(t) = 2\sqrt{f(t)}$, then $f(t) = f(0)+t^2$ \\
+SDE: Let us say we solve $dX_t = 2\sqrt{X_t}dB_t+dt$, then $X_t = B_t^2+X_0$ is the unique solution.
+
+\section{Theorems}
+Let $p(t,x,y)= P_x\{X_t=y\}$. Then this is the unique solution to $\frac{d}{dt}p(t,x,y) = a(x)\frac{d}{dx}+\frac{1}{2}b(x)^2\frac{d^2}{dx^2}p(t,x,y)$ with the boundary condition $p(t,x,y)\xrightarrow{t\to 0}\delta_x(y)$. \\
+
+Recall: For $B_t$, \\
+$$p(t,x,y) = \frac{1}{\sqrt{2\pi t}}e^{-\frac{(x-y)^2}{2t}}$$ solves the equation $$\frac{d}{dt} p(t,x,y) = \frac{1}{2}\frac{d^2}{dx^2}p(t,x,y)$$
+
+Definition: The generator a CTMP $X_t\in S$ is $G:f\to Gf$ with $f: S\to \mathbb{R}, GF:S\to \mathbb{R}$ is defined as follows:
+
+$$Gf(x) = \lim_{\epsilon \to 0}\frac{E_x[F(X_\epsilon)-f(x)]}{\epsilon}$$
+
+Example: If $X_t$ is a CTMC on $\{1,2\cdots n\} = S$. So if $f: S\to \mathbb{R}$, then $f\in \mathbb{R}^n$ and $G\in \mathbb{R}^{n\times n}$ with 
+
+$$
+G_{ij}=
+\begin{cases}
+\textbf{jump rates if $i\neq j$}\\
+\textbf{- Sum of jump rates if $i=j$}\\
+\end{cases}
+$$
+
+Theorem: $\frac{d}{dt}p(t,x,y) = G_x p(t,x,y)$ \\
+Proof: For diffusions, let $dX = a(X)dt+b(X)dB$, $G = a(x)\frac{d}{dx}+\frac{1}{2}b(x)^2\frac{d^2}{dx^2}$. Let $F_t(x) = E_x[f(X_t)]$. Then:
+
+\begin{align}
+    F_{t+\epsilon}(x) &= E_x[f(X_{t+\epsilon})] \\
+    &= E_x[E[f(X_{t+\epsilon})|X_{\epsilon}]] \\
+    &= E_x[F_t(X_\epsilon)] \textbf{By time homogeneity and Markov property} \\
+\end{align} 
+
+So
+\begin{align}
+    \frac{d}{dt}F_t(x) &= \lim_{\epsilon\to 0} \frac{F_{t+\epsilon}(x)-F(x)}{\epsilon} \\
+    &=  \lim_{\epsilon\to 0} \frac{E_x[F_t(X_\epsilon)]-F(x)}{\epsilon} \\
+    &= GF(x) \textbf{ By definition of $G$} 
+\end{align}
+
+So
+
+\begin{align}
+    F_t(x) &= E_x[f(X_y)] \\
+    &= \int_{\mathbb{R}} p(t,x,y)f(y)dy \\
+    \implies \frac{d}{dt}F_t(x) &= \int_{\mathbb{R}}\frac{d}{dt}p(t,x,y)f(y)dy \\
+    \implies Gf_t(x) &= \int_{\mathbb{R}} \left( a(x)\frac{d}{dx} + \frac{1}{2}b(x)^2\frac{d^2}{dx^2}\right) p(t,x,y)f(y)dy
+\end{align}
+
+This is true for all $f$, so $\frac{d}{dt}p(t,x,y) = G_x p(t,x,y)$
+
+
+\end{document}

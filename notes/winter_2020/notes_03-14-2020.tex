@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Week 8, Lecture 2}
+\author{Chandan Tankala}
+\date{12 March 2020}
+
+\begin{document}
+
+\maketitle
+\section{Ito's lemma}
+If $X_t = f(B_t)$, then
+
+$$dX_t = f'(B_t)dB_t+\frac{1}{2}f''(B_t)dt$$
+
+\section{Ito's integral}
+
+If $G(x) = \int_0^x g(z)dz$, then
+
+\begin{align}
+    \int_0^tg(B_s)dB_s &= G(B_t) -\frac{1}{2}\int_0^t g''(B_s)ds \\
+    &= \lim_{N\to \infty} \sum_{k=0}^{N-1}g\left( B\left(\frac{kt}{N} \right) \right)\left[ B\left(\frac{(k+1)t}{N} \right) - B\left(\frac{kt}{N} \right) \right] 
+\end{align}
+
+
+\section{Stieltjes integral}
+
+If $F:[0,t]\to \mathbb{R}, g:\mathbb{R}\to \mathbb{R}$, then
+
+\begin{align}
+    \int_0^tg(s)dF_s &= \lim_{N\to \infty} \sum_{k=0}^{N-1}g\left( g\left(\frac{kt}{N} \right) \right)\left[ F\left(\frac{(k+1)t}{N} \right) - F\left(\frac{kt}{N} \right) \right] \\
+    &= \lim_{N\to \infty} \sum_{k=0}^{N}g\left( g\left(\frac{kt}{N} \right) \right)\left[ F\left(\frac{kt}{N} \right) - F\left(\frac{(k-1)t}{N} \right) \right]
+\end{align}
+
+$(3)$ and $(4)$ are equal if $F$ has countably many discontinuities and has finite quadratic variation i.e. 
+
+$$\lim_{N\to \infty} \sum_{k=0}^{N-1}\left[ F\left( \frac{(k+1)t}{N} \right) - F\left( \frac{kt}{N} \right) \right]^2 < \infty$$
+
+\section{Quadratic variation of $B_t$}
+
+Lemma: The quadratic variation of $B_t$ is $t$ i.e.
+
+$$\lim_{N\to \infty} \sum_{k=0}^{N-1}\left[ B\left( \frac{(k+1)t}{N} \right) - B\left( \frac{kt}{N} \right) \right]^2 = t \;\;\text{a.s.}$$
+
+Proof:
+$$Z_k = \left[ B\left( \frac{(k+1)t}{N} \right) - B\left( \frac{kt}{N} \right) \right]\sqrt{N}$$ are iid $\sim N(0,t)$ for $0\leq k \leq N-1$. So:
+
+$$\frac{1}{N}\sum_{k=0}^{N-1}Z_k^2 \xrightarrow[N\to \infty]{SLLN} EZ_1^2 = t$$
+
+Hence proved.
+
+\section{Examples and a lemma}
+$f(x) = x^2 \implies X_t = B_t^2$. We know that $EX_t = t$. By Ito, $dX_t = 2dB_t + dt$ i.e. $B_t^2 = X_t = t+\int_0^t2B_s dB_s$ \\ \\
+
+Lemma: $E\left[ \int_0^t f(B_s)dB_s \right] = 0$ \\
+Proof: 
+\begin{align}
+    & E\left[ \frac{1}{N}\sum_{k=0}^{N-1}f\left( B\left( \frac{kt}{N}\right)\right)\left[ B\left( \frac{(k+1)t}{N} \right) - B\left( \frac{kt}{N} \right) \right] \right] \\
+    &= \frac{1}{N}\sum E\left[ f\left( B\left( \frac{kt}{N}\right)\right)\left[ B\left( \frac{(k+1)t}{N} \right) - B\left( \frac{kt}{N} \right) \right] \right]
+\end{align}
+
+Thus $EB_t^2 = EX_t = t+0 = t$
+
+By definition of $Z_k$, 
+\begin{align}
+B\left( \frac{(m+1)t}{N}\right) &= \frac{1}{\sqrt{N}}\sum_{k=0}^m Z_k \\
+\implies B_t^2 &= \frac{1}{N}\sum_{k=0}^{N-1}\sum_{j=0}^{N-1}Z_kZ_j \\
+&= \frac{1}{N}\sum_{k=0}^{N-1} Z_k^2 + \frac{2}{N}\sum_{k=1}^{N-1}\sum_{j=0}^{k-1}Z_k Z_j \xrightarrow{N\to \infty} t+2\int_0^t B_s dB_s
+\end{align}
+
+
+\end{document}
