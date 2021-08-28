@@ -1,4 +1,4 @@
-The actual website can be viewed at [https://petrelharp.github.io/applied_math/](https://petrelharp.github.io/applied_math/).
+The actual website can be viewed at [https://uo-applied-math.github.io/applied_math/](https://uo-applied-math.github.io/applied_math/).
 
 
 
