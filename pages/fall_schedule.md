@@ -4,99 +4,78 @@ title: schedule // computation and combinatorics
 description: Schedule for Computation and Combinatorics
 ---
 
+*Notes* from Fall 2019 can be found [here](../notes/fall_2019/README.html).
 
-Week 1: Counting things and using python
-
-:  
-
-* Generating functions
-    * Linear recurrence relations with constant coefficients
-    * Enumeration: 
-        * Various classes of partitions and permutations
-        * regular languages 
-        * tree-type structures and Catalan objects 
-    * Asymptotics: Partial Fractions / Singularity analysis
-    * Multivariate generating functions for analysis of run time
-* Experimental math
-    * Guessing formulae from data; fitting polynomial/rational/exponential functions 
-* Python
-    * basic flow control (if/then/else, loops, functions)
-    * Lists, dictionaries
-
-
-Week 2: Complexity and more programming skills
+Weeks 1-2: Counting things and using python
 
 :  
 
-* Famous algorithms from undergraduate mathematics
-    * Matrix multiplication (naive, fast)
-    * Number theory: fast modular arithmetic, Euclidean algorithm
-* Graph algorithms: 
-    * breadth first/depth first search
-    * topological sort
-    * Strongly connected components
-* Shortest path algorithms (all-pairs, single source, etc)
-* Algorithm run-time analysis
-    * Sorting algorithms: insertion/selection sort, merge sort, quicksort, heap sort
-    * Recursion, dynamic programming, memoization
+- Generating functions: counting partitions, permutations, Catalan objects.
+- Discrete probability distributions, expectation, variance, and conditional probability.
+- Linear recurrence relations.
+- Experimental math: guessing formulae from data.
+- Algorithmic complexity, big-oh notation.
+- Graph algorithms: shortest paths, counting subgraphs.
+- Python: basic flow control, functions, lists and dictionaries.
 
-Weeks 3-5: Graph theory
+
+Weeks 3-4: Structure and analysis of graphs and networks
 
 :  
 
-* Terminology: connectedness, degree, matchings
-* Adjacency matrix
-    * Power method for largest/smallest eigenvalue
-    * Cycle counting
-* Cheeger constant, expansion properties
-* Laplacian
-    * Incidence matrix
-    * Matrix tree theorem / Cauchy-Binet theorem 
-    * Laplacian eigenmaps (for visualization);
-    * Discrete harmonic functions, maximum principle 
-    * Relation to random walk
-* Random graphs
-    * Erdos-Renyi:
-        * Emergence of giant component (phase transition)
-        * Poisson approximation for number of cycles
-    * Random graphs are almost always expanders
-    * Sampling graphs from a given degree distribution
+- Terminology: connectedness, degree, matchings.
+- Adjacency matrix: eigenvalues/vectors, cycle counting.
+- Spanning trees, Wilson's algorithm
+- Laplacian: Matrix-tree and Cauchy-Binet theorems, discrete harmonic functions, Laplacian eigenmaps.
+- Random graphs: Erdős-Rényi model, phase transition, Poisson approximation.
+- Labeled graphs: the Ising model, Gibbs distributions, and the Metropolis algorithm.
+- Random walks on weighted graphs and the PageRank algorithm.
 
-Weeks 6-8: Statistical mechanics
+
+Week 5: Point processes
 
 :  
 
-* Terminology: energy, entropy, free energy, Hamiltonian formulation, phase transition
-* Random spanning tree
-    * resistance networks, squared rectangles, random walk, planar green’s function
-* Dimer model
-    * Kasteleyn matrix, kasteleyn orientation, edge placement probabilities
-    * Height function, plane partitions
-    * Determinant evaluations
-* Ising model
-    * One dimensional exact solution
-    * Fisher lattice
-* Sampling
-    * Markov chain monte carlo / metropolis algorithm
-    * Coupling from the past
-    * Simulated annealing
+- Definition; Poisson limits; additivity; motivating examples.
+- Thinning and labeling; conditional uniformity; characteristic functions and moments.
+- Statistics of spatial point processes: testing for independence.
+- Poisson jump processes.
+- The Cauchy process.
+- The Kolmogorov equation for pure-jump Levy processes.
 
-Weeks 9-10: Optimization
+
+Weeks 6-7: Markov chains and generators
 
 :  
 
-* Combinatorial optimization
-    * Complexity classes; approximate solutions
-    * Revisit graph algorithms
-    * max flow / min cut
-* Linear programming
-    * Standard terminology
-    * Simplex method
-    * duality
-* Semidefinite programming
-    * Sum-of-squares certification of positivity
-* Ising/quantum computing
-    * Adiabatic quantum computers (D-Wave)
-    * Actual annealing
-    * Simulated bifurcation algorithm
-		
+- Finite-state Markov chains: definitions, classificiation, transition probabilities.
+- Methods for simulation: Poissonization.
+- Matrix exponentiation of substochastic matrices.
+- The approach to stationarity.
+- Generators for Markov chains and Poisson jump processes.
+- Uses and examples of generators.
+- Simple random walk and relatives.
+
+
+Week 8: Brownian motion and Gaussian processes
+
+:  
+
+- Gaussian processes: definition and characterization; conditional probabilities.
+- Brownian motion as a limit of simple random walk via convergence of the graph Laplacian.
+- Brownian motion as an integral of white noise.
+- Other integrals of white noise and the L2 isometry.
+
+
+Weeks 9-10: Diffusions and associated PDE
+
+:  
+
+- Itô integration.
+- Stochastic differential equations
+- Backward Fokker-Planck equation from Itô’s lemma; connection to generators. 
+- Forward Fokker-Planck equation.
+- Equilibrium distributions and approach to equilibrium. 
+- First passage times of diffusions. 
+- Detailed analysis of double-well potential example.  
+

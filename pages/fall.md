@@ -1,40 +1,38 @@
 ---
 layout: page
-title: about this course // syllabus
-description: Syllabus for Computation and Combinatorics
+title: syllabus // computation, combinatorics, and applied stochastic processes
+description: Syllabus for Computation, Combinatorics, and Applied Stochastic Processes
 ---
 
-See [the schedule](fall_schedule.html) for topics by week and links to slides.
+See [the schedule](fall_schedule.html) for topics by week.
 
-Here is a collection of [student-transcribed notes](../notes/fall_2019/README.html).
+Here is a collection of [student-transcribed notes](../notes/fall_2021/README.html).
 
 And, here is a collection of [in-class demonstrations](../demos/index.html).
-
-# Homework
-**Assignment 1**.  Due Wednesday Oct 9 [html](../assignments/fall/hw1.html), [Jupyter Notebook](../assignments/fall/hw1.ipynb)
-
-**Assignment 2**.  Due Wednesday Oct 16 [html](../assignments/fall/hw2.html), [Jupyter Notebook](../assignments/fall/hw2.ipynb)
-
-**Assignment 3**.  Due Wednesday Oct 23 [html](../assignments/fall/hw3.html), [Jupyter Notebook](../assignments/fall/hw3.ipynb)
-
-**Assignment 4**.  Due Wednesday Oct 30 [html](../assignments/fall/hw4.html), [Jupyter Notebook](../assignments/fall/hw4.ipynb)
-
-**Assignment 5**.  Due Wednesday Oct 30 [html](../assignments/fall/hw5.html), [Jupyter Notebook](../assignments/fall/hw5.ipynb)
-
-**Assignment 6**.  Due Wednesday Nov 20  [html](../assignments/fall/hw6.html) [Jupyter Notebook](../assignments/fall/hw6.ipynb)
-
-**Assignment 7**.  Due Wednesday Nov 27  [html](../assignments/fall/hw7.html) [Jupyter Notebook](../assignments/fall/hw7.ipynb)
-
-**Practice Problems 1**.  [html](../assignments/fall/practice_problems_1.html) [Jupyter Notebook](../assignments/fall/practice_problems_1.ipynb)
 
 
 # Applied Mathematics I: Computation and combinatorics
 
-This is a *draft syllabus*, subject to change.
+**Goals:**
+Proficiency with advanced methods for computation and algorithms,
+with a focus on tools from graph theory;
+deep understanding of the tools underlying data analysis and predictive mechanistic modeling:
+proficiency with common stochastic processes,
+their uses in modeling and computation, and ability to simulate and visualize these.
+Students completing this course should be
+able to implement and analyze algorithms in python,
+have a sophisticated mathematical understanding of uses and descriptive statistics of graphs
+(often known as "networks" in other fields),
+be familiar with the mathematical basis of common stochastic models,
+explain assumptions underlying these models,
+identify plausible uses and misuses in real life,
+and know how to calculate (mathematically and computationally) important quantities.
+Examples and applications will be drawn from biology and data science.
 
-**Goals:** Proficiency with advanced methods for computation and algorithms, with a focus on tools from graph theory, statistical mechanics, and optimization. Students completing this course should  be able to implement and analyze efficient algorithms in python, have a sophisticated mathematical understanding of uses and descriptive statistics of graphs (often known as "networks" in other fields), including random graphs, and have a good familiarity with some exactly solvable statistical mechanical models (which will set the stage for the third course in this series).
 
-**Topics:** Recursive and dynamic programming, enumerative combinatorics, algorithmic complexity, graph theory and the graph Laplacian(s), random graphs, random spanning trees, the dimer model, the Ising model, topics in optimization.
+**Topics:**
+Enumerative combinatorics, algorithmic complexity, graph theory and the graph Laplacian(s), random graphs, random spanning trees, 
+Markov chains, Brownian motion, Gaussian processes, point processes, diffusions and associated PDE.
 
 ## Prerequisites:
 
@@ -43,11 +41,45 @@ Experience with programming similar to an undergraduate course (preferably in py
 
 ## Course structure
 
-Three hours of lecture (including computer demonstration and chalkboard exposition), and 1.5-2 hours of computer lab (in a classroom, mostly consisting of pair programming on student laptops) per week.
+Three hours of lecture (including computer demonstration and chalkboard exposition),
+and 1.5-2 hours of computer lab
+(in a classroom, mostly consisting of either demonstration or pair programming on student laptops)
+per week.
+
+
+## COVID-19
+
+Starting in the middle of the last time we taught this course,
+the world got an applied crash course in many of the topics we will cover:
+branching processes, evolution, and other random processes generally.
+It's our goal to run this class in a way that provides everyone access
+in a way that feels safe, flexible, and supportive.
+As of the start of the quarter,
+UO requires [students and employees to be fully vaccinated](https://coronavirus.uoregon.edu/vaccine),
+and [masks to be properly worn inside](https://coronavirus.uoregon.edu/prevention).
+This is a fairly small class,
+with room to spread out in the classroom,
+and I plan to teach wearing a mask.
+(If you rely on lip reading to understand lectures, please let me know,
+and I'll make adjustments!)
+However, there will be times when you can't or don't want to attend class in person:
+for instance,
+if [you have COVID syptoms](https://coronavirus.uoregon.edu/prevention#health-checks),
+if you are a member of a high-risk group,
+or life intervenes in some other way.
+So, I will make class available remotely as well,
+by broadcasting lectures on zoom (see Canvas for the link)
+and making the recordings available afterwards on Canvas.
+We'll do our best to make participation possible for remote students,
+and will discuss ways to facilitate this in class.
+For more information about UO's current policy, see [this Q&A](https://provost.uoregon.edu/resource-rubric).
+
 
 ## Homework and assessment
 
-Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.  There will be a final exam, which will be taken in-class, on paper - we will assess understanding of computational methods by asking for written descriptions of algorithms (for instance).
+Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.
+There will be a final exam, which will be taken in-class, on paper - we will assess understanding of computational methods by asking for written descriptions of algorithms (for instance).
+Grades will be assigned based on either 40% homework + 30% midterm + 30% final, or 20% homework + 40% midterm + 40% final, whichever is larger.
 
 
 ## Software
@@ -57,11 +89,15 @@ Weekly homeworks will consist of a mix of pen-and-paper problems and computation
 * The python package [numpy](https://numpy.org/)
 * A good code editor like [Atom](https://atom.io)
 
+
 ## Books
 
 We will not follow a single text, but students who would like additional reading might find these useful:
     
-* Bollobas, Modern Graph Theory nicely covers the graph theory topics we will cover (and more).
+* Bollobas, *Modern Graph Theory* nicely covers the graph theory topics we will cover (and more).
+* Gardiner, *Stochastic Methods: A Handbook for the Natural and Social Sciences* has useful descriptions of many stochastic processes we will cover, from a physical point of view.
+* Bass, *Stochastic Processes* takes a more formal approach.
+
 
 ## Inclusion and accessibility
 

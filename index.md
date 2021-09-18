@@ -5,12 +5,13 @@ tagline:
 description: graduate applied mathematics at the University of Oregon
 ---
 
-This is the website for the graduate series on applied mathematics at UO.
+This is the website for the graduate series on applied mathematics at UO,
+with a focus on the mathematical foundations of machine learning.
 
 Quick links:
 
-- [Fall:](pages/fall.html) Computation and combinatorics
-- [Winter:](pages/winter.html) Applied stochastic processes and dynamical systems
+- [Fall:](pages/fall.html) Computation, combinatorics, and applied stochastic processes
+- [Winter:](pages/winter.html) Pattern recognition and information theory
 - [Spring:](pages/spring.html) Machine learning and statistics
 - [useful links](pages/reference.html), to reference/background material.
 
@@ -22,31 +23,29 @@ Working in applied mathematics requires skill in modeling, communication, and co
 
 This sequence aims to teach these skills in the context of three general and interrelated topics of growing importance: combinatorics/computation; modeling/stochastic processes; and machine learning/statistics. Motivation from various applied fields will be used, with an emphasis on biological systems. 
 
-## Instructors:
-
-- Benjamin Young - bjy@uoregon.edu
-- Peter Ralph - plr@uoregon.edu
-- Yashar Ahmadian - yashar@uoregon.edu
-- Luca Mazzucato - lmazzuca@uoregon.edu
 
 ## Courses: 
 
 
 Fall
 
-: ["Computation and combinatorics"](pages/fall.html)
+: ["Computation, combinatorics, and applied stochastic processes"](pages/fall.html)
 
-*Goals:* proficiency with computational tools and methods; survey of modern discrete mathematics
+*Goals:* proficiency with computational tools and methods; familiarity with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
 
-*Topics:* enumerative combinatorics; (exact) statistical mechanics; graphs and networks; experimental mathematics and computation; combinatorial optimization.
+*Topics:* graphs and networks, experimental mathematics and computation, Brownian motion and Gaussian processes, point processes, diffusions and associated PDE.
+
+*Instructors:* Peter Ralph (plr@uoregon.edu) and Nicolae Istrate (nistrate@uoregon.edu)
 
 Winter
 
-: ["Applied stochastic processes and dynamical systems"](pages/winter.html)
+: ["Pattern recognition and information theory"](pages/winter.html)
 
-*Goals:* proficiency with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
+*Goals:* TODO
 
-*Topics:* Brownian motion, Gaussian processes, point processes, diffusions and associated PDE, random matrices, linear systems theory.
+*Topics:* TODO
+
+*Instructors:* James Murray (jmurray9@uoregon.edu)
 
 Spring
 
@@ -56,6 +55,7 @@ Spring
 
 *Topics:* information theory, statistical inference, generative models, mean field theory, feedforward and recurrent neural networks, supervised/unsupervised
 
+*Instructors:* Luca Mazzucato (lmazzuca@uoregon.edu)
 
 ## Prerequisites 
 
@@ -70,3 +70,8 @@ Weekly homeworks would cover both theory (proofs and analytical calculations), a
 
 We will be working extensively with python, using [jupyter notebooks](https://jupyter.org/)
 for demonstrations and hands-on assignments.
+
+## Previous versions:
+
+A similar series was taught in 2019-2020, the schedule, along with some exercises and notes,
+can be found [here](../2019/schedule.html).

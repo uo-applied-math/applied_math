@@ -1,15 +1,29 @@
 ---
 layout: page
-title: syllabus // TODO
-description: TODO
+title: "winter 2020 // stochastic processes and dynamical systems"
+description: Syllabus for Stochastic Processes and Dynamical Systems
 ---
 
-See [the schedule](winter_schedule.html) for topics by week.
+See [the schedule](winter_schedule.html) for topics by week and links to slides.
 
+Here is a collection of [student-transcribed notes](../notes/winter_2020/README.html).
 
-# Applied Mathematics II: TODO
+And, here is a collection of [in-class demonstrations](demos/index.html).
 
-UPDATE THE BELOW
+# Homework
+
+- **Assignment 1**.  Due Wednesday Jan 15 [html](assignments/winter/hw1.html), [Jupyter Notebook](assignments/winter/hw1.ipynb)
+- **Assignment 2**.  Due Wednesday Jan 22 [html](assignments/winter/hw2.html), [Jupyter Notebook](assignments/winter/hw2.ipynb)
+- **Assignment 3**.  Due Wednesday Jan 29 [html](assignments/winter/hw3.html), [Jupyter Notebook](assignments/winter/hw3.ipynb)
+- **Assignment 4**.  Due Wednesday Feb 5 [html](assignments/winter/hw4.html), [Jupyter Notebook](assignments/winter/hw4.ipynb)
+- **Assignment 5**.  Due Wednesday Feb 19 [html](assignments/winter/hw5.html), [Jupyter Notebook](assignments/winter/hw5.ipynb)
+- **Assignment 6**.  Due Wednesday Feb 26 [html](assignments/winter/hw6.html), [Jupyter Notebook](assignments/winter/hw6.ipynb)
+- **Assignment 7**.  Due Wednesday Mar 4 [html](assignments/winter/hw7.html), [Jupyter Notebook](assignments/winter/hw7.ipynb)
+- **Assignment 8**.  Due Wednesday Mar 11 [html](assignments/winter/hw8.html), [Jupyter Notebook](assignments/winter/hw8.ipynb)
+
+# Applied Mathematics II: Stochastic processes and dynamical systems
+
+This is a *draft syllabus*, subject to change.
 
 **Goals**: Deep understanding of the tools underlying data analysis and predictive mechanistic modeling: proficiency with properties of common stochastic processes and linear dynamical systems, their uses in modeling and computation, and ability to simulate and visualize these. Students completing this course should be familiar with the mathematical basis of common stochastic models, explain assumptions underlying these models, identify plausible uses and misuses in real life, and know how to calculate (mathematically and computationally) important quantities. Examples and applications will be drawn from biology and data science.
 
