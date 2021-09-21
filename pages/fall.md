@@ -66,7 +66,7 @@ However, there will be times when you can't or don't want to attend class in per
 for instance,
 if [you have COVID syptoms](https://coronavirus.uoregon.edu/prevention#health-checks),
 if you are a member of a high-risk group,
-or life intervenes in some other way.
+or if life intervenes in some other way.
 So, I will make class available remotely as well,
 by broadcasting lectures on zoom (see Canvas for the link)
 and making the recordings available afterwards on Canvas.
@@ -101,7 +101,7 @@ We will not follow a single text, but students who would like additional reading
 
 ## Inclusion and accessibility
 
-Please tell us your preferred pronouns and/or name,
+Please tell us your pronouns and/or name,
 especially if it differs from the class roster.
 We take seriously our responsibility to create inclusive learning environments.
 Please notify us if there are aspects of the instruction or design of this
@@ -110,7 +110,7 @@ to contact the Accessible Education Center in 164 Oregon Hall at 541-346-1155
 or uoaec@uoregon.edu.
 
 We are committed to making our classroom an inclusive and respectful learning space.
-Being respectful includes using preferred pronouns for your classmates.
+Being respectful includes using pronouns for your classmates.
 Your classmates come from a diverse set of backgrounds and experiences;
 please avoid assumptions or stereotypes, and aim for inclusivity.
 Let us know if there are classroom dynamics that impede your (or someone else’s) full engagement. 
