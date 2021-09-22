@@ -18,7 +18,23 @@ Familiarity with probability and random variables at an undergraduate level, exp
 
 ## Schedule overview:
 
-TBD
+The course will follow *Pattern Recognition and Machine Learning*, by Bishop.
+
+Tentative list of topics:
+
+- Linear predictors (Ch. 3)
+- Classification (Ch. 4)
+- Kernel methods (Ch. 6)
+- Mixture models and the EM algorithm (Ch. 9)
+- Sequential data (Ch. 13)
+
+Additional possible topics (if time permits):
+
+- Support vector machines (Ch. 7)
+- Approximate inference (Ch. 10)
+- Sampling methods (Ch. 11)
+- Continuous latent variables (Ch. 12)
+
 
 
 ## Homework and assessment:
