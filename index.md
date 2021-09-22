@@ -49,6 +49,7 @@ Spring
 Familiarity with computer programming equivalent to that in an introductory undergraduate programming course would be assumed. Students not entering with this ability might take such a course in the first year, e.g., through CIS or as an independent study (reading) course, and take this sequence in their second year.
 
 - [Useful links](pages/reference.html), to reference/background material.
+- [Preparatory classes](#preparatory-classes) that you might want to take if you're not ready for this one.
 
 
 ## Course overview
@@ -64,12 +65,37 @@ This sequence aims to teach these skills in the context of three general and int
 Weekly homeworks would cover both theory (proofs and analytical calculations), application (e.g., modeling exercises), and computation (writing computer code for simulations or data analysis). Final exams would be in-class, without programming but that may for instance involve outlining of algorithms. The qualifying exam would focus on theoretical and conceptual understanding, and would be structured similar to other exams, and would not involve computer programming (but could ask questions about computational techniques).
 
 
-## Software:
+## Software
 
 We will be working extensively with python, using [jupyter notebooks](https://jupyter.org/)
 for demonstrations and hands-on assignments.
 
-## Previous versions:
+## Previous versions
 
 A similar series was taught in 2019-2020, the schedule, along with some exercises and notes,
 can be found [here](../2019/schedule.html).
+
+## Preparatory classes
+
+If you're not familiar with programming, we recommend spending some time
+doing an introductory python module (there are various online; find one that suits you).
+
+A good introductory class to these topics might be
+*"Machine Learning and Statistics"*, Math 410/510, taught by Luca Mazzucato.
+Here's a short description for that class:
+
+> This class is strongly interdisciplinary and aimed at undergraduate and
+> graduate students from Mathematics, Physics, Biology, Computer Science,
+> Psychology, Economics, but open to everybody on campus, including faculty and
+> postdocs. Students taking this class will develop the ability to deploy modern
+> methods in machine learning and computational inference, familiarity with
+> underlying theory and assumptions, and proficiency in practical applications.
+> Covered topics include: information theory, bias/variance tradeoff, statistical
+> inference, neural networks, supervised and unsupervised learning, deep
+> learning. The course will be a mix of theoretical methods and practical
+> simulations run in Python using Jupyter notebooks. Students will work out many
+> examples in full details, with more emphasis on problem solving strategies
+> rather than on the formal constructions and proofs. Course prerequisites
+> include familiarity with computer programming in Python, equivalent to that in
+> an introductory undergraduate programming course. Basic knowledge of Calculus,
+> Linear Algebra, and Probability, are recommended.
