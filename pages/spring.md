@@ -1,12 +1,12 @@
 ---
 layout: page
-title: syllabus // machine learning and statistics
-description: Syllabus for Machine Learning and Statistics
+title: syllabus // neural computation
+description: Syllabus for Neural Computation
 ---
 
 See [the schedule](spring_schedule.html) for topics by week and links to slides.
 
-# Applied Mathematics III: Machine Learning and Statistics
+# Applied Mathematics III: Neural Computation
 
 This is a *draft syllabus*, subject to change.
 

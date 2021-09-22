@@ -39,17 +39,18 @@ Fall
 
 Winter
 
-: ["Pattern recognition and information theory"](pages/winter.html)
+: ["Statistical Learning"](pages/winter.html)
 
-*Goals:* TODO
+*Goals:* proficiency with foundational approaches in statistical and machine learning; ability to develop and implement these algorithms.
 
-*Topics:* TODO
+*Topics:* linear models, classification, kernel methods, mixture models and expectation maximization;
+    inference for sequential data with hidden Markov models and linear dynamical systems.
 
 *Instructors:* James Murray (jmurray9@uoregon.edu)
 
 Spring
 
-: ["Machine learning and statistics"](pages/spring.html)
+: ["Neural Computation"](pages/spring.html)
 
 *Goals:* ability to deploy modern methods in computational inference and feedforward and recurrent neural networks, and familiarity with underlying theory and assumptions. 
 

@@ -1,19 +1,16 @@
 ---
 layout: page
-title: syllabus // TODO
-description: TODO
+title: syllabus // Statistical Learning
+description: foundations in statistical and machine learning
 ---
 
-See [the schedule](winter_schedule.html) for topics by week.
 
 
-# Applied Mathematics II: TODO
+# Applied Mathematics II: Statistical Learning
 
-UPDATE THE BELOW
 
-**Goals**: Deep understanding of the tools underlying data analysis and predictive mechanistic modeling: proficiency with properties of common stochastic processes and linear dynamical systems, their uses in modeling and computation, and ability to simulate and visualize these. Students completing this course should be familiar with the mathematical basis of common stochastic models, explain assumptions underlying these models, identify plausible uses and misuses in real life, and know how to calculate (mathematically and computationally) important quantities. Examples and applications will be drawn from biology and data science.
-
-**Topics:** Markov chains, Brownian motion, Gaussian processes, point processes, diffusions and associated PDE, random matrices, linear systems theory.
+**Description**: 
+This course will cover statistical and machine learning theory using foundational approaches (i.e. not neural-network based, as these will be the focus of the third course in the Applied Math sequence). These will include probability theory, regression, classification, kernel methods, mixture models and expectation maximization, as well as inference for sequential data using hidden Markov models and linear dynamical systems. Homework assignments will be a mix of pen-and-paper calculations together with implementations and applications of machine learning algorithms to real and synthetic data using Python. The main prerequisites for this course are calculus and linear algebra. Prior familiarity with probability and statistics or with coding will be helpful but is not necessary.
 
 ## Prerequisites
 
@@ -21,12 +18,7 @@ Familiarity with probability and random variables at an undergraduate level, exp
 
 ## Schedule overview:
 
-* Weeks 1-2: Poisson point processes
-* Weeks 3-4: Markov chains, stochastic processes, and generators
-* Week 5: Brownian motion and Gaussian processes
-* Week 6: The stochastic integral
-* Weeks 7-8: Diffusions and associated PDE (via the Fokker-Planck equation)
-* Weeks 9-10: Linear systems theory
+TBD
 
 
 ## Homework and assessment:
