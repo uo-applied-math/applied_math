@@ -1,10 +1,11 @@
 ---
 layout: page
-title: schedule // computation and combinatorics
-description: Schedule for Computation and Combinatorics
+title: schedule // computation, combinatorics, and applied stochastic processes
+description: Schedule for Computation, Combinatorics, and Applied Stochastic Processes
 ---
 
-*Notes* from Fall 2019 can be found [here](../notes/fall_2019/README.html).
+Here are the schedules from [fall 2019](../2019/fall_schedule.md)
+and [winter 2020](../2019/winter_schedule.md).
 
 Weeks 1-2: Counting things and using python
 

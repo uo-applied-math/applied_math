@@ -7,6 +7,8 @@ description: Syllabus for Computation, Combinatorics, and Applied Stochastic Pro
 See [the schedule](fall_schedule.html) for topics by week.
 
 Here is a collection of [student-transcribed notes](../notes/fall_2021/README.html).
+(*Notes* from Fall and Winter 2019/2020
+can be found [here](../notes/fall_2019/README.html) and [here](../notes/winter_2020/README.html).)
 
 And, here is a collection of [in-class demonstrations](../demos/index.html).
 
