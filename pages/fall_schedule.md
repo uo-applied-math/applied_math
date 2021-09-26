@@ -19,6 +19,8 @@ Weeks 1-2: Counting things and using python
 - Graph algorithms: shortest paths, counting subgraphs.
 - Python: basic flow control, functions, lists and dictionaries.
 
+*Homework:* [hw1.ipynb](../assignments/fall/hw1.ipynb) or [hw1.html](../assignments/fall/hw1.html)
+
 
 Weeks 3-4: Structure and analysis of graphs and networks
 

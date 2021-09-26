@@ -4,7 +4,8 @@ title: syllabus // computation, combinatorics, and applied stochastic processes
 description: Syllabus for Computation, Combinatorics, and Applied Stochastic Processes
 ---
 
-See [the schedule](fall_schedule.html) for topics by week.
+See [the schedule](fall_schedule.html) for topics by week
+and links to the homework.
 
 Here is a collection of [student-transcribed notes](../notes/fall_2021/README.html).
 (*Notes* from Fall and Winter 2019/2020
