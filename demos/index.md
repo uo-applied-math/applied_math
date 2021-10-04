@@ -1,4 +1,5 @@
 # In-class demonstrations
 
-These haven't happened yet!
-But, here's the [demonstrations from last time](../2019/demos/index.html).
+Here's the [demonstrations from last time](../2019/demos/index.html).
+
+- 4 October 2021: [Catalan numbers](Catalan_numbers.ipynb)
