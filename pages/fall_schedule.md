@@ -37,6 +37,7 @@ Weeks 3-4: Structure and analysis of graphs and networks
 - Random walks on weighted graphs and the PageRank algorithm.
 
 *Homework 3:* [hw3.ipynb](../assignments/fall/hw3.ipynb) or [hw3.html](../assignments/fall/hw3.html)
+*Homework 4:* [hw4.ipynb](../assignments/fall/hw4.ipynb) or [hw4.html](../assignments/fall/hw4.html)
 
 Week 5: Point processes
 
