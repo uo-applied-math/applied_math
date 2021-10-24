@@ -12,13 +12,20 @@ description: foundations in statistical and machine learning
 **Description**: 
 This course will cover statistical and machine learning theory using foundational approaches (i.e. not neural-network based, as these will be the focus of the third course in the Applied Math sequence). These will include probability theory, regression, classification, kernel methods, mixture models and expectation maximization, as well as inference for sequential data using hidden Markov models and linear dynamical systems. Homework assignments will be a mix of pen-and-paper calculations together with implementations and applications of machine learning algorithms to real and synthetic data using Python. The main prerequisites for this course are calculus and linear algebra. Prior familiarity with probability and statistics or with coding will be helpful but is not necessary.
 
+By the end of this course, students will have obtained the following skills:
+- Approach any problem involving data from the perspective of probabilistic inference, using statistical thinking to quantify patterns and relationships in data.
+- Use statistical thinking to quantify the degree of confidence in conclusions that are drawn about patterns and relationships in data.
+- Derive the equations underlying standard machine-learning algorithms mathematically.
+- Implement standard machine-learning algorithms from scratch in Python.
+- Make use of standard implementations of machine-learning algorithms in Python.
+- Generate fake data that contains some interesting structure, then use standard machine-learning algorithms to discover the structure in this fake data.
+- Apply standard machine-learning algorithms to real data to quantify the patterns and relationships that it contains.
+
 ## Prerequisites
 
-Familiarity with probability and random variables at an undergraduate level, experience with python programming, linear algebra. Completion of the first course in this sequence will be sufficient.
+Familiarity with probability and random variables at an undergraduate level, experience with python programming, calculus, linear algebra. Completion of the first course in this sequence will be sufficient.
 
 ## Schedule overview:
-
-The course will follow *Pattern Recognition and Machine Learning*, by Bishop.
 
 Tentative list of topics:
 
@@ -39,8 +46,7 @@ Additional possible topics (if time permits):
 
 ## Homework and assessment:
 
-Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.  There will be a midterm and a final exam, which will be taken in-class, on paper - we will assess understanding of computational methods by asking for written descriptions of algorithms (for instance).
-Grades will be assigned based on either 40% homework + 30% midterm + 30% final, or 20% homework + 40% midterm + 40% final, whichever is larger.
+Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document. 
 
 ## Software
 
@@ -50,11 +56,7 @@ Grades will be assigned based on either 40% homework + 30% midterm + 30% final, 
 
 ## Books
 
-We will not follow a single text, but students who would like additional reading might find these useful:
-
-* Gardiner, Stochastic Methods: A Handbook for the Natural and Social Sciences has useful descriptions of many stochastic processes we will cover, from a physical point of view.
-* Bass, Stochastic Processes takes a more formal approach.
-
+The course will follow *Pattern Recognition and Machine Learning*, by Bishop. The books is available for free on the author's website.
 
 ## Inclusion and accessibility
 
