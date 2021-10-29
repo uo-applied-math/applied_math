@@ -50,6 +50,7 @@ Week 5: Point processes
 - The Cauchy process.
 - The Kolmogorov equation for pure-jump Levy processes.
 
+*Homework 5:* [hw5.ipynb](../assignments/fall/hw5.ipynb) or [hw5.html](../assignments/fall/hw5.html)
 
 Weeks 6-7: Markov chains and generators
 
