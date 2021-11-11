@@ -64,6 +64,7 @@ Weeks 6-7: Markov chains and generators
 - Uses and examples of generators.
 - Simple random walk and relatives.
 
+*Homework 6:* [hw6.ipynb](../assignments/fall/hw6.ipynb) or [hw6.html](../assignments/fall/hw6.html)
 
 Week 8: Brownian motion and Gaussian processes
 
