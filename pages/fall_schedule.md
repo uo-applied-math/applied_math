@@ -86,5 +86,5 @@ Weeks 9-10: Diffusions and associated PDE
 - Forward Fokker-Planck equation.
 - Equilibrium distributions and approach to equilibrium. 
 - First passage times of diffusions. 
-- Detailed analysis of double-well potential example.  
 
+*Homework 7:* [hw7.ipynb](../assignments/fall/hw7.ipynb) or [hw7.html](../assignments/fall/hw7.html)
