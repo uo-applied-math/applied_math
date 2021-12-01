@@ -10,3 +10,4 @@ Here's the [demonstrations from last time](../2019/demos/index.html).
 - 28 October 2021: [The Cauchy process](Cauchy_process.ipynb)
 - 1 November 2021: [Poisson rain](Poisson_rain.ipynb)
 - 22 November 2021: [Brownian motions](Brownian_motions.ipynb)
+- 30 November 2021: [Diffusions](Diffusions.ipynb)
