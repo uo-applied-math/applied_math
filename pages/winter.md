@@ -46,7 +46,9 @@ Additional possible topics (if time permits):
 
 ## Homework and assessment:
 
-Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document. 
+Homework assignments can be found here: [https://github.com/murray-lab/statistical-learning](https://github.com/murray-lab/statistical-learning).
+
+Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document. Homework assignments should be turned in via the course's Canvas page.
 
 ## Software
 
@@ -56,7 +58,7 @@ Weekly homeworks will consist of a mix of pen-and-paper problems and computation
 
 ## Books
 
-The course will follow *Pattern Recognition and Machine Learning*, by Bishop. The books is available for free on the author's website.
+The course will follow *Pattern Recognition and Machine Learning*, by Bishop. The book is available for free on the author's website.
 
 ## Inclusion and accessibility
 
