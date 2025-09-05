@@ -14,13 +14,14 @@ with a focus on the mathematical foundations of machine learning.
 
 Fall
 
-: ["Computation, combinatorics, and applied stochastic processes"](pages/fall.html)
+: ["Computation and combinatorics"](pages/fall.html)
 
-*Goals:* proficiency with computational tools and methods; familiarity with properties of common stochastic processes and their uses in modeling and computation; ability to simulate and visualize these
+*Goals:* Proficiency with advanced methods for computation and algorithms, with a focus on tools from graph theory, statistical mechanics, and enumerative combinatorics. Students completing this course should be able to implement and analyze efficient algorithms in python, have a sophisticated mathematical understanding of uses and descriptive statistics of graphs, including random graphs, and have a good familiarity with some exactly solvable statistical mechanical models.
+
 
 *Topics:* graphs and networks, experimental mathematics and computation, Brownian motion and Gaussian processes, point processes, diffusions and associated PDE.
 
-*Instructors:* Peter Ralph (plr@uoregon.edu) and Nicolae Istrate (nistrate@uoregon.edu)
+*Instructor:* Benjamin Young (bjy@uoregon.edu)
 
 Winter
 
@@ -28,18 +29,18 @@ Winter
 
 *Goals:* proficiency with foundational approaches in statistical and machine learning; ability to develop and implement these algorithms.
 
-*Topics:* linear models, classification, kernel methods, mixture models and expectation maximization;
-    inference for sequential data with hidden Markov models and linear dynamical systems.
+*Topics:* probability theory, regression, classification, kernel methods, mixture models and expectation maximization, as well as inference for sequential data using hidden Markov models and linear dynamical systems. In addition to covering the detailed mathematical derivations of these algorithms, we will implement and run them in Python using real and synthetic datasets.
 
 *Instructors:* James Murray (jmurray9@uoregon.edu)
 
 Spring
 
-: ["Neural Computation"](pages/spring.html)
+: ["Neural Networks"](pages/spring.html)
 
-*Goals:* ability to deploy modern methods in computational inference and feedforward and recurrent neural networks, and familiarity with underlying theory and assumptions. 
+*Goals:* ability to deploy modern methods in recurrent neural networks, familiarity with underlying theory and assumptions, and proficiency in practical applications.
 
-*Topics:* information theory, statistical inference, generative models, mean field theory, feedforward and recurrent neural networks, supervised/unsupervised
+*Topics:* 
+information theory, statistical inference, learning algorithms, recurrent neural networks (Hopfield networks and networks of excitatory and inhibitory neurons)
 
 *Instructors:* Luca Mazzucato (lmazzuca@uoregon.edu)
 
