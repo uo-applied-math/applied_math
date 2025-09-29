@@ -1,7 +1,7 @@
 ---
 layout: page
 title: syllabus // computation, combinatorics, and applied stochastic processes
-description: Syllabus for Computation, Combinatorics, and Applied Stochastic Processes
+description: Syllabus for Computation and Combinatorics
 ---
 
 See [the schedule](fall_schedule.html) for topics by week
@@ -46,7 +46,7 @@ Three hours of lecture (including computer demonstration and chalkboard expositi
 
 ## Homework and assessment
 
-Weekly homeworks will consist of a mix of pen-and-paper problems and computational exercises. Computational homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.
+Weekly homeworks will consist of a mix of theoretical problems and computational exercises.  Homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.
 
 ## Grading 
 
@@ -73,7 +73,8 @@ Mathematics graduate classes now have 2 separate "heavy load" and "light load" g
 
 We will use python for this class.
 
-To install python, together with everything you need for this class, I suggest installing [miniconda](https://www.anaconda.com/download).  We will need:
+To install python, together with everything you need for this class, I suggest installing [miniconda](https://www.anaconda.com/download).  We will need the following packages:
+
 - jupyter 
 - numpy
 - sympy
