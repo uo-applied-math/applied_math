@@ -77,9 +77,16 @@ Mathematics graduate classes now have 2 separate "heavy load" and "light load" g
 
 ## Software
 
-We will use [Sage](www.sagemath.org) for this class, though most of what we're doing will work in bare python.
+We will use python for this class.
 
-Generally the best way to install sage these days is by installing [miniconda](https://www.anaconda.com/download)
+To install python, together with everything you need for this class, I suggest installing [miniconda](https://www.anaconda.com/download).  We will need:
+- jupyter 
+- numpy
+- sympy
+- matplotlib
+
+In my own work, I also use [Sage](https://sagemath.org), a computer algebra system based on python.  Sage can also be installed through miniconda, and indeed this is probably the easiest way to install sage at the moment.  However, for continuity with future classes in the applied math sequence, I'm going to try not to use Sage.
+
 
 ## Books
 
