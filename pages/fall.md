@@ -1,6 +1,6 @@
 ---
 layout: page
-title: syllabus // computation, combinatorics, and applied stochastic processes
+title: syllabus // computation and combinatorics
 description: Syllabus for Computation and Combinatorics
 ---
 
@@ -8,7 +8,6 @@ See [the schedule](fall_schedule.html) for topics by week
 and links to the homework.
 
 
-# Applied Mathematics I: Computation and combinatorics
 
 
 ## Topics and Course Goals
