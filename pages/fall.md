@@ -10,7 +10,7 @@ and links to the homework.
 
 
 
-## Topics and Course Goals
+## Topics 
 
 First part of the class: combinatorial enumeration, iteration; standard combinatorial objects, combinatorics of 2D stat mech models.
 
@@ -26,6 +26,8 @@ Throughout the class: computation and computer algebra.
 - basics of writing python covered by "language immersion"
 - effective computation; code optimization, profiling.
 - Refactoring code, object-oriented programming, test driven development
+
+# Course Goals
 
 By end of class, students should be able to:
 - write code to generate large random combinatorial objects of the above types
