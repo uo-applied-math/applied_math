@@ -57,24 +57,22 @@ Mathematics graduate classes now have 2 separate "heavy load" and "light load" g
 	- 25% midterm, 50% final exam, 25% homework
 	- Tests are pen-and-paper, no computer (I'll ask about math and pseudocode)
 - Light load grading scheme
-	- 100% homework, scaled so that B+ = passing grade on about half the assignments
+	- 100% homework, scaled so that a grade of B+ corresponds to getting passing grade on about half the assignments.
 	- If you have an alternative suggestion for how you would like to be evaluated (e.g. a relevant research project) let me know
 
-- Math students: 
-	- pre-Ph.D. students always take heavy load
-	- Ph.D. students generally take light load
-	- Please talk to me if you think an exception should be made.
-- Students from other departments
-	- Generally take heavy load
-	- It is possible to take light load with agreement of advisor
+Whether you are taking the "light load" or "heavy load" version of this class largely depends on your status in the program.
 
+- Math undergrads and pre-Ph.D. students: **heavy load** grading scheme.
+- Math Ph.D. students: **light load** grading scheme.
+- Students from other departments: **heavy load** grading scheme.
 
+If you feel that an exception to the above should be made, please discuss with me and with your advisor.  
 
 ## Software
 
 We will use python for this class.
 
-To install python, together with everything you need for this class, I suggest installing [miniconda](https://www.anaconda.com/download).  We will need the following packages:
+To install python, together with everything you need for this class, I suggest installing [miniconda](https://www.anaconda.com/download). Miniconda is a python distribution that is commonly used in data science and scientific computing.  We will need the following packages:
 
 - jupyter 
 - numpy
