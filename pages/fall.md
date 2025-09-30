@@ -47,7 +47,9 @@ Three hours of lecture (including computer demonstration and chalkboard expositi
 
 ## Homework and assessment
 
-Weekly homeworks will consist of a mix of theoretical problems and computational exercises.  Homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.
+I will assign roughly 8 weekly homeworks - to be due all weeks except Week 1 (the first week of term) and Week 6 (midterm week).  Assignments are due in Canvas on Tuesdays, at 11:59pm.  There's a late penalty of 10 percent per day, so please submit on time.  I'll drop the lowest assignment grade. 
+ 
+These assignments will consist of a mix of theoretical problems and computational exercises.  Homework will be turned in as jupyter notebooks, allowing integration of programming, simulation results, and LaTeX into a single document.
 
 ## Grading 
 
