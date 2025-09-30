@@ -13,15 +13,17 @@ Ben Young, he/they.  bjy@uoregon.edu, 211 Fenton.  Office hours are, tentatively
 
 ## Topics 
 
-First part of the class: combinatorial enumeration, iteration; standard combinatorial objects, combinatorics of 2D stat mech models.
-
+First part of the class:  Combinatorial enumeration and iteration.
+- combinatorial enumeration, iteration; 
 - partitions, posets, trees, graphs, etc
 - dimer model, spanning tree, nonintersecting lattice path, ising model.
 - standard algorithms for working with these objects.
 - generating functions and combinatorial statistics
 
-Second part of the class: discrete probability, random sampling and random generation from these models.
+Second part of the class: random generation and random sampling.
+- discrete probability, random sampling and random generation 
 - markov chains, markov growth rules.
+- coupling from the past, simulated annealing
 
 Throughout the class: computation and computer algebra.
 - basics of writing python covered by "language immersion"
