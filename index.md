@@ -19,7 +19,7 @@ Fall
 *Goals:* Proficiency with advanced methods for computation and algorithms, with a focus on tools from graph theory, statistical mechanics, and enumerative combinatorics. Students completing this course should be able to implement and analyze efficient algorithms in python, have a sophisticated mathematical understanding of uses and descriptive statistics of graphs, including random graphs, and have a good familiarity with some exactly solvable statistical mechanical models.
 
 
-*Topics:* graphs and networks, experimental mathematics and computation, Brownian motion and Gaussian processes, point processes, diffusions and associated PDE.
+*Topics:* graphs and networks, 2D statistical mechanical models, experimental mathematics and computation, combinatorial enumeration, random generation
 
 *Instructor:* Benjamin Young (bjy@uoregon.edu)
 
