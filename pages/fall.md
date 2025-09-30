@@ -7,8 +7,9 @@ description: Syllabus for Computation and Combinatorics
 See [the schedule](fall_schedule.html) for topics by week
 and links to the homework.
 
+## Instructor
 
-
+Ben Young, he/they.  bjy@uoregon.edu, 211 Fenton.  Office hours are, tentatively, 1pm Tue/Thu. 
 
 ## Topics 
 
