@@ -7709,11 +7709,12 @@ Note that the lines (the "wires") are labeled $1$ through $4$ on the left - and 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Problem-5:-iterators-for-reduced-words">Problem 5: iterators for reduced words<a class="anchor-link" href="#Problem-5:-iterators-for-reduced-words">¶</a></h2><p>This continues on from Problem 3 - I split it up, as it was getting kinda long.  The <em>descent set</em> of a permutation $\pi$ in one-line notation is the set of indicies $i$ such that $\pi(i+1) &gt; \pi(i)$.</p>
+<h2 id="Problem-5:-iterators-for-reduced-words">Problem 5: iterators for reduced words<a class="anchor-link" href="#Problem-5:-iterators-for-reduced-words">¶</a></h2><p>This continues on from Problem 3 - I split it up, as it was getting kinda long.</p>
+<p>The <em>descent set</em> of a permutation $\pi$ in one-line notation is the set of indicies $i$ such that $\pi(i+1) &gt; \pi(i)$.</p>
 <p><strong>(a)</strong> Explain why a reduced word for $\pi$ must end with $i$, for some $i$ in the descent set of $\pi$.</p>
 <p><strong>(b)</strong> Write a function which computes the descent set of a permutation.</p>
 <p><strong>(c)</strong> Write an iterator which returns, in turn, the reduced words for $\pi$.</p>
-<p>There should be 16 reduced words for the permutation $54321 \in S_5$, for example.</p>
+<p>There should be 16 reduced words for the permutation $4321 \in S_4$, for example, and 768 reduced words for the permutation $54321 \in S_5$.</p>
 </div>
 </div>
 </div>
