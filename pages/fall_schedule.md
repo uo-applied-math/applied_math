@@ -18,7 +18,7 @@ Weeks 1-2: Counting things and using python
 - Python: basic flow control, functions, lists and dictionaries.
 
 *Homework 1:* [hw1.ipynb](../assignments/fall/hw1.ipynb) or [hw1.html](../assignments/fall/hw1.html)
-
+*Homework 2:* [hw2.ipynb](../assignments/fall/hw2.ipynb) or [hw2.html](../assignments/fall/hw2.html)
 
 Weeks 3-4: Spanning Trees and Perfect Matchings
 
