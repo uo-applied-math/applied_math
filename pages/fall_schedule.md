@@ -28,6 +28,8 @@ Weeks 3-4: Spanning Trees and Perfect Matchings
 - Laplacian: Matrix-tree and Cauchy-Binet theorems.
 - Kasteleyn matrix and related theory.
 
+*Homework 3:* [hw3.ipynb](../assignments/fall/hw3.ipynb) or [hw3.html](../assignments/fall/hw3.html)
+
 Week 5: Domino Shuffling and Non-intersecting lattice paths.
 
 Week 6: Midterm week; start of posets
