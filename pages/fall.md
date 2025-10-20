@@ -9,7 +9,7 @@ and links to the homework.
 
 ## Instructor
 
-Ben Young, he/they.  bjy@uoregon.edu, 211 Fenton.  Office hours are, tentatively, 1pm Tue/Thu. 
+Ben Young, he/they.  bjy@uoregon.edu, 211 Fenton.  Office hours are 1pm-2:30 Tue/Thu in Fenton 213. 
 
 ## Topics 
 
