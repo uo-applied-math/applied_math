@@ -23,14 +23,15 @@ Weeks 1-2: Counting things and using python
 Weeks 3-4: Spanning Trees and Perfect Matchings
 
 - Terminology: connectedness, degree, matchings.
-- Adjacency matrix: eigenvalues/vectors, cycle counting.
-- Spanning trees, Wilson's algorithm
+- Adjacency matrix: eigenvalues/vectors
+- Spanning trees.
 - Laplacian: Matrix-tree and Cauchy-Binet theorems.
 - Kasteleyn matrix and related theory.
 
 *Homework 3:* [hw3.ipynb](../assignments/fall/hw3.ipynb) or [hw3.html](../assignments/fall/hw3.html)
+*Homework 4:* [hw4.ipynb](../assignments/fall/hw4.ipynb) or [hw4.html](../assignments/fall/hw3.html)
 
-Week 5: Domino Shuffling and Non-intersecting lattice paths.
+Week 5: Non-intersecting lattice paths.
 
 Week 6: Midterm week; start of posets
 
