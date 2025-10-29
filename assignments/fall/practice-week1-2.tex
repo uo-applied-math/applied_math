@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\begin{document}
+\section*{Exam practice problems}
+
+I suggest you do some of these problems, as needed, to practice for the various exams you'll have to take in Applied Math.  I'm happy to discuss them; I won't publish solutions.  I'll put similar questions on the midterm, the final exam, and the qualifying exam.
+
+\section{week 1}
+
+The topics we covered in lecture and associated homework were:
+
+\begin{itemize}
+	\item Ordinary generating functions: polynomial, rational, algebraic, d-finite, the types of sequences they enumerate, and the combinatorial meaning of algebraic operations (sum, product, derivative, integral, multiplication by 1/(1-x) and (1-x))
+	\item permutations, the inversion generating function
+	\item probability generating functions, expected value
+	\item experimental math / "guess a recurrence relation/DE"
+	\item Catalan objects
+	\item Sicherman dice
+\end{itemize}
+
+Here are some questions - I think many of these would be a little long for exam questions:
+
+\begin{enumerate}
+	\item A finite sequence is \emph{palindromic} if it is the same written forwards and backwards. A polynomial is palindromic if its sequence of coefficients is palindromic.  Prove that a degree $d$ polynomial $f(x)$ is palindromic if $f(x) = x^d f(1/x)$.  Then prove that the inversion generating function for permutations of $n$ is palindromic.  (is there a bijective proof? I am a combinatorialist so I am contractually obligated to say that. But I don't care what the answer is.)
+	\item Prove that the generating function for inversions of a permutation in $\mathbb{S}_n$ is $$\prod_{i=1}^n \frac{1-q^i}{1-q}$$
+	\item Find a sequence of positive integers $a_n$ whose ordinary generating function is rational, and for which $a_n \sim C \left( \frac{5+\sqrt{13}}{2}\right)^n$.
+	\item Suppose that $a_0 = 0$,  $a_1 = 2$ , and that $a_{n} = 4(a_{n-1} - a_{n-2})$ for $n \geq 2$ .  Find a closed form for $a_n$.
+	\item Suppose that $a_n$ is a sequence such that $a_n = -a_{n-1} - a_{n-2}$ for $n \geq 2$.  Without finding an explicit closed form for $a_n$, explain why the sequence $a_n$ repeats with period at most 6.
+	\item Suppose that $a_n$ is a sequence of rational numbers satisfying $$a_0 = 1,\; a_1 =0,\; \text{ and } (n^2-n)a_{n} + 9a_{n-2} = 0 \text{ for all }n \geq 2.$$
+Find a closed form for the ordinary generating function $G(x)$.  Then, find a closed form for the sequence of coefficients $a_n$.   Hint: what class of nice generating functions does $G$ fall into, based on the form of the recurrence?
+	\item Everybody knows that $\frac{d^n}{dx^n}(1-x)^{-1} = n! (1-x)^{-n-1}$, but what sequence of numbers has OGF $(1-x)^{-n-1}$?
+	\item Suppose that $f(x)$ is a polynomial of degree $d$, and that $a_n$ is the sequence of values of $f$:  $a_n = f(n)$.  Describe the generating function of the sequence $\{a_n\}_{n \geq 0}$ as succinctly as you can.  What factors can appear in the denominator?
+	\item Construct a pair of 4-sided sicherman dice (two four-sided dice with unusual face numberings which, when rolled together, give the same probability distribution as two ordinary 4-sided dice).
+	\item A Dyck path of length 2n is a path from (0,0) to (n,n) in the integer lattice made of length one steps up or to the right, such that the path never crosses strictly below the line y=x.  Show that the generating function for Dyck paths $G(x)$ satisfies $G = 1 + xG^2$, and hence that the number of Dyck paths of length 2n is the $n$th Catalan number.
+	\item let C be the speed limit on a Canadian road in km/h, and let A be the speed limit on a similar road in the USA in miles/h.  Why is (C,A) often a pair of adjacent Fibonacci numbers (with an extra zero)?  For instance:
+	\begin{itemize}
+		\item the speed limit in a school zone is 20 mph in the usa, 30 km/h in Canada.
+		\item For city streets, it's 30 mph in USA, 50 mph in Canada.
+		\item For old, low quality highways, it's 50 mph in USA, 80 mph in Canada.
+	\end{itemize}
+\end{enumerate}
+
+\section{week 2}
+
+The topics I covered:
+\begin{itemize}
+\item Given finitely many objects whose size is marked by $x$ in the generating function $G(x)$, you can find the average size by taking $$\left. x \frac{d}{dx} \log(G(x)) \right|_{x=1}$$ and a similar statement holds for probability generating functions.
+\item Integer partitions.
+\item analysis of algorithms (we did bubblesort; you did mergesort): best, worst, average case.  Big O notation.
+\item Optimizing algorithms.
+\item Iteration for combinatorial objects; generator expressions; recursion.
+\item randomly permuting a list (fisher-yates, naively).
+\end{itemize}
+
+Questions for Week 2: 
+\begin{enumerate}
+	\item Write down how to find the mean of a random variable, given its probability generating function.
+	\item Write down how to find the \emph{variance} (i.e. second moment) of a random variable, given its probability generating function.  First do the case where the mean is zero.
+	\item Describe pseudocode for listing every involution on the set $1, \dots, n$ (an involution is a permutation $\pi$ such that $\pi^2=id$. )
+	\item How many involutions on $1, \dots, n$ are there?
+	\item Describe in pseudocode, an iterator for the $n$-fold cartesian product of an interval $[0, \dots, k]^n$.
+	\item Calculate the expected number of inversions in a randomly chosen permutation in $\mathbb{S_n}$, using the fact that the generating function for inversions of a permutation in $\mathbb{S}_n$ is $$G(x) = \prod_{i=1}^n \frac{1-x^i}{1-x}$$
+	\item The Poisson distribution is a probability distribution on $\mathbb{Z}$ with parameter $\lambda$.  It's characterized by the following: if $X$ is a poisson-distributed random variable, then $$\text{prob}(X=k) = \frac{1}{k!}\lambda^k e^{-\lambda}.$$ Let $G(x)$ be the probability generating function for the Poisson distribution.  Find a simple closed form for $G(x)$; then find the expected value of the Poisson distribution.
+	\item Let $L$ be a sorted list of numbers of length $2^k-1$ and let $a$ be your favorite number.  We want to determine whether $a \in L$.  Here's an algorithm for that, called ``binary search".  Let $b$ be the middle element of $L$ (there is one).   If $a < b$,  then binary search for  in the first half of $L$.  If $a=b$, then a is in $l$.  If $a > b$, then binary search for $a$ in the second half of $L$.   Analyze the running time of binary search.
+	\item If you need to search a list repeatedly for different numbers, at what point (roughly) does it make sense to sort the list first and use binary search?
+	\item Let $a,b$ be positive constants. Show that $a^n$ is $O(b^n)$ if and only if $a \leq b$.
+	\item Let $W = \{0,1\}^n$ be the set of binary words on $n$ letters.   Describe an algorithm for iterating over the words in $W$, producing words $w_1, w_2, \dots$ such that $w_i$ differs from $w_{i-1}$ in exactly 1 digit, as do $w_1$ and $w_{2^n}$.  (This is called a \emph{binary gray code of length n}; it's equivalent to finding a Hamiltonian cycle on the $n$-cube graph).
+	\item Suppose $a_n$ is the average number of parts of a partition of $n$.  Write down the generating function for $\{a_n\}$ Start by writing down a two-variable generating function which keeps track of both n and the number of parts, and simplify it as much as you can. I don't think there's a closed form, but I was able to write down an expression with just one sum in it.
+	\item Prove, using generating functions, that the number of partitions of $n$ into distinct parts is equal to the number of partitions of $n$ into odd parts (this is a famous problem due to Euler).
+\end{enumerate}
+\end{document}
