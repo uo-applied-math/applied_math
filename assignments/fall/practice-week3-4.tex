@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\begin{document}
+\section*{Further practice problems}
+
+\section{week 3}
+
+The topics I covered: 
+
+\begin{itemize}
+	\item Laplace matrix, Adjacency matrix, incidence matrix.
+	\item Reduced laplacian and incidence matrix; matrix-tree theorem, Cauchy-Binet.
+	\item There are $n^{n-2}$ spanning trees on $n$ vertices - by Lagrange inversion, and by the matrix-tree theorem.
+	\item Tensor products, graph products, eigenvalues/eigenvectors of adjacency and laplace matrices.
+	\item Cauchy-Binet theorem from linear algebra.
+	\item Spanning trees on the hypercube graph.
+	\item Exponential generating functions, and labeled combinatorial objects.
+	\item counting derangements on $n$ (fixed-point-free permutations).
+	\item operations (addition, multiplication, differentiation, exponentiation/logarithm) on EGFs
+	\item Kruskal's algorithm for minimum spanning tree.
+	\item descents and reduced decompositions/reduced words of permutations (perhaps this was the previous week).
+\end{itemize}
+
+Some questions:
+
+\begin{enumerate}
+	\item let $A$ be the reduced incidence matrix for $G$. Verify that a maximal minor of $A$  is $\pm 1$ if and only if the corresponding vertices and edges of $G$ form a spanning tree.  (This was part of the proof of the matrix-tree theorem, using Cauchy-Binet)
+	\item A \emph{set partition of n} is an unordered collection of nonempty disjoint sets whose union is $\{1,2, \dots, n\}$.  Explain why the exponential generating function for set partitions is $G(x) = e^{e^x-1}$.  How could you add a second variable, $y$, which marks the number of sets in the set partition?
+	\item Find the exponential generating function for connected graphs on the vertices $1, \dots, n$.
+	\item We saw several examples of graphs $G$ for which the number of walks of length $n$, for all large $n$, is approximately $C\lambda_1^n$ (where $\lambda_1$ is the largest eigenvalue of the adjacency matrix of $G$ and $c$ is some constant).  Give an example of a graph $G$ for which this is \emph{not} the case.
+	\item Suppose $G(x)$ is an EGF that counts some class of labeled objects.  What do $\text{cosh} (G(x))$ and $\text{sinh}(G(x))$ count?
+	\item Prim's algorithm is another algorithm for minimal spanning trees, similar to Kruskal's algorithm.  Given a connected graph $G = (V,E)$ and an edge weighting $w:E \rightarrow \mathbb{R}$.  Start growing a spanning tree $T$ as follows.  Repeatedly add the lowest-weight edge which is adjacent to one of the vertices in $T$ and which doesn't create a cycle; stop when $T$ spans $G$. Why does this create a spanning tree of minimum weight?
+	\item I could ask the same about Kruskal's algorithm obviously.
+	\item Let $G$ be a weighted graph, with positive edge weights $w_{ij}$, and say that the weight of a spanning tree is the product of its edge weights.  Describe a matrix $G$ whose determinant computes the sum of the weights of the spanning trees of $G$.  (It may be easiest to imagine that the weights are integers, representing edge multiplicities)
+	\item Let $G$ be the following directed graph with vertices $\{1,2,3\}$, and multiple edges:  Each vertex $v$ has two neighbors $a, b \in \{1,2,3\}$, with $a < b$; there is one directed edge from $v$ to $a$, and there are two directed edges from $v$ to $b$.  Count the walks in $G$ of length $k$ which end where they start.  Hint: you can actually factor the characteristic polynomial, though you might need to do long division!
+	\item Describe an algorithm for iterating over all reduced words of a permutation $\pi \in S_n$.  Find all reduced words of the permutation $4231$ (in one-line notation).
+\end{enumerate}
+
+\section{week 4}
+
+The topics I covered:
+
+\begin{itemize}
+	\item perfect matchings on plane-embedded bipartite graphs; Kasteleyn matrix, partition function of the dimer model.
+	\item spanning trees on the $m \times n$ grid
+	\item Temperley bijection.
+	\item graph transformations which have a predictable effect on the dimer partition function:
+	\begin{itemize}
+		\item pendant edge removal
+		\item double-edge contraction
+		\item gauge transform
+		\item spider move
+	\end{itemize}
+	\item count of domino tilings on aztec diamond (without evaluating det K)
+\end{itemize}
+
+Some questions.  Note that it is somewhat difficult to construct good exam questions about this material - Kasteleyn matrices are kind of huge, and we haven't really done any probability yet.  So these are more theoretical and are of the form "did you understand?"
+
+\begin{enumerate}
+	\item Reprove that the above four transforms have a predictable effect on the generating function for perfect matchings of $G$.
+	\item Make sure you can run the Temperley bijection.
+	\item Suppose $G$ is a connected planar graph and that $T$ is a spanning tree of $G$.  Define the corresponding dual spanning tree $T^{\vee}$ of the dual graph $G^{\vee}$ and prove that it's a tree.
+\end{enumerate}
+
+For all the following questions, let $G=(V,E)$ be a connected planar bipartite graph with the same number of white and black vertices, and suppose $G$ is embedded in the plane with faces $F$.  Let $w:E \rightarrow R$ be an edge weight function on $G$, taking values in the ring $R$.  Some questions:
+
+\begin{enumerate}
+        \setcounter{enumi}{4}
+	\item We have observed that when you superimpose two perfect matchings  $M_1, M_2$ on $G$, you obtain a collection of closed loops and doubled edges (a "double dimer configuration").  Let $D$ be a double-dimer configuration.  How many pairs of perfect matchings $M_1$, $M_2$ superimpose to give $D$?
+	\item Suppose that $\sigma:E \rightarrow \{\pm 1\}$ satisfies the Kasteleyn sign condition at all faces of $G$ except possibly $F$, the external face.  Prove that $\sigma$ also satisfies the Kasteleyn sign condition at $F$.  One approach: prove that if $\sigma$ is as above and if $L$ is a loop of length $2k$ in $G$ which encloses $\ell$ vertices, then the product of the signs along $L$ is $(-1)^{1+k+\ell}$ (you need this fact in order to prove that the Kasteleyn matrix works).
+	\item Show that any $G$ as above has a Kasteleyn sign.  The idea is: pick a spanning tree of $G$, which also means you have implicitly picked a spanning tree $T^{\vee}$ of the dual graph $G^{\vee}$.  Suppose that $T^{\vee}$ is rooted at the external face.   Argue that you can assign sign $+1$ to all edges in $T$, and then iteratively assign signs to the edges crossed by $T^{\vee}$, working from the leaf vertices towards the root.
+\end{enumerate}
+
+
+\end{document}
